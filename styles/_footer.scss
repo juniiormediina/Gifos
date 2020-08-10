@@ -1,0 +1,28 @@
+footer{
+    font-family: $secundary-font;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    flex-flow: column;
+    border-bottom: 5px solid #572ee5;
+    
+    .footer-social{
+        p{
+            font-size: 15px;
+            color: #000000;
+            letter-spacing: 0;
+            padding: 20px 0px;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+            margin: 10px;
+        }
+    }
+    .footer-copy{
+        font-size: 14px;
+        padding: 20px 0px;
+    }
+}

@@ -1,0 +1,43 @@
+.principal-section{
+    height: 550px;
+}
+
+.container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    text-align: center;
+    h1{
+        width: 286px;
+        height: 99px;
+        font-size: 25px;
+        color: #572EE5;
+        line-height: 33px;
+        margin-bottom: 30px;
+        span{
+            text-transform: uppercase;
+            color: #50E3C2;
+        }
+    }
+    img{
+        width: 273px;
+        height: 130px;
+    }
+    
+    input{
+        font-family: $secundary-font;
+        width: 334px;
+        height: 50px;
+        border: 1px solid #572EE5;
+        border-radius: 27px;
+        padding: 0px 30px;
+    }
+    i{
+        margin-left: 278px;
+        margin-top: -35px;
+        font-size: 20px;
+    }
+
+}
