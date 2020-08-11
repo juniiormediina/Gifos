@@ -1,0 +1,43 @@
+main{
+    .favorite-section{
+        /* height: 280px; */
+        padding-top: 120px;
+        .favorite-container{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            img{
+                width: 28px;
+                height: 21px;
+            }
+            h2{
+                color: #572EE5;
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+    }
+    .description-favorite-section{
+        height: 500px;
+        .description-favorite-container{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            img{
+                width: 150px;
+                height: 151px;
+            }
+            h2{
+                color: #50E3C2;
+                font-size: 22px;
+                line-height: 33px;
+                width: 320px;
+                text-align: center;
+            }
+        }
+    }
+}

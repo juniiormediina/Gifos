@@ -35,20 +35,29 @@
         }
     }
     main{
-        .container{
-            h1{
-                width: 443px;
-                height: 100px;
+        .principal-section{
+            .principal-container{
+                h1{
+                    width: 443px;
+                    height: 100px;
+                }
+                img{
+                    width: 399px;
+                    height: 190px;
+                }
+                input{
+                    width: 551px;
+                }
+                i{
+                    margin-left: 478px;
+                }
             }
-            img{
-                width: 399px;
-                height: 190px;
-            }
-            input{
-                width: 551px;
-            }
-            i{
-                margin-left: 478px;
+        }
+        .description-favorite-section{
+            .description-favorite-container{
+                h2{
+                    width: 431px;
+                }
             }
         }
     }

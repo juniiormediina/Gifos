@@ -1,22 +1,13 @@
-
-
-/* let iconMenu = document.getElementsByClassName('btn-menu')[0];
-iconMenu.addEventListener('click', () => {
-        if(document.getElementsByTagName('i').classList.contains('class')){
-                alert('its work!');
+document.getElementById('btn-menu').addEventListener('click', () => {
+        var iconMenu = document.getElementById('icon');
+        let fullMenu = document.getElementsByClassName('full-menu')[0];
+        if (iconMenu.classList.contains('class')) {
+                iconMenu.classList.toggle('fa-times');
+                iconMenu.classList.toggle('fa-bars');
+                fullMenu.style.left = '0%';
+        } else{
+                iconMenu.classList.toggle('fa-bars');
+                iconMenu.classList.toggle('fa-times');
+                fullMenu.style.left = '-100%';
         }
-        
-});  */
-
-/* == 'fas fa-bars' */
-
-
-
-/* let iconMenu = document.getElementById("icon");
-iconMenu.onclick = () => {
-    iconMenu.classList.toggle("fas fa-bars");
-}; */
-
-let iconMenu =document.getElementById('btn-menu').click(() =>{
-        iconMenu.lastChild.classList('fas fa-times');
-})
+});
