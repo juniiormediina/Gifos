@@ -89,12 +89,13 @@ header .full-menu ul span {
   border-bottom: 1px solid #fff;
 }
 
-.principal-section {
+main .principal-section {
   /* height: 550px; */
   padding-top: 120px;
+  padding-bottom: 16px;
 }
 
-.principal-section .principal-container {
+main .principal-section .principal-container {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -112,7 +113,7 @@ header .full-menu ul span {
   text-align: center;
 }
 
-.principal-section .principal-container h1 {
+main .principal-section .principal-container h1 {
   width: 286px;
   height: 99px;
   font-size: 25px;
@@ -121,17 +122,17 @@ header .full-menu ul span {
   margin-bottom: 30px;
 }
 
-.principal-section .principal-container h1 span {
+main .principal-section .principal-container h1 span {
   text-transform: uppercase;
   color: #50E3C2;
 }
 
-.principal-section .principal-container img {
+main .principal-section .principal-container img {
   width: 273px;
   height: 130px;
 }
 
-.principal-section .principal-container input {
+main .principal-section .principal-container input {
   font-family: "Roboto", sans-serif;
   width: 334px;
   height: 50px;
@@ -140,10 +141,79 @@ header .full-menu ul span {
   padding: 0px 30px;
 }
 
-.principal-section .principal-container i {
+main .principal-section .principal-container i {
   margin-left: 278px;
   margin-top: -35px;
   font-size: 20px;
+}
+
+main .trending-section {
+  height: 135px;
+}
+
+main .trending-section .trending-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .trending-section .trending-container h2 {
+  font-weight: 700;
+  color: #572EE5;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+main .trending-section .trending-container p {
+  color: #572EE5;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+main .trendingGifos-section {
+  height: 430px;
+}
+
+main .trendingGifos-section .trendingGifos-container {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .trendingGifos-section .trendingGifos-carrusel {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
 }
 
 main .favorite-section {
@@ -372,6 +442,9 @@ footer .footer-copy {
   }
   main .description-favorite-section .description-favorite-container h2 {
     width: 431px;
+  }
+  main .description-misGifos-section .description-misGifos-container h2 {
+    width: 375px;
   }
   footer {
     -webkit-box-orient: horizontal;
