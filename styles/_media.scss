@@ -31,6 +31,36 @@
                         color: #9CAFC3;
                     }
                 }
+                .add{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 54px;
+                    height: 54px;
+                    border: 1px solid #572EE5;
+                    border-radius: 50%;
+                    img{
+                        display: unset;
+                    }
+                    
+                    &:hover{
+                        background: #572EE5;
+                        img{
+                            /* filter: invert(4.4) hue-rotate(1deg) saturate(1%); */
+                            filter: brightness(2000%);
+                        }
+                    }
+                    
+                    /* &:hover{
+                        background: #572EE5;
+                        & svg{
+                            & path{
+                                fill: #ffffff;
+                            }
+                        }
+                    } */
+                }
+                
             }
         }
     }
@@ -51,6 +81,57 @@
                 i{
                     margin-left: 478px;
                 }
+            }
+        }
+        .result-search-section{
+            height: 1570px;
+            .result-search-container{           
+                .item{
+                    img{
+                        width: 260px;
+                        height: 200px;
+                    }
+                    .overlay{
+                        position: absolute;
+                        display: flex;
+                        flex-flow: column;
+                        justify-content: space-between;
+                        background: #572EE5;
+                        opacity: 0;
+                        width: 100%;
+                        font-size: 20px;
+                        bottom: 0;
+                        color: #ffffff;
+                        height: 100%;
+                        .icon-overlay{
+                            display: flex;
+                            justify-content: flex-end;
+                            img{
+                                width: 32px;
+                                height: 32px;
+                                border-radius: 6px;
+                                background:  #FFFFFF;
+                                opacity: 0.7;
+                                margin: 5px;
+                                &:hover{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                        .text-overlay{
+                            margin: 0 0 5px 10px;
+                        }
+                    }
+                    &:hover{
+                        .overlay{
+                            opacity: 0.7;
+                        }
+                    }
+                }      
+            }
+            .btn:hover{
+                background-color: #572EE5;
+                color: #ffffff;
             }
         }
         .description-favorite-section{
@@ -76,12 +157,34 @@
             display: flex;
             div{
                 padding: 20px;
+                a:hover{
+                    img{
+                        //TODO: esto no esta funcionando revisar como solucionar este problema del hover
+                        fill: #572ee5;
+                        /* filter: saturate(86) hue-rotate(1deg) contrast(116%) invert(4.4); */
+                    }
+                }
             }
+        }
+    }
+}
+@media screen and (min-width: 1024px){
+    main{
+        .result-search-section{
+            height: 1150px;
         }
     }
 }
 @media screen and (min-width: 1440px){
     header{
         padding: 0px 156px 0px 156px;
+    }
+    main{
+        
+        .result-search-section{
+            .result-search-container{
+                width: 1280px;
+            }
+        }
     }
 }

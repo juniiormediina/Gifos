@@ -25,6 +25,7 @@
                 <span></span>
                 <li><a href="./mis-gifos.html">Mis GIFOS</a></li>
                 <span></span>
+                <a href="#" class="add"><img src="./assets/button-crear-gifo.svg" alt="Crear Gifo"></a>
             </ul>
         </nav>
     </header>
@@ -42,6 +43,37 @@
                 <h2>¡Anímate a crear tu primer GIFO!</h2>
             </div>
         </section>
+
+        <section class="trendingGifos-section">
+            <div class="trendingGifos-container">
+                <h2>Trending GIFOS</h2>
+                <p>Mira los últimos GIFOS de nuestra comunidad</p>
+            </div>
+            <div class="trendingGifos-slider">
+                <div class="left-container">
+                    <div>
+                        <a class="left" onclick="nextSlide(-1)"><img src="./assets/button-left.svg" alt="left"></a>
+                    </div>
+                </div>
+
+                <div class="showSlide fade">
+                    <img src="https://via.placeholder.com/250x190.png/09f/fff" alt="Gifo">
+                </div>
+                <div class="showSlide fade">
+                    <img src="https://via.placeholder.com/250x190.png/09f/fff" alt="Gifo">
+                </div>
+                <div class="showSlide fade">
+                    <img src="https://via.placeholder.com/250x190.png/09f/fff" alt="Gifo">
+                </div>
+                                
+                <div class="right-container">
+                    <div>
+                        <a class="right" onclick="nextSlide(1)"><img src="./assets/button-right.svg" alt="right"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
