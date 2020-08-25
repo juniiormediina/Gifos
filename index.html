@@ -12,22 +12,22 @@
     <header id="navbar">
         <!-- icon -->
         <div class="menu-bar">
-            <a href="./index.html"><img src="assets/logo-mobile.svg" alt="Logo"></a>
+            <a href="./index.html"><!-- <img src="assets/logo-mobile.svg" alt="Logo"> --></a>
             <div class="btn-menu" id="btn-menu">
-                <i id="icon" class="icon fas fa-bars purple"></i>
+                <img id="bars" src="./assets/burger.svg" alt="Menu">
+                <img id="close" src="./assets/close.svg" alt="Close">
             </div>
         </div>
         <!-- Menu de navegación -->
         <nav class="full-menu">
             <ul>
-                <li><a href="#">Modo Nocturno</a></li>
+                <li><a href="#" id="changeMode">MODO NOCTURNO</a></li>
                 <span></span>
-                <li><a href="./favoritos.html">Favoritos</a></li>
+                <li><a href="./favoritos.html" id="favorite">FAVORITOS</a></li>
                 <span></span>
-                <li><a href="./mis-gifos.html">Mis GIFOS</a></li>
+                <li><a href="./mis-gifos.html" id="misGifos">MIS GIFOS</a></li>
                 <span></span>
-                <a href="#" class="add"><img src="./assets/button-crear-gifo.svg" alt="Crear Gifo"></a>
-                
+                <a href="./crear-gifos.html" class="add" id="createGifos"><img src="./assets/button-crear-gifo.svg" alt="Crear Gifo"></a>
             </ul>
         </nav>
     </header>
@@ -37,11 +37,13 @@
         <section class="principal-section">
             <div class="principal-container">
                 <h1>Inspírate, busca, guarda y crea los mejores <span>gifos</span></h1>
-                <img src="./assets/ilustra_header.svg" alt="">
-                <input type="text" placeholder="Busca GIFOS y más">
-                <!-- <i class="fas fa-search purple"></i> -->
+                <img src="./assets/ilustra_header.svg" alt="Bienvenido a GIFOS">
+                <div class="principal-container-input">
+                    <input type="text" placeholder="Busca GIFOS y más">
+                    <a class="img-search"><img  src="./assets/icon-search.svg" alt="Buscar"></a>
+                </div>
             </div>
-            <a class="img-search"><img  src="./assets/icon-search.svg" alt="Buscar"></a>
+            
         </section>
 
         <!-- Trending Section -->
@@ -230,26 +232,61 @@
             <a class="btn">Ver más</a>
         </section>
 
-        <!-- Seacrh Empty -->
+        <!-- Empty Seacrh -->
         <section class="search-empty-section">
-            <div class="search-empty-container">
-                
-                <h2>Resultado de la búsqueda</h2>
-            </div>
+            <section class="search-empty">
+                <div class="search-empty-container">
+                    <h2>Resultado de la búsqueda</h2>
+                </div>
+            </section>
+            <section class="description-search-empty-section">
+                <div class="description-search-empty-container">
+                    <img src="./assets/icon-busqueda-sin-resultado.svg" alt="Favoritos Sin Contenido">
+                    <h2>Intenta con otra búsqueda</h2>
+                </div>
+            </section>
         </section>
-        <section class="description-search-empty-section">
-            <div class="description-search-empty-container">
-                <img src="./assets/icon-busqueda-sin-resultado.svg" alt="Favoritos Sin Contenido">
-                <h2>Intenta con otra búsqueda</h2>
-            </div>
+
+        <!-- Favorites -->
+        <section class="favorite">
+            <section class="favorite-section">
+                <div class="favorite-container">
+                    <img src="./assets/icon-favoritos.svg" alt="Favoritos">
+                    <h2>Favoritos</h2>
+                </div>
+            </section>
+            <section class="description-empty-favorite-section">
+                <div class="description-empty-favorite-container">
+                    <img src="./assets/icon-fav-sin-contenido.svg" alt="Favoritos Sin Contenido">
+                    <h2>"¡Guarda tu primer GIFO en favoritos para que se muestre aquí!"</h2>
+                </div>
+            </section>
+        </section>
+
+        <!-- Mis Gifos -->
+        <section class="misGifos">
+            <section class="misGifos-section">
+                <div class="misGifos-container">
+                    <img src="./assets/icon-mis-gifos.svg" alt="Mis GIFOS">
+                    <h2>Mis GIFOS</h2>
+                </div>
+            </section>
+            <section class="description-empty-misGifos-section">
+                <div class="description-empty-misGifos-container">
+                    <img src="./assets/icon-mis-gifos-sin-contenido.svg" alt="Mis Gifos Sin Contenido">
+                    <h2>¡Anímate a crear tu primer GIFO!</h2>
+                </div>
+            </section>
         </section>
                 
         <!-- Slider de Gifos -->
         <section class="trendingGifos-section">
-            <div class="trendingGifos-container">
+            <div class="trendingGifos-text-container">
                 <h2>Trending GIFOS</h2>
                 <p>Mira los últimos GIFOS de nuestra comunidad</p>
             </div>
+
+            
             <div class="trendingGifos-slider">
                 <div class="left-container">
                     <div>
@@ -257,15 +294,84 @@
                     </div>
                 </div>
 
-                <div class="showSlide fade">
-                    <img src="https://via.placeholder.com/250x190.png/09f/fff" alt="Gifo">
+
+
+                <div class="img-container-slider">
+                    <div class="showSlide item-slider">
+                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
+                        <div class="overlay-slider">
+                            <div class="icon-overlay-slider">
+                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
+                                <img class="icon" src="./assets/icon-download.svg" alt="download">
+                                <img class="icon" src="./assets/icon-max.svg" alt="max">
+                            </div>
+                            <div class="text-overlay-slider">
+                                <p>User</p>
+                                <h2>Título GIFO</h2>
+                            </div>
+                        </div>
+                    </div>                                    
+                    <div class="showSlide item-slider">
+                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
+                        <div class="overlay-slider">
+                            <div class="icon-overlay-slider">
+                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
+                                <img class="icon" src="./assets/icon-download.svg" alt="download">
+                                <img class="icon" src="./assets/icon-max.svg" alt="max">
+                            </div>
+                            <div class="text-overlay-slider">
+                                <p>User</p>
+                                <h2>Título GIFO</h2>
+                            </div>
+                        </div>
+                    </div>                                    
+                    <div class="showSlide item-slider">
+                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
+                        <div class="overlay-slider">
+                            <div class="icon-overlay-slider">
+                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
+                                <img class="icon" src="./assets/icon-download.svg" alt="download">
+                                <img class="icon" src="./assets/icon-max.svg" alt="max">
+                            </div>
+                            <div class="text-overlay-slider">
+                                <p>User</p>
+                                <h2>Título GIFO</h2>
+                            </div>
+                        </div>
+                    </div>                                    
+                    <div class="showSlide item-slider">
+                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
+                        <div class="overlay-slider">
+                            <div class="icon-overlay-slider">
+                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
+                                <img class="icon" src="./assets/icon-download.svg" alt="download">
+                                <img class="icon" src="./assets/icon-max.svg" alt="max">
+                            </div>
+                            <div class="text-overlay-slider">
+                                <p>User</p>
+                                <h2>Título GIFO</h2>
+                            </div>
+                        </div>
+                    </div>                                    
+                    <div class="showSlide item-slider">
+                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
+                        <div class="overlay-slider">
+                            <div class="icon-overlay-slider">
+                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
+                                <img class="icon" src="./assets/icon-download.svg" alt="download">
+                                <img class="icon" src="./assets/icon-max.svg" alt="max">
+                            </div>
+                            <div class="text-overlay-slider">
+                                <p>User</p>
+                                <h2>Título GIFO</h2>
+                            </div>
+                        </div>
+                    </div>                                    
                 </div>
-                <div class="showSlide fade">
-                    <img src="https://via.placeholder.com/250x190.png/09f/fff" alt="Gifo">
-                </div>
-                <div class="showSlide fade">
-                    <img src="https://via.placeholder.com/250x190.png/09f/fff" alt="Gifo">
-                </div>
+                
+
+
+        
                                 
                 <div class="right-container">
                     <div>
@@ -273,6 +379,56 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Create Gifos -->
+        <section class="createGifos">
+            <div class="createGifos-container">
+
+                <div class="container-top">
+                    <div class="container-camera">
+                        <div class="createGifos-img-camera"></div>
+                        <div class="createGifos-img-camera-luz"></div>
+                    </div>
+                    
+                    <div class="container-createGifos-box">
+                        <div class="createGifos-box">
+                            <div class="createGifos-box-intern">
+                                <h2>Aquí podrás crear tus propios <span>gifos</span></h2>
+                                <p>¡Crea ty GIFO en sólo 3 pasos!</p>
+                                <p>(sólo necesitas una cámara para grabar un video)</p>
+                            </div>
+                        </div>
+                        <div class="container-createGifos-bottom">
+                            <div>
+                                <a href="#">1</a>
+                            </div>
+                            <div>
+                                <a href="#">2</a>
+                            </div>
+                            <div>
+                                <a href="#">3</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-movie">
+                        <div class="createGifos-movie"></div>
+                    </div>
+                </div>
+
+                <div class="container-bottom">
+                    <div class="createGifos-bottom">
+                        <div class="createGifos-bars"></div>
+                        <!-- <div class="createGifos-movie"></div> -->
+                    </div>
+                    <div class="container-btn">
+                        <a href="" class="btn-create">comenzar</a>
+                    </div>
+                </div>
+
+            </div>
+            
         </section>
     </main>
 
@@ -290,6 +446,7 @@
             <p><i class="far fa-copyright"></i> GIFOS 2020 All Rights Reserved.</p>
         </div>
     </footer>
+
     <!-- Scripts -->
     <script src="scripts/script.js"></script>
 </body>

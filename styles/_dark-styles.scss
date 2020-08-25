@@ -1,0 +1,272 @@
+.dark{
+    background: $dark-color;
+    
+    /* Header */
+    header{
+        background: $dark-color;
+        background-color: $dark-color;
+        border-top: 5px solid #000000;
+        .menu-bar{
+            a{
+                background-image: url(../assets/logo-mobile-modo-noct.svg);
+            }
+            .btn-menu{
+                img{
+                    filter: brightness(2000%);
+                }
+            }
+        }
+        .full-menu{
+            background: #000000;
+        }
+    }
+
+    main{
+
+        /* Principal con imagen / barra de busqueda */
+        .principal-section{
+            .principal-container{
+                h1{
+                    color: $color-white;
+                }
+                .principal-container-input{
+                    input{
+                        background-color: $dark-color;
+                        border: 1px solid $color-white;
+                    }
+                    a{
+                        img{
+                            filter: brightness(2000%);
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Tendring Section */
+        .trending-section{
+            .trending-container{
+                h2{
+                    color: $color-white;
+                }
+                p{
+                    color: $color-white;
+                }
+            }
+        }
+
+        /* Result Search */
+        .result-search-section{
+            .result-search-title{
+                color: $color-white;
+            }
+            .btn{
+                border: 1px solid $color-white;
+                color: $color-white;
+            }
+        }
+
+        /* Empty Search */
+        .search-empty-section{
+            .search-empty{
+                h2{
+                    color: $color-white;
+                }
+            }
+        }
+
+        /* Favorites */
+        .favorite{
+            .favorite-section{
+                .favorite-container{
+                    h2{
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+
+        /* Mis Gifos */
+        .misGifos{
+            .misGifos-section{
+                .misGifos-container{
+                    h2{
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+
+        /* Slider de Gifos */
+        .trendingGifos-section{
+            background-color: $bold-dark-color;
+            .trendingGifos-container{
+                h2{
+                    color: $color-white;
+                }
+                p{
+                    color: $color-white;
+                }
+            }
+            .trendingGifos-slider{
+                .left-container, .right-container{
+                    div{
+                        border: 1px solid $color-white;
+                        .left, .right{
+                            img{
+                                filter: brightness(2000%);
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Create Gifos */
+        .createGifos{
+            .createGifos-container{
+                .container-top{
+                    .container-camera{
+                        .createGifos-img-camera{
+                            background-image: url(../assets/camara-modo-noc.svg);
+                        }
+                    }
+                    .container-createGifos-box{
+                        .container-createGifos-bottom{
+                            div{
+                                border: 1px solid $color-white;
+                                a{
+                                    color: $color-white;
+                                }
+                                &:hover{
+                                    background: $color-white;
+                                    a{
+                                        color: #000000;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .container-movie{
+                        .createGifos-movie{
+                            background-image: url(../assets/pelicula-modo-noc.svg);
+                        }
+                    }
+                }
+                .container-bottom{
+                    .container-btn{
+                        .btn-create{
+                            border: 1px solid $color-white;
+                            color: $color-white;
+                            &:hover{
+                                background: $color-white;
+                                color: #000000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Footer */
+    footer{
+        border-bottom: 5px solid #000000;
+        .footer-social{
+            p{
+                color: $color-white;
+            }
+        }
+        .footer-copy{
+            p{
+                color: $color-white;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .dark{
+        /* header */
+        header{
+            .full-menu{
+                background: transparent;
+                ul{
+                    li{
+                        color: $color-white;
+                    }
+                    .add{
+                        border: 1px solid $color-white;
+                        img{
+                            filter: brightness(2000%);
+                        }
+                    }
+                    span{
+                        border-bottom: 1px solid $dark-color;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1024px){
+    .dark{
+        /* header */
+        header{
+            .menu-bar{
+                a{
+                    background-image: url(../assets/logo-desktop-modo-noc.svg);
+                }
+            }
+            .full-menu{
+                ul{
+                    .add{
+                        &:hover{
+                            background: $color-white;
+                            img{
+                                filter: brightness(0%);
+                            }
+                        }
+                        &:active{
+                            background:#9CAFC3;
+                            img{
+                                filter: brightness(2000%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        main{
+
+            /* Result Search */
+            .result-search-section{
+                .btn:hover{
+                    background-color: $color-white;
+                    color: #000000;
+                }
+            }
+
+            /* Slider de Gifos */
+            .trendingGifos-section{
+                .trendingGifos-slider{
+                    .left-container, .right-container{
+                        div{
+                            .left, .right{
+                                &:hover{
+                                    filter: brightness(0%);
+                                }
+                            }
+                            &:hover{
+                                background-color: $color-white;
+                            }
+                        }
+                    }
+                }          
+                
+            }
+        }
+    }
+}

@@ -1,12 +1,12 @@
 footer{
-    font-family: $secundary-font;
+    font-family: $secondary-font;
     width: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
     justify-content: space-evenly;
     flex-flow: column;
-    border-bottom: 5px solid #572ee5;
+    border-bottom: 5px solid $color-principal;
     
     .footer-social{
         p{

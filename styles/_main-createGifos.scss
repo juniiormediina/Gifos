@@ -1,0 +1,150 @@
+main{
+    /* Create Gifos */
+    .createGifos{
+            display: none;
+            height: 800px;
+            /* display: flex; */ // hay que habilitarlo para que se pueda ver la seccion
+            justify-content: center;
+            align-items: center;
+        .createGifos-container{
+            width: 100%;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            .container-top{
+                height: 600px;
+                width: 1130px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                justify-content: space-between;
+                .container-camera{
+                    display: flex;
+                    align-items: center;
+                    .createGifos-img-camera{
+                        background-image: url(../assets/camara.svg);
+                        width: 123px;
+                        height: 163px;
+                    }
+                    .createGifos-img-camera-luz{
+                        background-image: url(../assets/element-luz-camara.svg);
+                        width: 76px;
+                        height: 124px;
+                    }
+                }
+                .container-createGifos-box{
+                    .createGifos-box{
+                        width: 688px;
+                        height: 390px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        border: 1px solid $color-principal;
+                        .createGifos-box-intern{
+                            width: 630px;
+                            height: 330px;
+                            border: 1px solid #50E3C2;
+                            justify-content: center;
+                            align-items: center;
+                            display: flex;
+                            flex-flow: column;
+                            h2{
+                                width: 231px;
+                                font-family: $principal-font;
+                                font-size: 25px;
+                                color: $color-principal;
+                                text-align: center;
+                                line-height: 35px;
+                                span{
+                                    text-transform: uppercase;
+                                    color: $color-secondary;
+                                }
+                            }
+                            p{
+                                font-family: $secondary-font;
+                                font-size: 16px;
+                                color: #000000;
+                                line-height: 29px;
+                            }
+                        }
+                    }
+                    .container-createGifos-bottom{
+                        display: flex;
+                        justify-content: center;
+                        div{
+                            width: 32px;
+                            height: 32px;
+                            margin: 15px;
+                            border: 1px solid $color-principal;
+                            border-radius: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            a{
+                                font-family: $secondary-font;
+                                font-size: 18px;
+                                color: $color-principal;
+                                text-decoration: none;
+                                
+                            }
+                            &:hover{
+                                background: $color-principal;
+                                a{
+                                    color: $color-white;
+                                }
+                            }
+                        }
+                    }
+                }
+                .container-movie{
+                    height: 580px;
+                    display: flex;
+                    align-items: flex-end;
+                    .createGifos-movie{
+                        width: 142px;
+                        height: 88px;
+                        background-image: url(../assets/pelicula.svg);
+                    }
+                }
+            }           
+            .container-bottom{
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                .createGifos-bottom{
+                    display: flex;
+                    flex-flow: row;
+                    .createGifos-bars{
+                        width: 795px;
+                        height: 7px;
+                        background: $color-principal;
+                        margin-left: 30px;
+                    }
+                }
+                .container-btn{
+                    margin: 40px;
+                    .btn-create{
+                        border: 1px solid $color-principal;
+                        border-radius: 25px;
+                        padding: 20px;
+                        text-align: center;
+                        cursor: pointer;
+                        text-decoration: none;
+                        font-size: 13px;
+                        color: $color-principal;
+                        text-transform: uppercase;
+                        &:hover{
+                            background: $color-principal;
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

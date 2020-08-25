@@ -9,39 +9,45 @@
 </head>
 <body>
     
-    <header>
+    <!-- header -->
+    <header id="navbar">
+        <!-- icon -->
         <div class="menu-bar">
-            <a href="./index.html"><img src="assets/logo-mobile.svg" alt="Logo"></a>
+            <a href="./index.html"><!-- <img src="assets/logo-mobile.svg" alt="Logo"> --></a>
             <div class="btn-menu" id="btn-menu">
-                <i id="icon" class="fas fa-bars purple"></i>
+                <img id="bars" src="./assets/burger.svg" alt="Menu">
+                <img id="close" src="./assets/close.svg" alt="Close">
             </div>
         </div>
-
+        <!-- Menu de navegación -->
         <nav class="full-menu">
             <ul>
-                <li><a href="#">Modo Nocturno</a></li>
+                <li><a href="#" id="changeMode">MODO NOCTURNO</a></li>
                 <span></span>
-                <li><a href="./favoritos.html">Favoritos</a></li>
+                <li><a href="./favoritos.html">FAVORITOS</a></li>
                 <span></span>
-                <li><a href="./mis-gifos.html">Mis GIFOS</a></li>
+                <li><a href="./mis-gifos.html">MIS GIFOS</a></li>
                 <span></span>
-                <a href="#" class="add"><img src="./assets/button-crear-gifo.svg" alt="Crear Gifo"></a>
+                <a href="./crear-gifos.html" class="add"><img src="./assets/button-crear-gifo.svg" alt="Crear Gifo"></a>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="favorite-section">
-            <div class="favorite-container">
-                <img src="./assets/icon-favoritos.svg" alt="Favoritos">
-                <h2>Favoritos</h2>
-            </div>
-        </section>
-        <section class="description-favorite-section">
-            <div class="description-favorite-container">
-                <img src="./assets/icon-fav-sin-contenido.svg" alt="Favoritos Sin Contenido">
-                <h2>"¡Guarda tu primer GIFO en favoritos para que se muestre aquí!"</h2>
-            </div>
+        <!-- Favorites -->
+        <section class="favorite">
+            <section class="favorite-section">
+                <div class="favorite-container">
+                    <img src="./assets/icon-favoritos.svg" alt="Favoritos">
+                    <h2>Favoritos</h2>
+                </div>
+            </section>
+            <section class="description-empty-favorite-section">
+                <div class="description-empty-favorite-container">
+                    <img src="./assets/icon-fav-sin-contenido.svg" alt="Favoritos Sin Contenido">
+                    <h2>"¡Guarda tu primer GIFO en favoritos para que se muestre aquí!"</h2>
+                </div>
+            </section>
         </section>
 
         <section class="trendingGifos-section">

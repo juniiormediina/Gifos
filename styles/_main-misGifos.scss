@@ -1,42 +1,45 @@
 main{
-    .misGifos-section{
-        /* height: 280px; */
-        padding-top: 120px;
-        .misGifos-container{
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-flow: column;
-            img{
-                width: 24px;
-                height: 22px;
-            }
-            h2{
-                color: #572EE5;
-                font-size: 25px;
-                line-height: 30px;
+    /* Mis Gifos */
+    .misGifos{
+        .misGifos-section{
+            /* height: 280px; */
+            padding-top: 120px;
+            .misGifos-container{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: column;
+                img{
+                    width: 24px;
+                    height: 22px;
+                }
+                h2{
+                    color: $color-principal;
+                    font-size: 25px;
+                    line-height: 30px;
+                }
             }
         }
-    }
-    .description-misGifos-section{
-        height: 500px;
-        .description-misGifos-container{
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-flow: column;
-            img{
-                width: 150px;
-                height: 151px;
-            }
-            h2{
-                color: #50E3C2;
-                font-size: 22px;
-                line-height: 33px;
-                width: 320px;
-                text-align: center;
+        .description-empty-misGifos-section{
+            height: 500px;
+            .description-empty-misGifos-container{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: column;
+                img{
+                    width: 150px;
+                    height: 151px;
+                }
+                h2{
+                    color: $color-secondary;
+                    font-size: 22px;
+                    line-height: 33px;
+                    width: 320px;
+                    text-align: center;
+                }
             }
         }
     }
