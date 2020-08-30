@@ -60,65 +60,26 @@ class DarkMode{
 }
 
 /* Slider */
-//esto funciona bien solo que no cuando no esta dispuesto el elemento en la pagina que se encuentre
-var slide_index = 1;
-displaySlides(slide_index);
+const buttonPrev = document.getElementById('button-prev');
+const buttonNext = document.getElementById('button-next');
+const track = document.getElementById('track');
+const slickList = document.getElementById('slick-list');
+const slick = document.querySelectorAll('.slick');
 
-function nextSlide(n){
-        displaySlides(slide_index += n);
+const slickWidth = slick[0].offsetWidth;
+
+buttonPrev.onclick = () => Move(1);
+buttonNext.onclick = () => Move(2);
+
+function Move(value){
+        const trackWidth = track.offsetWidth;
+        const listWidth = slickList.offsetWidth;
+
+        track.style.left == "" ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice(0, -2) * -1);
+    
+        if(leftPosition < (trackWidth - listWidth) && value == 2){
+                track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
+        }else if(leftPosition > 0 && value == 1){
+                track.style.left = `${-1 * (leftPosition - slickWidth)}px`;
+        }
 }
-
-function currentSlide(n){
-        displaySlides(slide_index = n);
-}
-
-function displaySlides(n){
-        var slides = document.getElementsByClassName('showSlide');
-        if(n > slides.length){
-                slide_index = 1;
-        }
-        if(n < 1){
-                slide_index = slides.length;
-        }
-        for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = 'none';
-        }
-        slides[slide_index - 1].style.display = 'Block';
-}
-
-
-
-/* Cambio entre secciones  */
-
-/* class ChangeSection{
-        constructor(){
-                this.btnFavorite = document.getElementById('favorite');
-                this.btnMisGifos = document.getElementById('misGifos');
-                this.btnCreateGifos = document.getElementById('createGifos');
-        }
-
-        hide(){
-
-        }
-
-        show(){
-
-        }
-
-        change(){
-
-        }
-} */
-
-
-
-
-/* Conectar con API */
-//TODO: terminar de hacer la consulta e importe de la API (verificar documentacion)
-const Key_api = "NsM8Ow50lm4v9vROy1nC0lVGfP6rf8Ie";
-let getSearch = (Key_api) => {
-        fetch('api.giphy.com/v1/trending/searches' + Key_api)
-}
-
-
-

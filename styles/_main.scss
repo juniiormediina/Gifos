@@ -1,4 +1,5 @@
 main{
+
     /* Principal con imagen / barra de busqueda */
     .principal-section{
         /* height: 550px; */
@@ -76,8 +77,9 @@ main{
 
     /* Result Search */
     .result-search-section{
+        display: none;
         height: 1100px;
-        display: flex;
+        /* display: flex; */ // hay que dejar este unicamente para que se pueda mostrar
         flex-flow: column nowrap;
         align-items: center;
         justify-content: space-evenly;
@@ -147,7 +149,7 @@ main{
 
     /* Empty Search */
     .search-empty-section{
-        /* display: none; */
+        display: none;
         .search-empty{
             /* height: 280px; */
             padding-top: 120px;
@@ -192,84 +194,88 @@ main{
     }
     
     /* Slider de Gifos */
-
-    .trendingGifos-section{
-        height: 430px;
-        background-color: $color-gray;
-        .trendingGifos-text-container{
-            height: 50%;
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
-            align-items: center;
+    .carousel{
+        width: 100%;
+        height: 470px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        background: $color-gray;
+        /* margin: 0px 60px; */
+        h2{
+            font-family: $principal-font;
+            color: $color-principal;
+            font-size: 25px;
+            line-height: 60px;
+            padding-bottom: 24px;
             text-align: center;
-            h2{
-                color: $color-principal;
-            }
         }
-        .trendingGifos-slider{
-            height: 50%;
+        p{
+            font-family: $secondary-font;
+            font-size: 18px;
+            color: #000000;
+            text-align: center;
+        }
+        .slick-list{
+            /* position: relative; */// comentar
             display: flex;
-            justify-content: space-evenly;
-            flex-flow: row nowrap;
-            position: relative;
-            .img-container-slider{
-
-                .showSlide{
-                    /* display: none; */
+            align-items: center;
+            width: fit-content;
+            height: 304px;
+            padding: 10px 0px;
+            margin: 0px auto;
+            max-width: 64vw;
+            overflow: hidden;
+            .slick-track{
+                position: relative;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                transition: .5s ease-in-out;
+                .slick{
+                    position: relative;
+                    width: 275px;
+                    /* padding: 0 18px; */ // en vista movil no es necesario
+                    float: left;
+                    box-sizing: border-box;
+                    display: flex;
+                    height: 100%;
                     img{
-                        width: 243px;
-                        height: 187px;
+                        /* object-fit: cover; */
+                        /* height: 300px; */
+                        width: 100%;
+                        border-radius: 4px;
+                        box-shadow: 0 2px 0 rgba(0,0,0,.5);
+                        transition: .3s ease-in-out;
+                        &:hover{
+                            opacity: .85;
+                        }
                     }
                 }
-                .item-slider{
-                    position: relative;
-                    img{
-                        display: block;
-                        width: 260px;
-                        height: 200px;
-                    }
-                    .overlay-slider{
-                        position: absolute;
-                        display: flex;
-                        flex-flow: column;
-                        justify-content: space-between;
-                        background: $color-principal;
-                        opacity: 0;
-                        width: 100%;
-                        font-size: 20px;
-                        bottom: 0;
-                        color: $color-white;
-                        height: 100%;
-                        .icon-overlay-slider{
-                            display: flex;
-                            justify-content: flex-end;
-                            img{
-                                width: 32px;
-                                height: 32px;
-                                border-radius: 6px;
-                                background:  $color-white;
-                                opacity: 0.7;
-                                margin: 5px;
-                            }
-                        }
-                        .text-overlay-slider{
-                            margin: 0 0 5px 10px;
-                        }
-                    }
-                } 
             }
-            .left-container, .right-container{
-                align-items: center;
-                display: flex;
-                div{
-                    .left, .right{
-                        width: 40px;
-                        height: 40px;
-                        align-items: center;
-                        display: flex;
-                        justify-content: center;
-                    }
+            .slick-arrow{
+                background-color: #ffffff;
+                position: absolute;
+                z-index: 4;
+                width: 48px;
+                height: 48px;
+                text-align: center;
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+                border: 1px solid $color-principal;
+                cursor: pointer;
+            }
+            .slick-prev{
+                /* background-image: url(../assets/button-left.svg); */
+                left: 16px;
+                img{
+                    padding: 15px
+                }
+            }
+            .slick-next{
+                right: 14px;
+                img{
+                    padding: 15px
                 }
             }
         }

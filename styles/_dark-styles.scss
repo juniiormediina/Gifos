@@ -98,26 +98,27 @@
         }
 
         /* Slider de Gifos */
-        .trendingGifos-section{
+        .carousel{
             background-color: $bold-dark-color;
-            .trendingGifos-container{
-                h2{
-                    color: $color-white;
-                }
-                p{
-                    color: $color-white;
-                }
+            h2{
+                color: $color-white;
             }
-            .trendingGifos-slider{
-                .left-container, .right-container{
-                    div{
-                        border: 1px solid $color-white;
-                        .left, .right{
-                            img{
-                                filter: brightness(2000%);
-
-                            }
-                        }
+            p{
+                color: $color-white;
+            }
+            .slick-list{
+                .slick-arrow{
+                    background-color: $bold-dark-color;
+                    border: 1px solid $color-white;
+                }
+                .slick-prev{
+                    img{
+                        filter: brightness(2000%);
+                    }
+                }
+                .slick-next{
+                    img{
+                        filter: brightness(2000%);
                     }
                 }
             }
@@ -177,6 +178,31 @@
             p{
                 color: $color-white;
             }
+            .icons{
+                .face{
+
+                    background-image: url(../assets/icon_facebook_noc.svg);
+                }
+                .twit{
+
+                    background-image: url(../assets/icon-tw-normal.svg);
+                }
+                
+                .insta{
+                    background-image: url(../assets/icon_instagram_noc.svg);
+                }
+                &:hover{                   
+                    .face{
+                        background-image: url(../assets/icon_facebook_noc.svg);
+                    }
+                    .twit{
+                        background-image: url(../assets/icon-tw-normal.svg);
+                    }
+                    .insta{
+                        background-image: url(../assets/icon_instagram_noc.svg);
+                    }
+                }
+            }
         }
         .footer-copy{
             p{
@@ -198,9 +224,7 @@
                     }
                     .add{
                         border: 1px solid $color-white;
-                        img{
-                            filter: brightness(2000%);
-                        }
+                        background-image: url(../assets/CTA-crear-gifo-modo-noc.svg);
                     }
                     span{
                         border-bottom: 1px solid $dark-color;
@@ -224,15 +248,11 @@
                     .add{
                         &:hover{
                             background: $color-white;
-                            img{
-                                filter: brightness(0%);
-                            }
+                            background-image: url(../assets/CTA-crear-gifo-hover-modo-noc.svg);
                         }
                         &:active{
                             background:#9CAFC3;
-                            img{
-                                filter: brightness(2000%);
-                            }
+                            background-image: url(../assets/CTA-crear-gifo-active-modo-noc.svg);
                         }
                     }
                 }
@@ -250,22 +270,25 @@
             }
 
             /* Slider de Gifos */
-            .trendingGifos-section{
-                .trendingGifos-slider{
-                    .left-container, .right-container{
-                        div{
-                            .left, .right{
-                                &:hover{
-                                    filter: brightness(0%);
-                                }
-                            }
-                            &:hover{
-                                background-color: $color-white;
+            .carousel{
+                .slick-list{
+                    .slick-prev{
+                        &:hover{
+                            background: $color-white;
+                            img{ 
+                                filter: brightness(0%);
                             }
                         }
                     }
-                }          
-                
+                    .slick-next{
+                        &:hover{
+                            background: $color-white;
+                            img{
+                                filter: brightness(0%);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

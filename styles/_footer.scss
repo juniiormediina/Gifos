@@ -15,10 +15,30 @@ footer{
             letter-spacing: 0;
             padding: 20px 0px;
         }
-        a{
-            text-decoration: none;
-            color: inherit;
-            margin: 10px;
+        .icons{
+            display: flex;
+            justify-content: center;
+            a{
+                text-decoration: none;
+                color: inherit;
+                margin: 10px;
+            }
+            .face{
+                width: 9px;
+                height: 17px;
+                background-image: url(../assets/icon_facebook.svg);
+            }
+            .twit{
+                width: 19px;
+                height: 17px;
+                background-image: url(../assets/icon-twitter.svg);
+            }
+            
+            .insta{
+                width: 18px;
+                height: 18px;
+                background-image: url(../assets/icon_instagram.svg);
+            }
         }
     }
     .footer-copy{

@@ -3,6 +3,7 @@ main{
     // para manejar todo el DOM Deberia encapsular estas secciones para manejarlas por bloque por el momento considero que lo mejor seria que dentro de un section meter dos bloques de divs
     /* Favorites */
     .favorite{
+        display: none;
         .favorite-section{
             /* height: 280px; */
             padding-top: 120px;

@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIFOS</title>
     <link rel="stylesheet" href="styles/style.css">
-    <!-- <script src="https://kit.fontawesome.com/43ba610cc0.js" crossorigin="anonymous"></script> -->
+    <link rel="shortcut icon" href="./assets/logo-mobile.svg" type="image/x-icon">
 </head>
 <body>
     <!-- header -->
     <header id="navbar">
         <!-- icon -->
         <div class="menu-bar">
-            <a href="./index.html"><!-- <img src="assets/logo-mobile.svg" alt="Logo"> --></a>
+            <a href="./index.html" class="logo" id="logo"></a>
             <div class="btn-menu" id="btn-menu">
                 <img id="bars" src="./assets/burger.svg" alt="Menu">
                 <img id="close" src="./assets/close.svg" alt="Close">
@@ -21,33 +21,40 @@
         <!-- Menu de navegación -->
         <nav class="full-menu">
             <ul>
-                <li><a href="#" id="changeMode">MODO NOCTURNO</a></li>
+                <li><a id="changeMode">MODO NOCTURNO</a></li>
                 <span></span>
-                <li><a href="./favoritos.html" id="favorite">FAVORITOS</a></li>
+                <li><a id="btnfavorite">FAVORITOS</a></li>
                 <span></span>
-                <li><a href="./mis-gifos.html" id="misGifos">MIS GIFOS</a></li>
+                <li><a id="btnmisGifos">MIS GIFOS</a></li>
                 <span></span>
-                <a href="./crear-gifos.html" class="add" id="createGifos"><img src="./assets/button-crear-gifo.svg" alt="Crear Gifo"></a>
+                <a class="add" id="btncreateGifos" ></a>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Principal con imagen / barra de busqueda -->
-        <section class="principal-section">
-            <div class="principal-container">
+        <section class="principal-section" id="principal_section">
+            <div class="principal-container" id="principal-container">
                 <h1>Inspírate, busca, guarda y crea los mejores <span>gifos</span></h1>
                 <img src="./assets/ilustra_header.svg" alt="Bienvenido a GIFOS">
-                <div class="principal-container-input">
-                    <input type="text" placeholder="Busca GIFOS y más">
-                    <a class="img-search"><img  src="./assets/icon-search.svg" alt="Buscar"></a>
+                <div class="principal-container-input" id="principal-container-input">
+                    <input type="text" placeholder="Busca GIFOS y más" id="gifTitle">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <a class="img-search" id="search"><img src="./assets/icon-search.svg" alt="Buscar"></a>
                 </div>
             </div>
             
         </section>
 
         <!-- Trending Section -->
-        <Section class="trending-section">
+        <Section class="trending-section" id="trending_section">
             <div class="trending-container">
                 <h2>Trending</h2>
                 <p>Lorem ipsum dolor sit amet.</p>
@@ -55,11 +62,13 @@
         </Section>
 
         <!-- Result Search -->
-        <section class="result-search-section">
+        <section class="result-search-section" id="results">
             <div class="result-search-title">
                 <h2>Mascotas</h2>
             </div>
-            <div class="result-search-container">
+            <div class="result-search-container" id="results">
+                
+                
                 <div  class="item">
                     <img src="https://via.placeholder.com/250x190" alt="">
                     <div class="overlay">
@@ -74,166 +83,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div>
-                </div>
+               
+                
             </div>
             <a class="btn">Ver más</a>
         </section>
 
         <!-- Empty Seacrh -->
-        <section class="search-empty-section">
+        <section class="search-empty-section" id="search_empty">
             <section class="search-empty">
                 <div class="search-empty-container">
                     <h2>Resultado de la búsqueda</h2>
@@ -248,7 +105,7 @@
         </section>
 
         <!-- Favorites -->
-        <section class="favorite">
+        <section class="favorite" id="favorite">
             <section class="favorite-section">
                 <div class="favorite-container">
                     <img src="./assets/icon-favoritos.svg" alt="Favoritos">
@@ -264,7 +121,7 @@
         </section>
 
         <!-- Mis Gifos -->
-        <section class="misGifos">
+        <section class="misGifos" id="misGifos">
             <section class="misGifos-section">
                 <div class="misGifos-container">
                     <img src="./assets/icon-mis-gifos.svg" alt="Mis GIFOS">
@@ -280,109 +137,109 @@
         </section>
                 
         <!-- Slider de Gifos -->
-        <section class="trendingGifos-section">
-            <div class="trendingGifos-text-container">
-                <h2>Trending GIFOS</h2>
-                <p>Mira los últimos GIFOS de nuestra comunidad</p>
-            </div>
-
-            
-            <div class="trendingGifos-slider">
-                <div class="left-container">
-                    <div>
-                        <a class="left" onclick="nextSlide(-1)"><img src="./assets/button-left.svg" alt="left"></a>
+        <section class="carousel" id="carousel">
+            <h2>Trending GIFOS</h2>
+            <p>Mira los últimos GIFOS de nuestra comunidad</p>
+            <div class="slick-list" id="slick-list">
+                <button class="slick-arrow slick-prev" id="button-prev"><img src="./assets/button-left.svg" alt=""></button>
+                <div class="slick-track" id="track">
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="/">
+                                <picture>
+                                    <img src="https://via.placeholder.com/250x190" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-
-
-                <div class="img-container-slider">
-                    <div class="showSlide item-slider">
-                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
-                        <div class="overlay-slider">
-                            <div class="icon-overlay-slider">
-                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
-                                <img class="icon" src="./assets/icon-download.svg" alt="download">
-                                <img class="icon" src="./assets/icon-max.svg" alt="max">
-                            </div>
-                            <div class="text-overlay-slider">
-                                <p>User</p>
-                                <h2>Título GIFO</h2>
-                            </div>
-                        </div>
-                    </div>                                    
-                    <div class="showSlide item-slider">
-                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
-                        <div class="overlay-slider">
-                            <div class="icon-overlay-slider">
-                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
-                                <img class="icon" src="./assets/icon-download.svg" alt="download">
-                                <img class="icon" src="./assets/icon-max.svg" alt="max">
-                            </div>
-                            <div class="text-overlay-slider">
-                                <p>User</p>
-                                <h2>Título GIFO</h2>
-                            </div>
-                        </div>
-                    </div>                                    
-                    <div class="showSlide item-slider">
-                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
-                        <div class="overlay-slider">
-                            <div class="icon-overlay-slider">
-                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
-                                <img class="icon" src="./assets/icon-download.svg" alt="download">
-                                <img class="icon" src="./assets/icon-max.svg" alt="max">
-                            </div>
-                            <div class="text-overlay-slider">
-                                <p>User</p>
-                                <h2>Título GIFO</h2>
-                            </div>
-                        </div>
-                    </div>                                    
-                    <div class="showSlide item-slider">
-                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
-                        <div class="overlay-slider">
-                            <div class="icon-overlay-slider">
-                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
-                                <img class="icon" src="./assets/icon-download.svg" alt="download">
-                                <img class="icon" src="./assets/icon-max.svg" alt="max">
-                            </div>
-                            <div class="text-overlay-slider">
-                                <p>User</p>
-                                <h2>Título GIFO</h2>
-                            </div>
-                        </div>
-                    </div>                                    
-                    <div class="showSlide item-slider">
-                        <img src="https://via.placeholder.com/250x190" alt="Gifo">
-                        <div class="overlay-slider">
-                            <div class="icon-overlay-slider">
-                                <img class="icon" src="./assets/icon-fav-hover.svg" alt="favorites">
-                                <img class="icon" src="./assets/icon-download.svg" alt="download">
-                                <img class="icon" src="./assets/icon-max.svg" alt="max">
-                            </div>
-                            <div class="text-overlay-slider">
-                                <p>User</p>
-                                <h2>Título GIFO</h2>
-                            </div>
-                        </div>
-                    </div>                                    
-                </div>
-                
-
-
-        
-                                
-                <div class="right-container">
-                    <div>
-                        <a class="right" onclick="nextSlide(1)"><img src="./assets/button-right.svg" alt="right"></a>
-                    </div>
-                </div>
+                <button class="slick-arrow slick-next" id="button-next"><img src="./assets/button-right.svg" alt=""></button>
             </div>
         </section>
 
         <!-- Create Gifos -->
-        <section class="createGifos">
+        <section class="createGifos" id="createGifos">
             <div class="createGifos-container">
 
                 <div class="container-top">
@@ -397,6 +254,9 @@
                                 <h2>Aquí podrás crear tus propios <span>gifos</span></h2>
                                 <p>¡Crea ty GIFO en sólo 3 pasos!</p>
                                 <p>(sólo necesitas una cámara para grabar un video)</p>
+                            </div>
+                            <div class="video_cointainer" id="video_cointainer">
+                                <video id="window_video" src=""></video>
                             </div>
                         </div>
                         <div class="container-createGifos-bottom">
@@ -423,7 +283,7 @@
                         <!-- <div class="createGifos-movie"></div> -->
                     </div>
                     <div class="container-btn">
-                        <a href="" class="btn-create">comenzar</a>
+                        <a href="" class="btn-create" id="btn_start">comenzar</a>
                     </div>
                 </div>
 
@@ -436,18 +296,21 @@
     <footer>
         <div class="footer-social">
             <p>Compartir en:</p>
-            <div>
-                <a href="https://www.facebook.com/" target="blanck"><img src="./assets/icon_facebook.svg" alt="facebook"></a>
-                <a href="https://twitter.com/" target="blanck"><img src="./assets/icon-twitter.svg" alt="twitter"></a>
-                <a href="https://www.instagram.com/" target="blanck"><img src="./assets/icon_instagram.svg" alt="instagram"></a>
+            <div class="icons">
+                <a href="https://www.facebook.com/" target="blanck"><div class="face"></div></a>                
+                <a href="https://twitter.com/" target="blanck"><div class="twit"></div></a>
+                <a href="https://www.instagram.com/" target="blanck"><div class="insta"></div></a>
             </div>
         </div>
         <div class="footer-copy">
-            <p><i class="far fa-copyright"></i> GIFOS 2020 All Rights Reserved.</p>
+            <p> GIFOS 2020 All Rights Reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="scripts/script.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/changeSections.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script src="./scripts/createGifos.js"></script>
 </body>
 </html>

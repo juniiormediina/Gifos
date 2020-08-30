@@ -34,9 +34,7 @@
                     height: 54px;
                     border: 1px solid $color-principal;
                     border-radius: 50%;
-                    img{
-                        display: unset;
-                    }
+                    background-image: url(../assets/button-crear-gifo.svg);
                 }
             }
         }
@@ -97,6 +95,13 @@
                 }
             }
         }
+
+        /* Slider de Gifos */
+        .carousel{
+            .slick-list{
+                max-width: 68vw;
+            }
+        }
     }
 
     /* footer */
@@ -106,9 +111,7 @@
         align-items: center;
         .footer-social{
             display: flex;
-            div{
-                padding: 20px;
-            }
+            align-items: center;
         }
     }
 }
@@ -135,23 +138,12 @@
                 .add{
                     &:hover{
                         background: $color-principal;
-                        img{
-                            /* filter: invert(4.4) hue-rotate(1deg) saturate(1%); */
-                            filter: brightness(2000%);
-                        }
+                        background-image: url(../assets/CTA-crear-gifo-hover.svg);
                     }
                     &:active{
                         background: #9CAFC3;
+                        background-image: url(../assets/CTA-crear-gifo-active.svg);
                     }
-                    
-                    /* &:hover{
-                        background: #572EE5;
-                        & svg{
-                            & path{
-                                fill: #ffffff;
-                            }
-                        }
-                    } */
                 }
             }
         }
@@ -187,54 +179,64 @@
         }
 
         /* Slider de Gifos */
-        .trendingGifos-section{
-            .trendingGifos-slider{
-                .img-container-slider{
-                    .item-slider{
-                        .overlay-slider{
-                            .icon-overlay-slider{
-                                img{
-                                    &:hover{
-                                        opacity: 1;
-                                    }
-                                }
-                            }
-                        }
-                        &:hover{
-                            .overlay-slider{
-                                opacity: 0.7;
-                            }
-                        }
-                    }  
-                }
-                .left-container, .right-container{
-                    div{
-                        .left, .right{
-                            &:hover{
-                                /* filter: invert(4.4) hue-rotate(1deg) saturate(1%); */
+        .carousel{
+            .slick-list{
+                max-width: 78vw;
+                .slick-prev{
+                    /* background-image: url(../assets/button-left.svg); */
+                    left: 50px;
+                    &:hover{
+                        background: $color-principal;
+                        img{
+                            //filter: invert(4.4) hue-rotate(1deg) saturate(1%); 
                             filter: brightness(2000%);
-                            }
-                        }
-                        &:hover{
-                            background-color: $color-principal;
                         }
                     }
                 }
-            }          
-            
+                .slick-next{
+                    right: 50px;
+                    &:hover{
+                        background: $color-principal;
+                        img{
+                            //filter: invert(4.4) hue-rotate(1deg) saturate(1%); 
+                            filter: brightness(2000%);
+                        }
+                    }
+                }
+            }
         }
     }
 
     /* footer */
     footer{
         .footer-social{
-            div{
-                a:hover{
-                    img{
-                        //TODO: esto no esta funcionando revisar como solucionar este problema del hover
-                        fill: #572ee5;
-                        /* filter: saturate(86) hue-rotate(1deg) contrast(116%) invert(4.4); */
+            .icons{
+                a:hover{                   
+                    .face{
+                        background-image: url(../assets/icon_facebook_hover.svg);
                     }
+                    .twit{
+                        background-image: url(../assets/icon-twitter-hover.svg);
+                    }
+                    .insta{
+                        background-image: url(../assets/icon_instagram-hover.svg);
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    main{
+        .carousel{
+            .slick-list{
+                max-width: 63vw;
+                .slick-prev{
+                    /* background-image: url(../assets/button-left.svg); */
+                    left: 120px;
+                }
+                .slick-next{
+                    right: 123px;
                 }
             }
         }
@@ -252,6 +254,20 @@
         .result-search-section{
             .result-search-container{
                 width: 1280px;
+            }
+        }
+
+        /* Slider de Gifos */
+        .carousel{
+            .slick-list{
+                max-width: 56vw;
+                .slick-prev{
+                    /* background-image: url(../assets/button-left.svg); */
+                    left: 166px;
+                }
+                .slick-next{
+                    right: 169px;
+                }
             }
         }
     }

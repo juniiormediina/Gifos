@@ -2,6 +2,7 @@ main{
     /* Create Gifos */
     .createGifos{
             display: none;
+            padding: 95px 0 0 0;
             height: 800px;
             /* display: flex; */ // hay que habilitarlo para que se pueda ver la seccion
             justify-content: center;
@@ -36,6 +37,7 @@ main{
                 }
                 .container-createGifos-box{
                     .createGifos-box{
+                        position: relative;
                         width: 688px;
                         height: 390px;
                         display: flex;
@@ -68,6 +70,17 @@ main{
                                 font-size: 16px;
                                 color: #000000;
                                 line-height: 29px;
+                            }
+                        }
+                        .video_cointainer{
+                            position: absolute;
+                            z-index: 50;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            #video_window{
+                                
+                                width: 100%;
                             }
                         }
                     }

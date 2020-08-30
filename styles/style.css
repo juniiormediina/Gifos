@@ -16,6 +16,14 @@
   color: #9CAFC3;
 }
 
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -87,10 +95,6 @@ header .full-menu ul li {
 header .full-menu ul li a {
   color: inherit;
   text-decoration: none;
-}
-
-header .full-menu ul .add img {
-  display: none;
 }
 
 header .full-menu ul span {
@@ -216,10 +220,9 @@ main .trending-section .trending-container p {
 }
 
 main .result-search-section {
+  display: none;
   height: 1100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  /* display: flex; */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -320,7 +323,7 @@ main .result-search-section .btn {
 }
 
 main .search-empty-section {
-  /* display: none; */
+  display: none;
 }
 
 main .search-empty-section .search-empty {
@@ -390,13 +393,9 @@ main .search-empty-section .description-search-empty-section .description-search
   text-align: center;
 }
 
-main .trendingGifos-section {
-  height: 430px;
-  background-color: #F3F5F8;
-}
-
-main .trendingGifos-section .trendingGifos-text-container {
-  height: 50%;
+main .carousel {
+  width: 100%;
+  height: 470px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,118 +406,122 @@ main .trendingGifos-section .trendingGifos-text-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background: #F3F5F8;
+  /* margin: 0px 60px; */
+}
+
+main .carousel h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #572EE5;
+  font-size: 25px;
+  line-height: 60px;
+  padding-bottom: 24px;
   text-align: center;
 }
 
-main .trendingGifos-section .trendingGifos-text-container h2 {
-  color: #572EE5;
+main .carousel p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #000000;
+  text-align: center;
 }
 
-main .trendingGifos-section .trendingGifos-slider {
-  height: 50%;
+main .carousel .slick-list {
+  /* position: relative; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  position: relative;
-}
-
-main .trendingGifos-section .trendingGifos-slider .img-container-slider .showSlide {
-  /* display: none; */
-}
-
-main .trendingGifos-section .trendingGifos-slider .img-container-slider .showSlide img {
-  width: 243px;
-  height: 187px;
-}
-
-main .trendingGifos-section .trendingGifos-slider .img-container-slider .item-slider {
-  position: relative;
-}
-
-main .trendingGifos-section .trendingGifos-slider .img-container-slider .item-slider img {
-  display: block;
-  width: 260px;
-  height: 200px;
-}
-
-main .trendingGifos-section .trendingGifos-slider .img-container-slider .item-slider .overlay-slider {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background: #572EE5;
-  opacity: 0;
-  width: 100%;
-  font-size: 20px;
-  bottom: 0;
-  color: #ffffff;
-  height: 100%;
-}
-
-main .trendingGifos-section .trendingGifos-slider .img-container-slider .item-slider .overlay-slider .icon-overlay-slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-main .trendingGifos-section .trendingGifos-slider .img-container-slider .item-slider .overlay-slider .icon-overlay-slider img {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background: #ffffff;
-  opacity: 0.7;
-  margin: 5px;
-}
-
-main .trendingGifos-section .trendingGifos-slider .img-container-slider .item-slider .overlay-slider .text-overlay-slider {
-  margin: 0 0 5px 10px;
-}
-
-main .trendingGifos-section .trendingGifos-slider .left-container, main .trendingGifos-section .trendingGifos-slider .right-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 304px;
+  padding: 10px 0px;
+  margin: 0px auto;
+  max-width: 64vw;
+  overflow: hidden;
 }
 
-main .trendingGifos-section .trendingGifos-slider .left-container div .left, main .trendingGifos-section .trendingGifos-slider .left-container div .right, main .trendingGifos-section .trendingGifos-slider .right-container div .left, main .trendingGifos-section .trendingGifos-slider .right-container div .right {
-  width: 40px;
-  height: 40px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+main .carousel .slick-list .slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+main .carousel .slick-list .slick-track .slick {
+  position: relative;
+  width: 275px;
+  /* padding: 0 18px; */
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+main .carousel .slick-list .slick-track .slick img {
+  /* object-fit: cover; */
+  /* height: 300px; */
+  width: 100%;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+main .carousel .slick-list .slick-track .slick img:hover {
+  opacity: .85;
+}
+
+main .carousel .slick-list .slick-arrow {
+  background-color: #ffffff;
+  position: absolute;
+  z-index: 4;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+  border: 1px solid #572EE5;
+  cursor: pointer;
+}
+
+main .carousel .slick-list .slick-prev {
+  /* background-image: url(../assets/button-left.svg); */
+  left: 16px;
+}
+
+main .carousel .slick-list .slick-prev img {
+  padding: 15px;
+}
+
+main .carousel .slick-list .slick-next {
+  right: 14px;
+}
+
+main .carousel .slick-list .slick-next img {
+  padding: 15px;
 }
 
 main {
   /* Favorites */
+}
+
+main .favorite {
+  display: none;
 }
 
 main .favorite .favorite-section {
@@ -590,6 +593,10 @@ main .favorite .description-empty-favorite-section .description-empty-favorite-c
 
 main {
   /* Mis Gifos */
+}
+
+main .misGifos {
+  display: none;
 }
 
 main .misGifos .misGifos-section {
@@ -665,6 +672,7 @@ main {
 
 main .createGifos {
   display: none;
+  padding: 95px 0 0 0;
   height: 800px;
   /* display: flex; */
   -webkit-box-pack: center;
@@ -732,6 +740,7 @@ main .createGifos .createGifos-container .container-top .container-camera .creat
 }
 
 main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box {
+  position: relative;
   width: 688px;
   height: 390px;
   display: -webkit-box;
@@ -785,6 +794,24 @@ main .createGifos .createGifos-container .container-top .container-createGifos-b
   font-size: 16px;
   color: #000000;
   line-height: 29px;
+}
+
+main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .video_cointainer {
+  position: absolute;
+  z-index: 50;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .video_cointainer #video_window {
+  width: 100%;
 }
 
 main .createGifos .createGifos-container .container-top .container-createGifos-box .container-createGifos-bottom {
@@ -926,10 +953,37 @@ footer .footer-social p {
   padding: 20px 0px;
 }
 
-footer .footer-social a {
+footer .footer-social .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .footer-social .icons a {
   text-decoration: none;
   color: inherit;
   margin: 10px;
+}
+
+footer .footer-social .icons .face {
+  width: 9px;
+  height: 17px;
+  background-image: url(../assets/icon_facebook.svg);
+}
+
+footer .footer-social .icons .twit {
+  width: 19px;
+  height: 17px;
+  background-image: url(../assets/icon-twitter.svg);
+}
+
+footer .footer-social .icons .insta {
+  width: 18px;
+  height: 18px;
+  background-image: url(../assets/icon_instagram.svg);
 }
 
 footer .footer-copy {
@@ -984,15 +1038,14 @@ footer .footer-copy {
     height: 54px;
     border: 1px solid #572EE5;
     border-radius: 50%;
-  }
-  header .full-menu ul .add img {
-    display: unset;
+    background-image: url(../assets/button-crear-gifo.svg);
   }
   main {
     /* Principal con imagen / barra de busqueda */
     /* Result Search */
     /* favorites */
     /* Mis Gifos */
+    /* Slider de Gifos */
   }
   main .principal-section .principal-container h1 {
     width: 443px;
@@ -1018,6 +1071,9 @@ footer .footer-copy {
   main .misGifos .description-empty-misGifos-section .description-empty-misGifos-container h2 {
     width: 375px;
   }
+  main .carousel .slick-list {
+    max-width: 68vw;
+  }
   /* footer */
   footer {
     -webkit-box-orient: horizontal;
@@ -1033,9 +1089,9 @@ footer .footer-copy {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-  footer .footer-social div {
-    padding: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -1052,26 +1108,13 @@ footer .footer-copy {
   header .full-menu ul li a:active {
     color: #9CAFC3;
   }
-  header .full-menu ul .add {
-    /* &:hover{
-                        background: #572EE5;
-                        & svg{
-                            & path{
-                                fill: #ffffff;
-                            }
-                        }
-                    } */
-  }
   header .full-menu ul .add:hover {
     background: #572EE5;
-  }
-  header .full-menu ul .add:hover img {
-    /* filter: invert(4.4) hue-rotate(1deg) saturate(1%); */
-    -webkit-filter: brightness(2000%);
-            filter: brightness(2000%);
+    background-image: url(../assets/CTA-crear-gifo-hover.svg);
   }
   header .full-menu ul .add:active {
     background: #9CAFC3;
+    background-image: url(../assets/CTA-crear-gifo-active.svg);
   }
   main {
     /* Result Search */
@@ -1090,24 +1133,52 @@ footer .footer-copy {
     background-color: #572EE5;
     color: #ffffff;
   }
-  main .trendingGifos-section .trendingGifos-slider .img-container-slider .item-slider .overlay-slider .icon-overlay-slider img:hover {
-    opacity: 1;
+  main .carousel .slick-list {
+    max-width: 78vw;
   }
-  main .trendingGifos-section .trendingGifos-slider .img-container-slider .item-slider:hover .overlay-slider {
-    opacity: 0.7;
+  main .carousel .slick-list .slick-prev {
+    /* background-image: url(../assets/button-left.svg); */
+    left: 50px;
   }
-  main .trendingGifos-section .trendingGifos-slider .left-container div .left:hover, main .trendingGifos-section .trendingGifos-slider .left-container div .right:hover, main .trendingGifos-section .trendingGifos-slider .right-container div .left:hover, main .trendingGifos-section .trendingGifos-slider .right-container div .right:hover {
-    /* filter: invert(4.4) hue-rotate(1deg) saturate(1%); */
+  main .carousel .slick-list .slick-prev:hover {
+    background: #572EE5;
+  }
+  main .carousel .slick-list .slick-prev:hover img {
     -webkit-filter: brightness(2000%);
             filter: brightness(2000%);
   }
-  main .trendingGifos-section .trendingGifos-slider .left-container div:hover, main .trendingGifos-section .trendingGifos-slider .right-container div:hover {
-    background-color: #572EE5;
+  main .carousel .slick-list .slick-next {
+    right: 50px;
+  }
+  main .carousel .slick-list .slick-next:hover {
+    background: #572EE5;
+  }
+  main .carousel .slick-list .slick-next:hover img {
+    -webkit-filter: brightness(2000%);
+            filter: brightness(2000%);
   }
   /* footer */
-  footer .footer-social div a:hover img {
-    fill: #572ee5;
-    /* filter: saturate(86) hue-rotate(1deg) contrast(116%) invert(4.4); */
+  footer .footer-social .icons a:hover .face {
+    background-image: url(../assets/icon_facebook_hover.svg);
+  }
+  footer .footer-social .icons a:hover .twit {
+    background-image: url(../assets/icon-twitter-hover.svg);
+  }
+  footer .footer-social .icons a:hover .insta {
+    background-image: url(../assets/icon_instagram-hover.svg);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  main .carousel .slick-list {
+    max-width: 63vw;
+  }
+  main .carousel .slick-list .slick-prev {
+    /* background-image: url(../assets/button-left.svg); */
+    left: 120px;
+  }
+  main .carousel .slick-list .slick-next {
+    right: 123px;
   }
 }
 
@@ -1118,9 +1189,20 @@ footer .footer-copy {
   }
   main {
     /* Result Search */
+    /* Slider de Gifos */
   }
   main .result-search-section .result-search-container {
     width: 1280px;
+  }
+  main .carousel .slick-list {
+    max-width: 56vw;
+  }
+  main .carousel .slick-list .slick-prev {
+    /* background-image: url(../assets/button-left.svg); */
+    left: 166px;
+  }
+  main .carousel .slick-list .slick-next {
+    right: 169px;
   }
 }
 
@@ -1203,23 +1285,29 @@ footer .footer-copy {
   color: #ffffff;
 }
 
-.dark main .trendingGifos-section {
+.dark main .carousel {
   background-color: #222326;
 }
 
-.dark main .trendingGifos-section .trendingGifos-container h2 {
+.dark main .carousel h2 {
   color: #ffffff;
 }
 
-.dark main .trendingGifos-section .trendingGifos-container p {
+.dark main .carousel p {
   color: #ffffff;
 }
 
-.dark main .trendingGifos-section .trendingGifos-slider .left-container div, .dark main .trendingGifos-section .trendingGifos-slider .right-container div {
+.dark main .carousel .slick-list .slick-arrow {
+  background-color: #222326;
   border: 1px solid #ffffff;
 }
 
-.dark main .trendingGifos-section .trendingGifos-slider .left-container div .left img, .dark main .trendingGifos-section .trendingGifos-slider .left-container div .right img, .dark main .trendingGifos-section .trendingGifos-slider .right-container div .left img, .dark main .trendingGifos-section .trendingGifos-slider .right-container div .right img {
+.dark main .carousel .slick-list .slick-prev img {
+  -webkit-filter: brightness(2000%);
+          filter: brightness(2000%);
+}
+
+.dark main .carousel .slick-list .slick-next img {
   -webkit-filter: brightness(2000%);
           filter: brightness(2000%);
 }
@@ -1266,6 +1354,30 @@ footer .footer-copy {
   color: #ffffff;
 }
 
+.dark footer .footer-social .icons .face {
+  background-image: url(../assets/icon_facebook_noc.svg);
+}
+
+.dark footer .footer-social .icons .twit {
+  background-image: url(../assets/icon-tw-normal.svg);
+}
+
+.dark footer .footer-social .icons .insta {
+  background-image: url(../assets/icon_instagram_noc.svg);
+}
+
+.dark footer .footer-social .icons:hover .face {
+  background-image: url(../assets/icon_facebook_noc.svg);
+}
+
+.dark footer .footer-social .icons:hover .twit {
+  background-image: url(../assets/icon-tw-normal.svg);
+}
+
+.dark footer .footer-social .icons:hover .insta {
+  background-image: url(../assets/icon_instagram_noc.svg);
+}
+
 .dark footer .footer-copy p {
   color: #ffffff;
 }
@@ -1282,10 +1394,7 @@ footer .footer-copy {
   }
   .dark header .full-menu ul .add {
     border: 1px solid #ffffff;
-  }
-  .dark header .full-menu ul .add img {
-    -webkit-filter: brightness(2000%);
-            filter: brightness(2000%);
+    background-image: url(../assets/CTA-crear-gifo-modo-noc.svg);
   }
   .dark header .full-menu ul span {
     border-bottom: 1px solid #37383C;
@@ -1301,17 +1410,11 @@ footer .footer-copy {
   }
   .dark header .full-menu ul .add:hover {
     background: #ffffff;
-  }
-  .dark header .full-menu ul .add:hover img {
-    -webkit-filter: brightness(0%);
-            filter: brightness(0%);
+    background-image: url(../assets/CTA-crear-gifo-hover-modo-noc.svg);
   }
   .dark header .full-menu ul .add:active {
     background: #9CAFC3;
-  }
-  .dark header .full-menu ul .add:active img {
-    -webkit-filter: brightness(2000%);
-            filter: brightness(2000%);
+    background-image: url(../assets/CTA-crear-gifo-active-modo-noc.svg);
   }
   .dark main {
     /* Result Search */
@@ -1321,12 +1424,19 @@ footer .footer-copy {
     background-color: #ffffff;
     color: #000000;
   }
-  .dark main .trendingGifos-section .trendingGifos-slider .left-container div .left:hover, .dark main .trendingGifos-section .trendingGifos-slider .left-container div .right:hover, .dark main .trendingGifos-section .trendingGifos-slider .right-container div .left:hover, .dark main .trendingGifos-section .trendingGifos-slider .right-container div .right:hover {
+  .dark main .carousel .slick-list .slick-prev:hover {
+    background: #ffffff;
+  }
+  .dark main .carousel .slick-list .slick-prev:hover img {
     -webkit-filter: brightness(0%);
             filter: brightness(0%);
   }
-  .dark main .trendingGifos-section .trendingGifos-slider .left-container div:hover, .dark main .trendingGifos-section .trendingGifos-slider .right-container div:hover {
-    background-color: #ffffff;
+  .dark main .carousel .slick-list .slick-next:hover {
+    background: #ffffff;
+  }
+  .dark main .carousel .slick-list .slick-next:hover img {
+    -webkit-filter: brightness(0%);
+            filter: brightness(0%);
   }
 }
 /*# sourceMappingURL=style.css.map */
