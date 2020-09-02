@@ -16,8 +16,8 @@ let clean_sections=() => {
     principal_section.classList.add('hide');
     trending_section.classList.add('hide');
     trending_section.classList.remove('show');
-    /* results.classList.add('hide');
-    results.classList.remove('show'); */
+    results.classList.add('hide');
+    results.classList.remove('show');
     search_empty.classList.add('hide');
     search_empty.classList.remove('show');
     favorite.classList.add('hide');

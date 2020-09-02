@@ -67,19 +67,22 @@ main{
                 font-size: 16px;
                 line-height: 25px;
             }
-            p{
-                color: $color-principal;
-                font-size: 14px;
-                line-height: 25px;
+            div{
+                display: flex;
+                p{
+                    color: $color-principal;
+                    font-size: 14px;
+                    line-height: 25px;
+                    padding-left: 10px;
+                    cursor: pointer;
+                }
             }
         }
     }
 
     /* Result Search */
     .result-search-section{
-        display: none;
-        height: 1100px;
-        /* display: flex; */ // hay que dejar este unicamente para que se pueda mostrar
+        display: flex;
         flex-flow: column nowrap;
         align-items: center;
         justify-content: space-evenly;
@@ -135,9 +138,11 @@ main{
             }
         }
         .btn{
+            display: none;// hay que hacer una funcion que muestre este boton al realizar la consulta
             border: 1px solid $color-principal;
             border-radius: 25px;
             padding: 20px;
+            margin: 50px;
             text-align: center;
             cursor: pointer;
 
@@ -201,7 +206,6 @@ main{
         flex-flow: column;
         justify-content: center;
         background: $color-gray;
-        /* margin: 0px 60px; */
         h2{
             font-family: $principal-font;
             color: $color-principal;
@@ -228,33 +232,74 @@ main{
             overflow: hidden;
             .slick-track{
                 position: relative;
+                overflow-x: scroll;
                 top: 0;
                 left: 0;
                 display: flex;
-                justify-content: center;
                 transition: .5s ease-in-out;
                 .slick{
                     position: relative;
-                    width: 275px;
-                    /* padding: 0 18px; */ // en vista movil no es necesario
+                    width: 243px;
                     float: left;
                     box-sizing: border-box;
                     display: flex;
-                    height: 100%;
+                    height: 191px;
+                    margin-right: 15px;
                     img{
-                        /* object-fit: cover; */
-                        /* height: 300px; */
-                        width: 100%;
+                        width: 243px;
                         border-radius: 4px;
                         box-shadow: 0 2px 0 rgba(0,0,0,.5);
                         transition: .3s ease-in-out;
-                        &:hover{
-                            opacity: .85;
+                        height: 187px;
+                        scroll-snap-align: center;
+                    }
+                    .overlay-slider{
+                        position: absolute;
+                        display: flex;
+                        flex-flow: column;
+                        justify-content: space-between;
+                        background: $color-principal;
+                        opacity: 0;
+                        width: 100%;
+                        font-size: 20px;
+                        bottom: 0;
+                        color: $color-white;
+                        height: 100%;
+                        .icon-overlay-slider{
+                            display: flex;
+                            justify-content: flex-end;
+                            img{
+                                width: 32px;
+                                height: 32px;
+                                border-radius: 6px;
+                                background:  $color-white;
+                                opacity: 0.7;
+                                margin: 5px;
+                            }
+                        }
+                        .text-overlay-slider{
+                            margin: 0 0 0px 15px;
+                            display: flex;
+                            flex-flow: column;
+                            align-items: end;                        
+                            .user{
+                                font-family: Roboto-Regular;
+                                font-size: 15px;
+                                color: $color-white;
+                            }
+                            .title{
+                                line-height: unset;
+                                text-align: unset;
+                                font-size: 16px;
+                                color: $color-white;
+                                font-family: $secondary-font;
+                            }
                         }
                     }
                 }
             }
             .slick-arrow{
+                display: none;
                 background-color: #ffffff;
                 position: absolute;
                 z-index: 4;

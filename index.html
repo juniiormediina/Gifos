@@ -56,21 +56,19 @@
         <!-- Trending Section -->
         <Section class="trending-section" id="trending_section">
             <div class="trending-container">
-                <h2>Trending</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
             </div>
         </Section>
 
         <!-- Result Search -->
-        <section class="result-search-section" id="results">
+        <section class="result-search-section">
             <div class="result-search-title">
-                <h2>Mascotas</h2>
+                <h2 class="search-title"></h2>
             </div>
             <div class="result-search-container" id="results">
                 
                 
-                <div  class="item">
-                    <img src="https://via.placeholder.com/250x190" alt="">
+                <!-- <div  class="item" > -->
+                    <!-- <img src="https://via.placeholder.com/250x190" alt="">
                     <div class="overlay">
                         <div class="icon-overlay">
                             <img src="./assets/icon-fav-hover.svg" alt="">
@@ -81,8 +79,8 @@
                             <p>User</p>
                             <h2>Título GIFO</h2>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div> -->
                
                 
             </div>
@@ -110,6 +108,11 @@
                 <div class="favorite-container">
                     <img src="./assets/icon-favoritos.svg" alt="Favoritos">
                     <h2>Favoritos</h2>
+                </div>
+            </section>
+            <section class="result-favorite-section">
+                <div class="result-container" id="favorite-results">
+
                 </div>
             </section>
             <section class="description-empty-favorite-section">
@@ -143,7 +146,7 @@
             <div class="slick-list" id="slick-list">
                 <button class="slick-arrow slick-prev" id="button-prev"><img src="./assets/button-left.svg" alt=""></button>
                 <div class="slick-track" id="track">
-                    <div class="slick">
+                   <!-- <div class="slick">
                         <div>
                             <a href="/">
                                 <picture>
@@ -151,88 +154,7 @@
                                 </picture>
                             </a>
                         </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
                 <button class="slick-arrow slick-next" id="button-next"><img src="./assets/button-right.svg" alt=""></button>
             </div>
@@ -303,14 +225,14 @@
             </div>
         </div>
         <div class="footer-copy">
-            <p> GIFOS 2020 All Rights Reserved.</p>
+            <p> &copy; GIFOS 2020 All Rights Reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/changeSections.js"></script>
-    <script src="./scripts/search.js"></script>
+    <script src="./scripts/Favorite.js"></script>
     <script src="./scripts/createGifos.js"></script>
+    <script src="./scripts/changeSections.js"></script>
 </body>
 </html>
