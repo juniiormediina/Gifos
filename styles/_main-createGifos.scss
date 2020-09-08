@@ -78,9 +78,14 @@ main{
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            #video_window{
-                                
-                                width: 100%;
+                            #window_video{
+                                height: 320px;
+                                width: 480px;
+                            }
+                            #window_preview{
+                                display: none;
+                                height: 320px;
+                                width: 480px;
                             }
                         }
                     }

@@ -3,6 +3,7 @@
     header{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 0px 86px 0px 86px;
         .menu-bar{
             .btn-menu{
@@ -31,7 +32,6 @@
                     justify-content: center;
                     width: 54px;
                     height: 54px;
-                    border: 1px solid $color-principal;
                     border-radius: 50%;
                     background-image: url(../assets/button-crear-gifo.svg);
                 }
@@ -56,6 +56,10 @@
                         width: 551px;
                     } 
                 }
+                .suggestion-container{
+                    left: 13px;
+                    width: 551px;
+                }
             }
         }
 
@@ -71,8 +75,18 @@
             }
         }
 
-        /* favorites */
+        // favorites 
         .favorite{
+            .result-favorite-section{
+                .result-container{
+                    .item-favorite{
+                        img{
+                            width: 260px;
+                            height: 200px;
+                        }
+                    }
+                }
+            }
             .description-empty-favorite-section{
                 .description-empty-favorite-container{
                     h2{
@@ -84,6 +98,16 @@
 
         /* Mis Gifos */
         .misGifos{
+            .misGifos_render{
+                .misGifos_render_container{
+                    .item-gifos{
+                        img{
+                            width: 260px;
+                            height: 200px;
+                        }
+                    }
+                }
+            }
             .description-empty-misGifos-section{
                 .description-empty-misGifos-container{
                     h2{
@@ -147,78 +171,15 @@
     }
 
     main{
-
-        /* Result Search */
-        .result-search-section{
-            .result-search-container{           
-                .item{
-                    .overlay{
-                        .icon-overlay{
-                            img{
-                                &:hover{
-                                    opacity: 1;
-                                }
-                            }
-                        }
-                    }
-                    &:hover{
-                        .overlay{
-                            opacity: 0.7;
-                        }
-                    }
-                }      
-            }
-            .btn:hover{
-                background-color: $color-principal;
-                color: $color-white;
-            }
-        }
-
         /* Slider de Gifos */
         .carousel{
             .slick-list{
                 max-width: 74vw;
-                .slick-track {
-                    overflow-x: unset;
-                    .slick{
-                        .overlay-slider{
-                            
-                            .icon-overlay-slider{
-                                img{
-                                    &:hover{
-                                        opacity: 1;
-                                    }
-                                }
-                            }
-                        }
-                        &:hover{
-                            .overlay-slider{
-                                opacity: 0.7;
-                            }
-                        }
-                    }
-                }
-                
-                .slick-arrow{
-                    display: flex;
-                }
                 .slick-prev{
                     left: 50px;
-                    &:hover{
-                        background: $color-principal;
-                        img{ 
-                            filter: brightness(2000%);
-                        }
-                    }
                 }
                 .slick-next{
                     right: 50px;
-                    &:hover{
-                        background: $color-principal;
-                        img{ 
-                            filter: brightness(2000%);
-                        }
-                    }
                 }
             }
         }
@@ -245,14 +206,128 @@
 }
 @media screen and (min-width: 1280px){
     main{
+        /* Result Search */
+        .result-search-section{
+            .result-search-container{           
+                .item{
+                    .overlay{
+                        display: flex;
+                        .icon-overlay{
+                            img{
+                                &:hover{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                    &:hover{
+                        .overlay{
+                            opacity: 0.7;
+                        }
+                    }
+                }      
+            }
+            .btn:hover{
+                background-color: $color-principal;
+                color: $color-white;
+            }
+        }
+
+        /* favorite */
+        .favorite{
+            .result-favorite-section{
+                .result-container{
+                    .item-favorite{
+                        .overlay-favorite{
+                            display: flex;
+                            .icon-overlay-favorite{
+                                
+                                img{
+                                    &:hover{
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover{
+                            .overlay-favorite{
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Mis Gifos */
+        .misGifos{
+            .misGifos_render{
+                .misGifos_render_container{
+                    .item-gifos{
+                        .overlay-gifos{
+                            display: flex;
+                            .icon-overlay-gifos{
+                                img{
+                                    &:hover{
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover{
+                            .overlay-gifos{
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        /* Slider de Gifos */
         .carousel{
             .slick-list{
-                max-width: 59vw;
+                max-width: 59vw;;
+                .slick-track {
+                    overflow-x: unset;
+                    .slick{
+                        .overlay-slider{
+                            display: flex;
+                            .icon-overlay-slider{
+                                img{
+                                    &:hover{
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover{
+                            .overlay-slider{
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+                .slick-arrow{
+                    display: flex;
+                }
                 .slick-prev{
                     left: 120px;
+                    &:hover{
+                        background: $color-principal;
+                        img{ 
+                            filter: brightness(2000%);
+                        }
+                    }
                 }
                 .slick-next{
                     right: 123px;
+                    &:hover{
+                        background: $color-principal;
+                        img{ 
+                            filter: brightness(2000%);
+                        }
+                    }
                 }
             }
         }
@@ -270,6 +345,24 @@
         .result-search-section{
             .result-search-container{
                 width: 1280px;
+            }
+        }
+        
+        /* favorite */
+        .favorite{
+            .result-favorite-section{
+                .result-container{
+                    width: 1280px;
+                }
+            }
+        }
+
+        /* Mis Gifos */
+        .misGifos{
+            .misGifos_render{
+                .misGifos_render_container{
+                    width: 1280px;
+                }
             }
         }
 

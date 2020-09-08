@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIFOS</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <link rel="shortcut icon" href="./assets/logo-mobile.svg" type="image/x-icon">
 </head>
 <body>
@@ -17,6 +18,10 @@
                 <img id="bars" src="./assets/burger.svg" alt="Menu">
                 <img id="close" src="./assets/close.svg" alt="Close">
             </div>
+        </div>
+        <div class="search-nav" id="searchNavTop">
+            <input type="text" placeholder="Busca GIFOS y más" id="gifTitleNav">
+            <a class="img-search-nav" id="searchNav"><img src="./assets/icon-search.svg" alt="Buscar"></a>
         </div>
         <!-- Menu de navegación -->
         <nav class="full-menu">
@@ -40,15 +45,18 @@
                 <img src="./assets/ilustra_header.svg" alt="Bienvenido a GIFOS">
                 <div class="principal-container-input" id="principal-container-input">
                     <input type="text" placeholder="Busca GIFOS y más" id="gifTitle">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
+                    
                     <a class="img-search" id="search"><img src="./assets/icon-search.svg" alt="Buscar"></a>
                 </div>
+                        <div class="suggestion-container">
+                            <hr class="hr">
+                            <ul class="suggestions">
+                                <!-- <li>sugerencia</li>
+                                <li>sugerencia</li>
+                                <li>sugerencia</li>
+                                <li>sugerencia</li> -->
+                            </ul>
+                        </div>
             </div>
             
         </section>
@@ -65,26 +73,8 @@
                 <h2 class="search-title"></h2>
             </div>
             <div class="result-search-container" id="results">
-                
-                
-                <!-- <div  class="item" > -->
-                    <!-- <img src="https://via.placeholder.com/250x190" alt="">
-                    <div class="overlay">
-                        <div class="icon-overlay">
-                            <img src="./assets/icon-fav-hover.svg" alt="">
-                            <img src="./assets/icon-download.svg" alt="">
-                            <img src="./assets/icon-max.svg" alt="">
-                        </div>
-                        <div class="text-overlay">
-                            <p>User</p>
-                            <h2>Título GIFO</h2>
-                        </div>
-                    </div> -->
-                <!-- </div> -->
-               
-                
+
             </div>
-            <a class="btn">Ver más</a>
         </section>
 
         <!-- Empty Seacrh -->
@@ -131,7 +121,12 @@
                     <h2>Mis GIFOS</h2>
                 </div>
             </section>
-            <section class="description-empty-misGifos-section">
+            <section id="misGifos_render" class="misGifos_render">
+                <div id="misGifos_render_container" class="misGifos_render_container">
+
+                </div>
+            </section>
+            <section class="description-empty-misGifos-section" id="misGifos_empty">
                 <div class="description-empty-misGifos-container">
                     <img src="./assets/icon-mis-gifos-sin-contenido.svg" alt="Mis Gifos Sin Contenido">
                     <h2>¡Anímate a crear tu primer GIFO!</h2>
@@ -178,20 +173,22 @@
                                 <p>(sólo necesitas una cámara para grabar un video)</p>
                             </div>
                             <div class="video_cointainer" id="video_cointainer">
-                                <video id="window_video" src=""></video>
-                            </div>
+                                <video id="window_video" autoplay></video>
+                                <img id="window_preview" src="">
+                            </div>           
                         </div>
                         <div class="container-createGifos-bottom">
-                            <div>
-                                <a href="#">1</a>
+                            <div id="btn_1">
+                                <a id="num1">1</a>
                             </div>
-                            <div>
-                                <a href="#">2</a>
+                            <div id="btn_2">
+                                <a id="num2">2</a>
                             </div>
-                            <div>
-                                <a href="#">3</a>
+                            <div id="btn_3">
+                                <a id="num3">3</a>
                             </div>
                         </div>
+                        <div id="btn_repeat">Repetir Captura</div>
                     </div>
 
                     <div class="container-movie">
@@ -204,14 +201,21 @@
                         <div class="createGifos-bars"></div>
                         <!-- <div class="createGifos-movie"></div> -->
                     </div>
-                    <div class="container-btn">
-                        <a href="" class="btn-create" id="btn_start">comenzar</a>
+                    <div class="container-btn" id="container_btn">
+                        <a class="btn-create" id="btn_start">COMENZAR</a>
                     </div>
                 </div>
 
             </div>
             
         </section>
+
+        <div class="modal" id="modal">
+            <div id="modal__content" class="modal__content">
+                <img src="./assets/close.svg" alt="close icon" />
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -231,6 +235,7 @@
 
     <!-- Scripts -->
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/misGifos.js"></script>
     <script src="./scripts/Favorite.js"></script>
     <script src="./scripts/createGifos.js"></script>
     <script src="./scripts/changeSections.js"></script>

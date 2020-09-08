@@ -1,5 +1,3 @@
-/* console.log('Estoy funcionando desde el changeSections'); */
-
 //VARIABLES SECCIONES DEL DOM
 let principal_section= document.getElementById('principal_section');
 let trending_section = document.getElementById('trending_section');
@@ -9,6 +7,7 @@ let favorite = document.getElementById('favorite');
 let misGifos = document.getElementById('misGifos');
 let carousel = document.getElementById('carousel');
 let createGifos = document.getElementById('createGifos');
+let result_search_container = document.getElementById('results');
 
 // FUNCION PARA LIMPIAR EL DOM
 let clean_sections=() => {
@@ -42,7 +41,8 @@ btn_home.addEventListener('click', () => {
     trending_section.classList.remove('hide');
     trending_section.classList.add('show');
     carousel.classList.remove('hide');
-    carousel.classList.add('show'); 
+    carousel.classList.add('show');
+    result_search_container.classList.remove('hide');
 });
 
 //SECCION FAVORITOS
@@ -68,7 +68,13 @@ let btn_create = document.getElementById('btncreateGifos');
 btn_create.addEventListener('click', () => {
     event.preventDefault();
     clean_sections();
+
+    btn_video.hidden=false;
+    // window_preview.hidden=true;
+
     createGifos.classList.remove('hide'); 
     createGifos.classList.add('show');
+    btn_repeat.classList.add('hide');
+    btn_blancos();
     //pedir permiso desde el inicio de la seccion
-} );
+});

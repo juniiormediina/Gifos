@@ -24,11 +24,14 @@ window.onscroll = function(){
 };
 //TODO: importante falta hacer que se agregue la barra de busqueda en el header al hacer scroll
 function scrollFunction(){
+    if(screen.width >= 1280){
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                /* document.getElementById("navbar").style.background = "white"; */
+            document.getElementById("searchNavTop").style.display = "flex";
         } else {
-                /* document.getElementById("navbar").style.top = "-50px"; */
+            document.getElementById("searchNavTop").style.display = "none";
+            document.getElementById('gifTitleNav').value = '';
         }
+    }
 }
 
 /* Dark style */
@@ -69,47 +72,134 @@ async function getGifByTitle(title) {
         return gifData;
 }
 
+
 let input = document.getElementById('gifTitle');
 let results = document.getElementById('results');
 let btnSearch = document.getElementById('search');
 
 btnSearch.addEventListener('click', ()=>{
-        document.querySelector('.search-title').innerHTML= input.value;
-        document.querySelector('#results').innerHTML='';
-        search();
+    document.querySelector('.search-title').innerHTML= input.value;
+    document.querySelector('#results').innerHTML='';
+    search();
 });
+
 
 input.addEventListener('keyup', (event) => { // verificar si podemos quitar el event
     document.querySelector('#results').innerHTML='';
+    document.querySelector('.search-title').innerHTML= '';
     if(event.keyCode === 13){
         document.querySelector('.search-title').innerHTML= input.value;
         search();
     }
 });
 
+let inputNav = document.getElementById('gifTitleNav');
+let btnSearchNav = document.getElementById('searchNav');
+
+btnSearchNav.addEventListener('click', ()=>{
+    document.querySelector('.search-title').innerHTML= inputNav.value;
+    document.querySelector('#results').innerHTML='';
+    search();
+});
+
+inputNav.addEventListener('keyup', (event) => { // verificar si podemos quitar el event
+    document.querySelector('#results').innerHTML='';
+    document.querySelector('.search-title').innerHTML= '';
+    if(event.keyCode === 13){
+        document.querySelector('.search-title').innerHTML= inputNav.value;
+        search();
+    }
+});
+
 let search = () => {
     let gifTitle = input.value;
+    let gifTitleNav = inputNav.value;
 
-    if(gifTitle === ''){
-            alert('Ingrese el nombre de un GIF para buscar');
+    if(gifTitle === '' && gifTitleNav === ''){
+        alert('Ingrese el nombre de un GIF para buscar');
     } else{
         getGifByTitle(gifTitle).then((gifData) => {
             console.log(gifData);
-
+            let button = document.querySelector('.btn');
+            if(button == null) {
+                buttonAdd();
+            }
             gifData.data.forEach(gif => {
                 renderHTMLsearch(gif);
+                allGifs.push(new Gif (gif.images.preview_gif.url, gif.images.downsized.url, gif.id, gif.title, gif.username));
             });
-                    
+            
+        });
+
+        getGifByTitle(gifTitleNav).then((gifDataNav) => {
+            console.log(gifDataNav);
+            let button = document.querySelector('.btn');
+            if(button == null) {
+                buttonAdd();
+            }
+            gifDataNav.data.forEach(gifNav => {
+                renderHTMLsearch(gifNav);
+                allGifs.push(new Gif (gifNav.images.preview_gif.url, gifNav.images.downsized.url, gifNav.id, gifNav.title, gifNav.username));
+            });   
         });
     }
 }
 
-let getImage = (urlImage) => {
-    if(urlImage.images.preview_webp.url === ''){
-        return urlImage.images.preview_gif.url
-    } else{
-        return urlImage.images.preview_webp.url;
+// FUNCION DE AGREGAR BOTÓN
+let buttonAdd = () => {
+
+    let div = document.querySelector('.result-search-section');
+    
+    let button = document.createElement('button');
+    button.textContent = 'VER MÁS';
+    button.classList.add('btn')
+    button.setAttribute('onclick', 'limitFunction()');
+    div.insertAdjacentElement('beforeend',button);
+}
+
+let limitBtn = 12;
+
+let limitFunction = () => {
+    limitBtn += 12;
+    seeMore();
+}
+
+let seeMore = () => {
+    let gifTitle = input.value;
+    document.querySelector('#results').innerHTML='';
+    document.querySelector('.search-title').innerHTML= '';
+
+    async function getGifByTitleVerMas(title) {
+        let url = `https://api.giphy.com/v1/gifs/search?api_key=${Key_api}&q=${title}&limit=${limitBtn}&offset=0&rating=g&lang=en`;
+        let response = await fetch(url);
+        let gifData = await response.json();
+        return gifData;
     }
+
+        
+        getGifByTitleVerMas(gifTitle).then((gifData) => {
+            let button = document.querySelector('.btn');
+            
+            if(button == null) {
+                buttonAdd();
+            }
+            
+            gifData.data.forEach(gif => {
+                renderHTMLsearch(gif);
+                allGifs.push(new Gif (gif.images.preview_gif.url, gif.images.downsized.url, gif.id, gif.title, gif.username));
+            });            
+        });
+        
+}
+
+
+let getImage = (urlImage) => {
+    // console.log(urlImage.images.preview_webp.url);
+    if (urlImage.images.preview_gif.url) {
+            return urlImage.images.preview_gif.url;          
+    } else {
+            return '';
+    }  
 }
 
 let getTitle = (title) => {
@@ -131,10 +221,13 @@ let getId = (id) => {
 let renderHTMLsearch = (gifInfo) => {
     let divItem = document.createElement('div');
     divItem.classList.add('item');
+    
         
     let img = document.createElement('img');
     img.src = getImage(gifInfo);
     img.alt = getTitle(gifInfo);
+    img.setAttribute("data-id", getId(gifInfo));
+    img.setAttribute("onclick", "searchGif('"+img.dataset.id+"')");
         
     let divOverlay = document.createElement('div');
     divOverlay.classList.add('overlay');
@@ -152,10 +245,15 @@ let renderHTMLsearch = (gifInfo) => {
     let img2 = document.createElement('img');
     img2.src = "./assets/icon-download.svg";
     img2.alt = "download";
+    img2.setAttribute("data-image", getImage(gifInfo));
+    img2.setAttribute("data-title", getTitle(gifInfo));
+    img2.addEventListener('click', ()=> descargarGif(img2.dataset.image , img2.dataset.title));
     
     let img3 = document.createElement('img');
     img3.src = "./assets/icon-max.svg";
     img3.alt = "max";
+    img3.setAttribute("data-id", getId(gifInfo));
+    img3.setAttribute("onclick", "searchGif('"+img3.dataset.id+"')");
         
     let divTextOverlay = document.createElement('div');
     divTextOverlay.classList.add('text-overlay');
@@ -177,28 +275,121 @@ let renderHTMLsearch = (gifInfo) => {
     results.appendChild(divItem);
     results.insertAdjacentElement('beforeend', divItem);
 }
+/* _________________________________________________________________ */
+// LLAMADO A LA API SUGERENCIAS DE BUSQUEDA
+let search_input_enter = document.getElementById('gifTitle');
+search_input_enter.addEventListener("keyup",()=>{
+    if(search_input_enter.value == '') {
+        document.querySelector('.suggestions').innerHTML = '';
+        suggestion_container.style.display =''
+    }else{
+        suggest()
+    }
+});
+
+let suggestion_container = document.querySelector('.suggestion-container');
+let suggest = ()=>{
+    document.querySelector('.suggestions').innerHTML = '';
+    let term = event.target.value;
+
+    if(suggestion_container.style.display == ''){
+        suggestion_container.style.display = 'block';
+    }
+
+    fetch(`https://api.giphy.com/v1/tags/related/${term}?api_key=${Key_api}&limit=4`)
+    .then(response=>{
+        response.json().then(data=>{
+        for (let i = 0; i < data.data.length; i++) {
+                createSuggestions(data.data[i].name);
+        }    
+        //     console.log(data.data[0].name);
+        });
+    });
+}
+
+let getsearch = ()=>{
+    let search_value = event.target.childNodes[1];
+    input.value = search_value.textContent;
+
+    document.querySelector('.search-title').innerHTML= input.value;
+    document.querySelector('#results').innerHTML='';
+
+    getGifByTitle(input.value).then((gifData) => {
+        let button = document.querySelector('.btn');
+        if(button == null) {
+            buttonAdd();
+        }
+        gifData.data.forEach(gif => {
+            renderHTMLsearch(gif);
+            allGifs.push(new Gif (gif.images.downsized.url, gif.images.preview_gif.url, gif.id, gif.title, gif.username));
+            
+        });            
+    });
+    suggestion_container.style.display = '';
+}
+
+let getSuggestion = (suggestion) => { 
+    return suggestion;
+}
+
+let createSuggestions = (data) => {//cambiar a render
+
+    let li = document.createElement('li');
+    li.classList.add('suggestion-list');
+    li.setAttribute('onclick', "getsearch()");
+    li.textContent = getSuggestion(data);
+
+    let imgIcon = document.createElement('img');
+    imgIcon.src = './assets/icon-search-gray.svg';
+
+    let ul = document.querySelector('.suggestions');
+
+    li.insertAdjacentElement('afterbegin', imgIcon);
+    ul.insertAdjacentElement('beforeend', li);
+}
+
+/* -______________________________________________________________ */
 /* Tags */
 let getTrendingTags = () => {
-        let tags = `https://api.giphy.com/v1/trending/searches?api_key=${Key_api}&limit=5`;
-        let trendingSection = document.querySelector('.trending-container');
-        fetch(tags).then((tagInfomation) => {
-            tagInfomation.json().then((tagInfomation) => {
-    
-                trendingSection.innerHTML = `
-                <h2>Trending</h2>
-                <div>
-                    <p>${tagInfomation.data[0]},</p><p>${tagInfomation.data[1]},</p>
-                    <p>${tagInfomation.data[2]},</p><p>${tagInfomation.data[3]},</p>
-                    <p>${tagInfomation.data[4]},</p>
-                </div>
-                `;
-            });
+    let tags = `https://api.giphy.com/v1/trending/searches?api_key=${Key_api}&limit=5`;
+    let trendingSection = document.querySelector('.trending-container');
+    fetch(tags).then((tagInfomation) => {
+        tagInfomation.json().then((tagInfomation) => {
+
+            trendingSection.innerHTML = `
+            <h2>Trending</h2>
+            <div>
+                <p class='tag' onclick='tagSearch()'>${tagInfomation.data[0]}</p><span> ,</span>
+                <p class='tag' onclick='tagSearch()'>${tagInfomation.data[1]}</p><span> ,</span>
+                <p class='tag' onclick='tagSearch()'>${tagInfomation.data[2]}</p><span> ,</span>
+                <p class='tag' onclick='tagSearch()'>${tagInfomation.data[3]}</p><span> ,</span>     
+                <p class='tag' onclick='tagSearch()'>${tagInfomation.data[4]}</p>
+            </div>
+            `;
         });
-    }
+    });
+}
+
+let tagSearch = () => {
+    document.querySelector('#results').innerHTML='';
+    document.querySelector('.search-title').innerHTML= '';
+    let tag= event.currentTarget.innerHTML;
+    document.querySelector('.search-title').innerHTML= tag;
+    let button = document.querySelector('.btn');
+    getGifByTitle(tag).then((gifData) => {
+        if(button == null) {
+            buttonAdd();
+        };
+        gifData.data.forEach(gif => {
+            renderHTMLsearch(gif);
+            allGifs.push(new Gif (gif.images.preview_gif.url, gif.images.downsized.url, gif.id, gif.title, gif.username));
+        });     
+    });    
+}
     
-    getTrendingTags();
+getTrendingTags();
 
-
+/* ________________________________________________________________________ */
 /* slider */
 let slick;
 
@@ -210,6 +401,7 @@ let getTrendingSlider = () => {
         trendingSlider.json().then((trendingSlider) => {
             trendingSlider.data.forEach((gifos) => {
                 renderHTMLslider(gifos);
+                allGifs.push(new Gif (gifos.images.preview_gif.url, gifos.images.downsized.url, gifos.id, gifos.title, gifos.username));
             });
             slick = document.querySelectorAll('.slick');
         });
@@ -226,10 +418,12 @@ let renderHTMLslider = (gif) => {
     let a = document.createElement('a');
 
     let picture = document.createElement('picture');
-
+    
     let img = document.createElement('img');
     img.src = getImage(gif);
     img.alt = getTitle(gif);
+    img.setAttribute("data-id", getId(gif));
+    img.setAttribute("onclick", "searchGif('"+img.dataset.id+"')");
 
     let divOverlaySlider = document.createElement('div');
     divOverlaySlider.classList.add('overlay-slider');
@@ -245,9 +439,14 @@ let renderHTMLslider = (gif) => {
     
     let download = document.createElement("img");
     download.src = "./assets/icon-download.svg";
+    download.setAttribute("data-image", getImage(gif));
+    download.setAttribute("data-title", getTitle(gif));
+    download.addEventListener('click', ()=> descargarGif(download.dataset.image , download.dataset.title));
 
     let max = document.createElement("img");
     max.src = "./assets/icon-max.svg";
+    max.setAttribute("data-id", getId(gif));
+    max.setAttribute("onclick", "searchGif('"+max.dataset.id+"')");
 
     let divTextOverlaySlider = document.createElement("div");
     divTextOverlaySlider.classList.add('text-overlay-slider');
@@ -301,3 +500,72 @@ function Move(value){
             track.style.left = `${-1 * (leftPosition - slickWidth)}px`;
     }
 }
+
+/* ________________________________________________________________ */
+/* modal */
+modal = document.getElementById('modal');
+modalContainer = document.getElementById('modal__content');
+body = document.getElementsByTagName('body')[0];
+
+const searchGif = (id) => {
+	let gif = allGifs.filter((gif) => {
+		return gif.id === id;
+	});
+	maximixeGif(gif[0]);
+};
+
+const maximixeGif = (gif) => {
+    modalContainer.innerHTML = '';
+
+    const { username, title, image, id, favorite } = gif;
+
+	let src;
+	if (!favorite) {
+		src = './assets/icon-fav-hover.svg';
+	} else {
+		src = './assets/icon-fav-active.svg';
+    }
+    
+    let template = `
+        <img src="./assets/close.svg" alt="close icon" id="close-modal"/><div class="modal__content__card">
+            <div class="modal__content__card__image">
+                <img
+                    src="${image}"
+                    alt="${title}"
+                />
+            </div>
+            <div class="modal__content__card__info">
+                <div class="modal__content__card__info__text">
+                    <p>${username}</p>
+                    <h3>${title}</h3>
+                </div>
+                <div class="modal__content__card__info__images">
+                    <img src="${src}" class="fav__icon" onclick="addFavorite('${id}')"/>
+                    <img
+                        src="./assets/icon-download-hover.svg"
+                        alt="icono de descarga"
+                        class="download__icon"
+                        data-id="${id}"
+                        onclick="descargarGif('${gif.image},${gif.title}')"
+                    />
+                </div>
+            </div>
+        </div>`;
+	modalContainer.insertAdjacentHTML('beforeend', template);
+    // modal.classList.add('modal--show');
+    modal.style.display = 'Flex';
+	/* body.style.overflow = 'hidden'; */
+	let button = document.getElementById('close-modal');
+	button.addEventListener('click', () => {
+		closeModal();
+	});
+};
+
+const closeModal = () => {
+    // modal.classList.remove('modal--show');
+    modal.style.display = 'none';
+	/* body.removeAttribute('style'); */
+};
+
+
+/* ________________________________________________________________ */

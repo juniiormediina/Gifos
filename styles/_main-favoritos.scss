@@ -7,6 +7,7 @@ main{
         .favorite-section{
             /* height: 280px; */
             padding-top: 120px;
+            padding-bottom: 50px;
             .favorite-container{
                 height: 100%;
                 display: flex;
@@ -46,8 +47,8 @@ main{
                         display: block;
                     }
                     .overlay-favorite{
+                        display: none;
                         position: absolute;
-                        display: flex;
                         flex-flow: column;
                         justify-content: space-between;
                         background: $color-principal;
@@ -77,6 +78,7 @@ main{
             }
             
         }
+
         .description-empty-favorite-section{
             height: 500px;
             .description-empty-favorite-container{
