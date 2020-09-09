@@ -1,33 +1,33 @@
 /* Cambio de icono del menu */
 document.getElementById('btn-menu').addEventListener('click', () => {
         
-        let iconb = document.getElementById('bars');
-        let iconc = document.getElementById('close');
-        let fullMenu = document.getElementsByClassName('full-menu')[0];
+    let iconb = document.getElementById('bars');
+    let iconc = document.getElementById('close');
+    let fullMenu = document.getElementsByClassName('full-menu')[0];
         
-        if(iconb.classList.contains('validacion')){
-                iconb.style.display = 'block';
-                iconc.style.display = 'none';
-                fullMenu.style.left = '-100%';
-                iconb.classList.remove('validacion');
-        }else{
-                iconc.style.display = 'block';
-                iconb.style.display = 'none';
-                fullMenu.style.left = '0%';
-                iconb.classList.add('validacion');
-        }
+    if(iconb.classList.contains('validacion')){
+        iconb.style.display = 'block';
+        iconc.style.display = 'none';
+        fullMenu.style.left = '-100%';
+        iconb.classList.remove('validacion');
+    }else{
+        iconc.style.display = 'block';
+        iconb.style.display = 'none';
+        fullMenu.style.left = '0%';
+        iconb.classList.add('validacion');
+    }
 });
 
 /* scroll header sticky y agrego barra de busqueda */
 window.onscroll = function(){
         scrollFunction();
 };
-//TODO: importante falta hacer que se agregue la barra de busqueda en el header al hacer scroll
+
 function scrollFunction(){
     if(screen.width >= 1280){
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             document.getElementById("searchNavTop").style.display = "flex";
-        } else {
+        } else{
             document.getElementById("searchNavTop").style.display = "none";
             document.getElementById('gifTitleNav').value = '';
         }
@@ -39,37 +39,35 @@ window.onload = () => {
         new DarkMode();
 }
 class DarkMode{
-        constructor(){
-               this.change = document.getElementById('changeMode');
-               this.body = document.getElementsByTagName('body');
-               this.addEvents(); 
+    constructor(){
+        this.change = document.getElementById('changeMode');
+        this.body = document.getElementsByTagName('body');
+        this.addEvents(); 
+    }
+    addEvents(){
+        this.change.addEventListener('click', () => {
+            this.changeStyle();
+        })
+    }
+    changeStyle(){
+        event.preventDefault();
+        let hasClass = this.body[0].classList.toggle('dark');
+        if(hasClass){
+            event.currentTarget.innerHTML = 'MODO DIURNO';
+        } else{
+            event.currentTarget.innerHTML = 'MODO NOCTURNO';
         }
-
-        addEvents(){
-                this.change.addEventListener('click', () => {
-                        this.changeStyle();
-                })
-        }
-
-        changeStyle() {
-                event.preventDefault();
-                let hasClass = this.body[0].classList.toggle('dark');
-                if(hasClass){
-                        event.currentTarget.innerHTML = 'MODO DIURNO';
-                } else {
-                        event.currentTarget.innerHTML = 'MODO NOCTURNO';
-                }
-        }
+    }
 }
 
 /* Funcion del Search */
 const Key_api = "NsM8Ow50lm4v9vROy1nC0lVGfP6rf8Ie";
 
-async function getGifByTitle(title) {
-        let url = `https://api.giphy.com/v1/gifs/search?api_key=${Key_api}&q=${title}&limit=12&offset=0&rating=g&lang=en`;
-        let response = await fetch(url);
-        let gifData = await response.json();
-        return gifData;
+async function getGifByTitle(title){
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=${Key_api}&q=${title}&limit=12&offset=0&rating=g&lang=en`;
+    let response = await fetch(url);
+    let gifData = await response.json();
+    return gifData;
 }
 
 
@@ -77,14 +75,11 @@ let input = document.getElementById('gifTitle');
 let results = document.getElementById('results');
 let btnSearch = document.getElementById('search');
 
-btnSearch.addEventListener('click', ()=>{
-    /* document.querySelector('.search-title').innerHTML= input.value;
-    document.querySelector('#results').innerHTML=''; */
+btnSearch.addEventListener('click', () => {
     search();
 });
 
-
-input.addEventListener('keyup', (event) => { // verificar si podemos quitar el event
+input.addEventListener('keyup', (event) => {
     document.querySelector('#results').innerHTML='';
     document.querySelector('.search-title').innerHTML= '';
     if(event.keyCode === 13){
@@ -96,13 +91,13 @@ input.addEventListener('keyup', (event) => { // verificar si podemos quitar el e
 let inputNav = document.getElementById('gifTitleNav');
 let btnSearchNav = document.getElementById('searchNav');
 
-btnSearchNav.addEventListener('click', ()=>{
+btnSearchNav.addEventListener('click', () => {
     document.querySelector('.search-title').innerHTML= inputNav.value;
     document.querySelector('#results').innerHTML='';
     search();
 });
 
-inputNav.addEventListener('keyup', (event) => { // verificar si podemos quitar el event
+inputNav.addEventListener('keyup', (event) => {
     document.querySelector('#results').innerHTML='';
     document.querySelector('.search-title').innerHTML= '';
     if(event.keyCode === 13){
@@ -116,12 +111,13 @@ let search = () => {
     let gifTitleNav = inputNav.value;
 
     if(gifTitle === '' && gifTitleNav === ''){
-        alert('Ingrese el nombre de un GIF para buscar');
+        search_empty.classList.add('show');
     } else{
+        search_empty.classList.add('hide');
         getGifByTitle(gifTitle).then((gifData) => {
             console.log(gifData);
             let button = document.querySelector('.btn');
-            if(button == null) {
+            if(button == null){
                 buttonAdd();
             }
             gifData.data.forEach(gif => {
@@ -145,18 +141,18 @@ let search = () => {
     }
 }
 
-// FUNCION DE AGREGAR BOTÓN
+/* funcion agregar boton ver mas */
 let buttonAdd = () => {
 
     let div = document.querySelector('.result-search-section');
-    
     let button = document.createElement('button');
     button.textContent = 'VER MÁS';
-    button.classList.add('btn')
+    button.classList.add('btn');
     button.setAttribute('onclick', 'limitFunction()');
     div.insertAdjacentElement('beforeend',button);
 }
 
+/* Boton ver más */
 let limitBtn = 12;
 
 let limitFunction = () => {
@@ -176,29 +172,25 @@ let seeMore = () => {
         return gifData;
     }
 
+    getGifByTitleVerMas(gifTitle).then((gifData) => {
+        let button = document.querySelector('.btn');
         
-        getGifByTitleVerMas(gifTitle).then((gifData) => {
-            let button = document.querySelector('.btn');
-            
-            if(button == null) {
-                buttonAdd();
-            }
-            
-            gifData.data.forEach(gif => {
-                renderHTMLsearch(gif);
-                allGifs.push(new Gif (gif.images.preview_gif.url, gif.images.downsized.url, gif.id, gif.title, gif.username));
-            });            
-        });
-        
+        if(button == null) {
+            buttonAdd();
+        }
+        gifData.data.forEach(gif => {
+            renderHTMLsearch(gif);
+            allGifs.push(new Gif (gif.images.preview_gif.url, gif.images.downsized.url, gif.id, gif.title, gif.username));
+        });            
+    });
 }
 
-
+/* obtener datos necesarios */
 let getImage = (urlImage) => {
-    // console.log(urlImage.images.preview_webp.url);
-    if (urlImage.images.preview_gif.url) {
-            return urlImage.images.preview_gif.url;          
+    if (urlImage.images.preview_gif.url){
+        return urlImage.images.preview_gif.url;          
     } else {
-            return '';
+        return '';
     }  
 }
 
@@ -215,14 +207,13 @@ let getUserName = (userName) => {
 }
 
 let getId = (id) => {
-        return id.id
+    return id.id;
 }
-
+/* Pintar información obtenida */
 let renderHTMLsearch = (gifInfo) => {
     let divItem = document.createElement('div');
     divItem.classList.add('item');
     
-        
     let img = document.createElement('img');
     img.src = getImage(gifInfo);
     img.alt = getTitle(gifInfo);
@@ -238,7 +229,6 @@ let renderHTMLsearch = (gifInfo) => {
     let img1 = document.createElement('img');
     img1.src = "./assets/icon-fav-hover.svg";
     img1.alt = "Favoritos";
-    img1.id = "img-favorite";
     img1.setAttribute("data-id", getId(gifInfo));
     img1.setAttribute("onclick", "addFavorite('"+img1.dataset.id+"')");
     
@@ -247,7 +237,7 @@ let renderHTMLsearch = (gifInfo) => {
     img2.alt = "download";
     img2.setAttribute("data-image", getImage(gifInfo));
     img2.setAttribute("data-title", getTitle(gifInfo));
-    img2.addEventListener('click', ()=> descargarGif(img2.dataset.image , img2.dataset.title));
+    img2.addEventListener('click', () => descargarGif(img2.dataset.image , img2.dataset.title));
     
     let img3 = document.createElement('img');
     img3.src = "./assets/icon-max.svg";
@@ -275,20 +265,20 @@ let renderHTMLsearch = (gifInfo) => {
     results.appendChild(divItem);
     results.insertAdjacentElement('beforeend', divItem);
 }
-/* _________________________________________________________________ */
-// LLAMADO A LA API SUGERENCIAS DE BUSQUEDA
+
+/* Llamado a la API sugerencias  y pintado de la información */
 let search_input_enter = document.getElementById('gifTitle');
-search_input_enter.addEventListener("keyup",()=>{
-    if(search_input_enter.value == '') {
+search_input_enter.addEventListener("keyup",() => {
+    if(search_input_enter.value == ''){
         document.querySelector('.suggestions').innerHTML = '';
-        suggestion_container.style.display =''
+        suggestion_container.style.display ='';
     }else{
-        suggest()
+        suggest();
     }
 });
 
 let suggestion_container = document.querySelector('.suggestion-container');
-let suggest = ()=>{
+let suggest = () => {
     let term = event.target.value;
     
     if(suggestion_container.style.display == ''){
@@ -296,18 +286,17 @@ let suggest = ()=>{
     }
     
     fetch(`https://api.giphy.com/v1/tags/related/${term}?api_key=${Key_api}&limit=4`)
-    .then(response=>{
-        response.json().then(data=>{
+    .then(response => {
+        response.json().then(data => {
             document.querySelector('.suggestions').innerHTML = '';
         for (let i = 0; i < data.data.length; i++) {
                 createSuggestions(data.data[i].name);
         }    
-        //     console.log(data.data[0].name);
         });
     });
 }
 
-let getsearch = ()=>{
+let getsearch = () => {
     let search_value = event.target.childNodes[1];
     input.value = search_value.textContent;
 
@@ -322,7 +311,6 @@ let getsearch = ()=>{
         gifData.data.forEach(gif => {
             renderHTMLsearch(gif);
             allGifs.push(new Gif (gif.images.downsized.url, gif.images.preview_gif.url, gif.id, gif.title, gif.username));
-            
         });            
     });
     suggestion_container.style.display = '';
@@ -332,7 +320,7 @@ let getSuggestion = (suggestion) => {
     return suggestion;
 }
 
-let createSuggestions = (data) => {//cambiar a render
+let createSuggestions = (data) => {
 
     let li = document.createElement('li');
     li.classList.add('suggestion-list');
@@ -348,8 +336,7 @@ let createSuggestions = (data) => {//cambiar a render
     ul.insertAdjacentElement('beforeend', li);
 }
 
-/* -______________________________________________________________ */
-/* Tags */
+/* Funcionalidad de los tags */
 let getTrendingTags = () => {
     let tags = `https://api.giphy.com/v1/trending/searches?api_key=${Key_api}&limit=5`;
     let trendingSection = document.querySelector('.trending-container');
@@ -377,7 +364,7 @@ let tagSearch = () => {
     document.querySelector('.search-title').innerHTML= tag;
     let button = document.querySelector('.btn');
     getGifByTitle(tag).then((gifData) => {
-        if(button == null) {
+        if(button == null){
             buttonAdd();
         };
         gifData.data.forEach(gif => {
@@ -389,8 +376,7 @@ let tagSearch = () => {
     
 getTrendingTags();
 
-/* ________________________________________________________________________ */
-/* slider */
+/* Funcionalidad del slider página principal */
 let slick;
 
 let getTrendingSlider = () => {
@@ -433,7 +419,6 @@ let renderHTMLslider = (gif) => {
 
     let favorite = document.createElement("img");
     favorite.src="./assets/icon-fav-hover.svg";
-    // favorite.id = "img-favorite";
     favorite.setAttribute("data-id", getId(gif));
     favorite.setAttribute("onclick", "addFavorite('"+favorite.dataset.id+"')");
     
@@ -441,7 +426,7 @@ let renderHTMLslider = (gif) => {
     download.src = "./assets/icon-download.svg";
     download.setAttribute("data-image", getImage(gif));
     download.setAttribute("data-title", getTitle(gif));
-    download.addEventListener('click', ()=> descargarGif(download.dataset.image , download.dataset.title));
+    download.addEventListener('click', () => descargarGif(download.dataset.image , download.dataset.title));
 
     let max = document.createElement("img");
     max.src = "./assets/icon-max.svg";
@@ -460,16 +445,16 @@ let renderHTMLslider = (gif) => {
     h2.textContent= getTitle(gif);
 
     div.appendChild(a);
-    a.appendChild(picture);
-    picture.appendChild(img);
+        a.appendChild(picture);
+            picture.appendChild(img);
 
-    divOverlaySlider.appendChild(divIconOvaerlaySlider);
-    divIconOvaerlaySlider.appendChild(favorite);
-    divIconOvaerlaySlider.appendChild(download);
-    divIconOvaerlaySlider.appendChild(max);
-    divOverlaySlider.appendChild(divTextOverlaySlider);
-    divTextOverlaySlider.appendChild(p);
-    divTextOverlaySlider.appendChild(h2);
+            divOverlaySlider.appendChild(divIconOvaerlaySlider);
+                divIconOvaerlaySlider.appendChild(favorite);
+                divIconOvaerlaySlider.appendChild(download);
+                divIconOvaerlaySlider.appendChild(max);
+            divOverlaySlider.appendChild(divTextOverlaySlider);
+                divTextOverlaySlider.appendChild(p);
+                divTextOverlaySlider.appendChild(h2);
 
     picture.appendChild(divOverlaySlider);
     divSlick.appendChild(div);
@@ -484,7 +469,6 @@ const buttonPrev = document.getElementById('button-prev');
 const buttonNext = document.getElementById('button-next');
 const track = document.getElementById('track');
 const slickList = document.getElementById('slick-list');
-
 
 buttonPrev.onclick = () => Move(1);
 buttonNext.onclick = () => Move(2);
@@ -501,8 +485,7 @@ function Move(value){
     }
 }
 
-/* ________________________________________________________________ */
-/* modal */
+/* Funcionalidad del modal de las imagenes */
 modal = document.getElementById('modal');
 modalContainer = document.getElementById('modal__content');
 body = document.getElementsByTagName('body')[0];
@@ -516,13 +499,11 @@ const searchGif = (id) => {
 
 const maximixeGif = (gif) => {
     modalContainer.innerHTML = '';
-
     const { username, title, image, id, favorite } = gif;
-
 	let src;
 	if (!favorite) {
 		src = './assets/icon-fav-hover.svg';
-	} else {
+	} else{
 		src = './assets/icon-fav-active.svg';
     }
     
@@ -551,10 +532,9 @@ const maximixeGif = (gif) => {
                 </div>
             </div>
         </div>`;
+
 	modalContainer.insertAdjacentHTML('beforeend', template);
-    // modal.classList.add('modal--show');
     modal.style.display = 'Flex';
-	/* body.style.overflow = 'hidden'; */
 	let button = document.getElementById('close-modal');
 	button.addEventListener('click', () => {
 		closeModal();
@@ -562,10 +542,5 @@ const maximixeGif = (gif) => {
 };
 
 const closeModal = () => {
-    // modal.classList.remove('modal--show');
     modal.style.display = 'none';
-	/* body.removeAttribute('style'); */
 };
-
-
-/* ________________________________________________________________ */

@@ -2,7 +2,6 @@ main{
 
     /* Principal con imagen / barra de busqueda */
     .principal-section{
-        /* height: 550px; */
         padding-top: 120px;
         padding-bottom: 16px;
         .principal-container{
@@ -32,26 +31,18 @@ main{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                /* flex-flow: column; */
-                /* border: 1px solid $color-principal;
-                    border-radius: 27px;
-                    height:  100px; */
                 input{
                     font-family: $secondary-font;
                     width: 334px;
                     height: 50px;
                     border: 1px solid $color-principal;
                     border-radius: 27px;
-                    /* border-bottom: none; */
-                    padding: 0 0 10px 30px; //padding: 0px 30px; //
+                    padding: 0 0 10px 30px;
                     &:focus{
                         outline: none;
                     }
                 }
                 a{
-                    /* margin-left: 270px;
-                    position: absolute; */
-                    /* margin-top: -104px; */
                     margin-left: -45px;
                     z-index: 200;
                     img{
@@ -66,8 +57,6 @@ main{
                 left: 12px;
                 position: relative;
                 width: 334px;
-                /* top: 84px;
-                left: -483px; */
                 border: 1px solid $color-principal;
                 border-top: none;
                 border-radius: 0 0 27px 27px;
@@ -147,10 +136,9 @@ main{
         .result-search-container{
             display: flex;
             flex-flow: row wrap;
+            justify-content: center;
             grid-column-gap: 20px;
             grid-row-gap: 20px;
-            
-            justify-content: center;
             .item{
                 position: relative;
                 img{
@@ -189,7 +177,7 @@ main{
             }
         }
         .btn{
-            // display: none;// hay que hacer una funcion que muestre este boton al realizar la consulta
+
             border: 1px solid $color-principal;
             border-radius: 25px;
             padding: 20px;
@@ -200,7 +188,7 @@ main{
             font-size: 13px;
             color: $color-principal;
             text-transform: uppercase;
-
+            font-weight: bold;
             &:focus {
                 outline: none;
             }
@@ -211,7 +199,6 @@ main{
     .search-empty-section{
         display: none;
         .search-empty{
-            /* height: 280px; */
             padding-top: 120px;
             .search-empty-container{
                 height: 100%;
@@ -378,4 +365,5 @@ main{
             }
         }
     }
+    
 }

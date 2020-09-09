@@ -4,7 +4,6 @@ main{
             display: none;
             padding: 95px 0 0 0;
             height: 800px;
-            /* display: flex; */ // hay que habilitarlo para que se pueda ver la seccion
             justify-content: center;
             align-items: center;
         .createGifos-container{
@@ -93,7 +92,7 @@ main{
                                 justify-content: center;
                                 width: 480px;
                                 height: 320px;
-                                background: #572ee599;
+                                background: rgba(87, 46, 229, 0.4);
                                 opacity: 1;
                                 align-content: center;
                                 p{
@@ -109,7 +108,7 @@ main{
                                 justify-content: center;
                                 width: 480px;
                                 height: 320px;
-                                background: #572ee599;
+                                background: rgba(87, 46, 229, 0.4);
                                 opacity: 1;
                                 align-content: center;
                                 p{
@@ -140,12 +139,6 @@ main{
                                 text-decoration: none;
                                 
                             }
-                            /* &:hover{
-                                background: $color-principal;
-                                a{
-                                    color: $color-white;
-                                }
-                            } */
                         }
                     }
                     #btn_repeat{
@@ -205,6 +198,7 @@ main{
                         font-size: 13px;
                         color: $color-principal;
                         text-transform: uppercase;
+                        font-weight: bold;
                         &:hover{
                             background: $color-principal;
                             color: $color-white;

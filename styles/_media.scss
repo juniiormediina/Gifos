@@ -26,15 +26,6 @@
                 li{
                     color: $color-principal;
                 }
-                .add{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 54px;
-                    height: 54px;
-                    border-radius: 50%;
-                    background-image: url(../assets/button-crear-gifo.svg);
-                }
             }
         }
     }
@@ -137,38 +128,6 @@
     }
 }
 @media screen and (min-width: 1024px){
-    /* header */
-    header{
-        .menu-bar{
-            a{
-                width: 63px;
-                height: 60px;
-                background-image: url(../assets/logo-desktop.svg);
-            }
-        }
-        .full-menu{
-            ul{
-                li{
-                    a:hover{
-                        border-bottom: 2px solid $color-secondary;
-                    }
-                    a:active{
-                        color: #9CAFC3;
-                    }
-                }
-                .add{
-                    &:hover{
-                        background: $color-principal;
-                        background-image: url(../assets/CTA-crear-gifo-hover.svg);
-                    }
-                    &:active{
-                        background: #9CAFC3;
-                        background-image: url(../assets/CTA-crear-gifo-active.svg);
-                    }
-                }
-            }
-        }
-    }
 
     main{
         /* Slider de Gifos */
@@ -205,6 +164,44 @@
     }
 }
 @media screen and (min-width: 1280px){
+    /* header */
+    header{
+        .menu-bar{
+            a{
+                width: 63px;
+                height: 60px;
+                background-image: url(../assets/logo-desktop.svg);
+            }
+        }
+        .full-menu{
+            ul{
+                li{
+                    a:hover{
+                        border-bottom: 2px solid $color-secondary;
+                    }
+                    a:active{
+                        color: #9CAFC3;
+                    }
+                }
+                .add{
+                    align-items: center;
+                    justify-content: center;
+                    width: 54px;
+                    height: 54px;
+                    border-radius: 50%;
+                    background-image: url(../assets/button-crear-gifo.svg);
+                    &:hover{
+                        background: $color-principal;
+                        background-image: url(../assets/CTA-crear-gifo-hover.svg);
+                    }
+                    &:active{
+                        background: #9CAFC3;
+                        background-image: url(../assets/CTA-crear-gifo-active.svg);
+                    }
+                }
+            }
+        }
+    }
     main{
         /* Result Search */
         .result-search-section{

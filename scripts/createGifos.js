@@ -1,4 +1,4 @@
-//ACCEDIENDO A LOS ELEMENTOS
+/* Accediendo a los elementos */
 let window_video = document.getElementById('window_video');
 let btn_video = document.getElementById('btn_start');
 let window_preview = document.getElementById('window_preview');
@@ -8,14 +8,15 @@ let is_recording = false;
 let recorder;
 let btn_repeat = document.getElementById('btn_repeat');
 let temporizador = document.getElementById('temporizador');
-//MARCADORES PASO A PASO 
+
+/* Indicadores paso a paso */
 let btn_1 = document.getElementById('btn_1');
 let btn_2 = document.getElementById('btn_2');
 let btn_3 = document.getElementById('btn_3');
 let num1 = document.getElementById('num1');
 let num2 = document.getElementById('num2');
 let num3 = document.getElementById('num3');
-function btn_blancos (){
+function btn_blancos(){
     btn_1.classList.remove('morado');
     num1.classList.remove('blanco');
     btn_2.classList.remove('morado');
@@ -23,8 +24,9 @@ function btn_blancos (){
     btn_3.classList.remove('morado');
     num3.classList.remove('blanco');
 } 
-//EVENTOS PARA EL BOTON
-btn_video.addEventListener('click', ()=>{
+
+/* Acciones del botón */
+btn_video.addEventListener('click', () => {
     switch(btn_video.textContent){
         case 'COMENZAR':
             startdivice();
@@ -58,39 +60,41 @@ btn_video.addEventListener('click', ()=>{
             btn_3.classList.add('morado');
             num3.classList.add('blanco');
             uploadGifo();
-
             break;
     }
 });
-//BOTON REPETIR GRABACION
-btn_repeat.addEventListener('click',()=>{
+
+/* Repetir grabación */
+btn_repeat.addEventListener('click', () => {
     startdivice();
     btn_video.textContent = 'GRABAR';
     window_video.hidden = false;
     window_preview.classList.add('hide');
     btn_repeat.classList.add('hide');
     temporizador.classList.remove('hide');
-
 });
-// INICIO CAMARA 
-const startdivice = ()=>{ //btn comenzar
-    navigator.mediaDevices.getUserMedia({video: true, audio: false}).then((stream)=>{
+
+/* Inicio de cámar */a
+const startdivice = () => {
+    navigator.mediaDevices.getUserMedia({video: true, audio: false}).then((stream) => {
         window_video.srcObject = stream;
         window_video.play();
     });
-};
-// FINALIZAR CAMARA 
-const stopdivice = async(recorder)=>{
-    stream.getTracks().forEach(function(track) {
+}
+
+/* Finalizar Cámara */
+const stopdivice = async(recorder) => {
+    stream.getTracks().forEach(function(track){
         track.stop();
         recorder.stopRecording();
         is_recording=false;
         window_video.removeAttribute('src');
         window_video.load();
     });
-};
-//INICIAR GRABACION
-const startrecord = ()=>{
+}
+
+/* Inicio de grabación */
+const startrecord = () => {
     recorder = new RecordRTC(window_video.srcObject, {
         type: 'gif',
         frameRate: 1,
@@ -101,27 +105,28 @@ const startrecord = ()=>{
     recorder.startRecording();
     is_recording = true;
     timer();
-    
 };
-//DETENER GRABACION
-const stoprecord = () =>{
+
+/* Detener Grabación */
+const stoprecord = () => {
     recorder.stopRecording();
-    is_recording=false
+    is_recording = false;
     let blob = recorder.getBlob();
     window_video.hidden = true;
     window_preview.classList.remove('hide');
-    window_preview.setAttribute('src',URL.createObjectURL(blob));
+    window_preview.setAttribute('src', URL.createObjectURL(blob));
     stopDivice();
     clearTimeout(t);
-};
-//DETENER/APAGAR CAMARA
-const stopDivice = ()=>{
+}
+
+/* Detener / Apagar cámara */
+const stopDivice = () => {
     let tracks = window_video.srcObject.getTracks();
 	tracks[0].stop();
-};
+}
 
-//FUNCION SUBIR GIFO
-let uploadGifo = () =>{
+/* Subir Gifos */
+let uploadGifo = () => {
     btn_video.hidden=true;
     var form = new FormData();
     form.append('api_key','NsM8Ow50lm4v9vROy1nC0lVGfP6rf8Ie');
@@ -130,7 +135,7 @@ let uploadGifo = () =>{
         method: "POST",
         body: form
     }).then((resp)=>{
-        resp.json().then((data)=>{
+        resp.json().then((data) => {
             btn_video.textContent = 'COMENZAR';
             let misGifos = localStorage.getItem('misGifos') == null?[]:localStorage.getItem('misGifos').split(',');
             misGifos.push(data.data.id);
@@ -141,25 +146,27 @@ let uploadGifo = () =>{
     });
 }
 
-function add() {
+/* Temporizador */
+function add(){
     seconds++;
-    if (seconds >= 60) {
+    if(seconds >= 60){
         seconds = 0;
         minutes++;
-        if (minutes >= 60) {
+        if(minutes >= 60){
             minutes = 0;
             hours++;
         }
     }
-    
     temporizador.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-
     timer();
 }
+
 let t;
 let hours = 0;
 let minutes = 0;
 let seconds = 0;
-function timer() {
+
+/* Inicio del temporizador */
+function timer(){
     t = setTimeout(add, 10);
 }

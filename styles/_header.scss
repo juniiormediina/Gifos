@@ -34,6 +34,9 @@ header{
             border-radius: 27px;
             border: 1px solid $color-principal;
             padding: 0px 30px;
+            &:focus {
+                outline: none;
+            }
         }
         img{
             cursor: pointer;
@@ -42,6 +45,9 @@ header{
         }
         .img-search-nav{
             margin-left: -40px;
+            &:focus {
+                outline: none;
+            }
         }
     }
     
@@ -56,7 +62,6 @@ header{
         background: rgba(87, 46, 229, 0.90);
 
         transition: .2s;
-
         ul{
             display: flex;
             height: 100%;

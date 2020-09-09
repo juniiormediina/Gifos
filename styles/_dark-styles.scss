@@ -31,6 +31,7 @@
                 }
                 .principal-container-input{
                     input{
+                        color: $color-white;
                         background-color: $dark-color;
                         border: 1px solid $color-white;
                     }
@@ -83,7 +84,8 @@
             }
             .btn{
                 border: 1px solid $color-white;
-                color: $color-white;
+                color: #000000;
+                background: transparent;
             }
         }
 
@@ -155,17 +157,22 @@
                         }
                     }
                     .container-createGifos-box{
+                        .createGifos-box{
+                            .createGifos-box-intern{
+                                h2{
+
+                                    color: $color-white;
+                                }
+                                p{
+                                    color: $color-white;
+                                }
+                            }
+                        }
                         .container-createGifos-bottom{
                             div{
                                 border: 1px solid $color-white;
                                 a{
                                     color: $color-white;
-                                }
-                                &:hover{
-                                    background: $color-white;
-                                    a{
-                                        color: #000000;
-                                    }
                                 }
                             }
                         }

@@ -16,6 +16,7 @@
   color: #9CAFC3;
 }
 
+/* clases para ocutar y mostrar secciones */
 .show {
   display: block !important;
 }
@@ -24,6 +25,7 @@
   display: none !important;
 }
 
+/* clases dadas para elementos de la seccion create gifos */
 .morado {
   background: #572EE5;
 }
@@ -86,6 +88,10 @@ header .search-nav input {
   padding: 0px 30px;
 }
 
+header .search-nav input:focus {
+  outline: none;
+}
+
 header .search-nav img {
   cursor: pointer;
   height: 20px;
@@ -94,6 +100,10 @@ header .search-nav img {
 
 header .search-nav .img-search-nav {
   margin-left: -40px;
+}
+
+header .search-nav .img-search-nav:focus {
+  outline: none;
 }
 
 header .full-menu {
@@ -151,7 +161,6 @@ main {
 }
 
 main .principal-section {
-  /* height: 550px; */
   padding-top: 120px;
   padding-bottom: 16px;
 }
@@ -203,10 +212,6 @@ main .principal-section .principal-container .principal-container-input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* flex-flow: column; */
-  /* border: 1px solid $color-principal;
-                    border-radius: 27px;
-                    height:  100px; */
 }
 
 main .principal-section .principal-container .principal-container-input input {
@@ -215,7 +220,6 @@ main .principal-section .principal-container .principal-container-input input {
   height: 50px;
   border: 1px solid #572EE5;
   border-radius: 27px;
-  /* border-bottom: none; */
   padding: 0 0 10px 30px;
 }
 
@@ -224,9 +228,6 @@ main .principal-section .principal-container .principal-container-input input:fo
 }
 
 main .principal-section .principal-container .principal-container-input a {
-  /* margin-left: 270px;
-                    position: absolute; */
-  /* margin-top: -104px; */
   margin-left: -45px;
   z-index: 200;
 }
@@ -242,8 +243,6 @@ main .principal-section .principal-container .suggestion-container {
   left: 12px;
   position: relative;
   width: 334px;
-  /* top: 84px;
-                left: -483px; */
   border: 1px solid #572EE5;
   border-top: none;
   border-radius: 0 0 27px 27px;
@@ -360,11 +359,11 @@ main .result-search-section .result-search-container {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 main .result-search-section .result-search-container .item {
@@ -428,6 +427,7 @@ main .result-search-section .btn {
   font-size: 13px;
   color: #572EE5;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 main .result-search-section .btn:focus {
@@ -439,7 +439,6 @@ main .search-empty-section {
 }
 
 main .search-empty-section .search-empty {
-  /* height: 280px; */
   padding-top: 120px;
 }
 
@@ -694,7 +693,6 @@ main .favorite {
 }
 
 main .favorite .favorite-section {
-  /* height: 280px; */
   padding-top: 120px;
   padding-bottom: 50px;
 }
@@ -751,12 +749,11 @@ main .favorite .result-favorite-section .result-container {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  /* width: 1280px; */
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 main .favorite .result-favorite-section .result-container .item-favorite {
@@ -1009,7 +1006,6 @@ main .createGifos {
   display: none;
   padding: 95px 0 0 0;
   height: 800px;
-  /* display: flex; */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1168,7 +1164,7 @@ main .createGifos .createGifos-container .container-top .container-createGifos-b
           justify-content: center;
   width: 480px;
   height: 320px;
-  background: #572ee599;
+  background: rgba(87, 46, 229, 0.4);
   opacity: 1;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -1194,7 +1190,7 @@ main .createGifos .createGifos-container .container-top .container-createGifos-b
           justify-content: center;
   width: 480px;
   height: 320px;
-  background: #572ee599;
+  background: rgba(87, 46, 229, 0.4);
   opacity: 1;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -1231,12 +1227,6 @@ main .createGifos .createGifos-container .container-top .container-createGifos-b
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  /* &:hover{
-                                background: $color-principal;
-                                a{
-                                    color: $color-white;
-                                }
-                            } */
 }
 
 main .createGifos .createGifos-container .container-top .container-createGifos-box .container-createGifos-bottom div a {
@@ -1329,6 +1319,7 @@ main .createGifos .createGifos-container .container-bottom .container-btn .btn-c
   font-size: 13px;
   color: #572EE5;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 main .createGifos .createGifos-container .container-bottom .container-btn .btn-create:hover {
@@ -1342,7 +1333,7 @@ main .createGifos .createGifos-container .container-bottom .container-btn .btn-c
   top: 0;
   width: 100%;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.7);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1552,21 +1543,6 @@ footer .footer-copy {
   header .full-menu ul li {
     color: #572EE5;
   }
-  header .full-menu ul .add {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    background-image: url(../assets/button-crear-gifo.svg);
-  }
   main {
     /* Principal con imagen / barra de busqueda */
     /* Result Search */
@@ -1631,26 +1607,6 @@ footer .footer-copy {
 }
 
 @media screen and (min-width: 1024px) {
-  /* header */
-  header .menu-bar a {
-    width: 63px;
-    height: 60px;
-    background-image: url(../assets/logo-desktop.svg);
-  }
-  header .full-menu ul li a:hover {
-    border-bottom: 2px solid #50E3C2;
-  }
-  header .full-menu ul li a:active {
-    color: #9CAFC3;
-  }
-  header .full-menu ul .add:hover {
-    background: #572EE5;
-    background-image: url(../assets/CTA-crear-gifo-hover.svg);
-  }
-  header .full-menu ul .add:active {
-    background: #9CAFC3;
-    background-image: url(../assets/CTA-crear-gifo-active.svg);
-  }
   main {
     /* Slider de Gifos */
   }
@@ -1676,6 +1632,38 @@ footer .footer-copy {
 }
 
 @media screen and (min-width: 1280px) {
+  /* header */
+  header .menu-bar a {
+    width: 63px;
+    height: 60px;
+    background-image: url(../assets/logo-desktop.svg);
+  }
+  header .full-menu ul li a:hover {
+    border-bottom: 2px solid #50E3C2;
+  }
+  header .full-menu ul li a:active {
+    color: #9CAFC3;
+  }
+  header .full-menu ul .add {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-image: url(../assets/button-crear-gifo.svg);
+  }
+  header .full-menu ul .add:hover {
+    background: #572EE5;
+    background-image: url(../assets/CTA-crear-gifo-hover.svg);
+  }
+  header .full-menu ul .add:active {
+    background: #9CAFC3;
+    background-image: url(../assets/CTA-crear-gifo-active.svg);
+  }
   main {
     /* Result Search */
     /* favorite */
@@ -1835,6 +1823,7 @@ footer .footer-copy {
 }
 
 .dark main .principal-section .principal-container .principal-container-input input {
+  color: #ffffff;
   background-color: #37383C;
   border: 1px solid #ffffff;
 }
@@ -1881,7 +1870,8 @@ footer .footer-copy {
 
 .dark main .result-search-section .btn {
   border: 1px solid #ffffff;
-  color: #ffffff;
+  color: #000000;
+  background: transparent;
 }
 
 .dark main .search-empty-section .search-empty h2 {
@@ -1927,20 +1917,20 @@ footer .footer-copy {
   background-image: url(../assets/camara-modo-noc.svg);
 }
 
+.dark main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .createGifos-box-intern h2 {
+  color: #ffffff;
+}
+
+.dark main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .createGifos-box-intern p {
+  color: #ffffff;
+}
+
 .dark main .createGifos .createGifos-container .container-top .container-createGifos-box .container-createGifos-bottom div {
   border: 1px solid #ffffff;
 }
 
 .dark main .createGifos .createGifos-container .container-top .container-createGifos-box .container-createGifos-bottom div a {
   color: #ffffff;
-}
-
-.dark main .createGifos .createGifos-container .container-top .container-createGifos-box .container-createGifos-bottom div:hover {
-  background: #ffffff;
-}
-
-.dark main .createGifos .createGifos-container .container-top .container-createGifos-box .container-createGifos-bottom div:hover a {
-  color: #000000;
 }
 
 .dark main .createGifos .createGifos-container .container-top .container-movie .createGifos-movie {
