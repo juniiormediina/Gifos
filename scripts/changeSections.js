@@ -8,9 +8,10 @@ let misGifos = document.getElementById('misGifos');
 let carousel = document.getElementById('carousel');
 let createGifos = document.getElementById('createGifos');
 let result_search_container = document.getElementById('results');
+let result_search_section = document.getElementById('result_search_section'); 
 
 // FUNCION PARA LIMPIAR EL DOM
-let clean_sections=() => {
+let clean_sections=()=> {
     principal_section.classList.remove('show');
     principal_section.classList.add('hide');
     trending_section.classList.add('hide');
@@ -27,11 +28,12 @@ let clean_sections=() => {
     carousel.classList.remove('show');
     createGifos.classList.add('hide');
     createGifos.classList.remove('show');
+    result_search_section.classList.add('hide');
+    result_search_section.classList.remove('show');
 }
-
 //FUNCION MOSTRAR SECCION DESEADA
 let btn_home = document.getElementById('logo');
-btn_home.addEventListener('click', () => {
+btn_home.addEventListener('click', ()=>{
     event.preventDefault();
     clean_sections();
     principal_section.classList.remove('hide');
@@ -41,40 +43,40 @@ btn_home.addEventListener('click', () => {
     trending_section.classList.remove('hide');
     trending_section.classList.add('show');
     carousel.classList.remove('hide');
-    carousel.classList.add('show');
+    carousel.classList.add('show'); 
     result_search_container.classList.remove('hide');
+    result_search_section.classList.add('show');
+    result_search_section.classList.remove('hide');
 });
-
 //SECCION FAVORITOS
 let btn_favoritos = document.getElementById('btnfavorite');
-btn_favoritos.addEventListener('click', () => {
+btn_favoritos.addEventListener('click', ()=>{
     event.preventDefault();
     clean_sections();
     favorite.classList.remove('hide'); 
     favorite.classList.add('show');
 });
-
 // SECCION MIS GIFOS
 let btn_mis_gifos = document.getElementById('btnmisGifos');
-btn_mis_gifos.addEventListener('click', () => {
+btn_mis_gifos.addEventListener('click', ()=>{
     event.preventDefault();
     clean_sections();
+    misGifos_render_container.innerHTML='';
     misGifos.classList.remove('hide'); 
     misGifos.classList.add('show');
+    creaMisGifos();
 });
-
 //SECCION CREAR GIFOS
 let btn_create = document.getElementById('btncreateGifos');
-btn_create.addEventListener('click', () => {
+btn_create.addEventListener('click', ()=>{
     event.preventDefault();
     clean_sections();
-
     btn_video.hidden=false;
-    // window_preview.hidden=true;
-
     createGifos.classList.remove('hide'); 
     createGifos.classList.add('show');
+    upload_img.classList.add('hide');
+    uploading_img.classList.add('hide');
+    window_preview.classList.add('hide');
     btn_repeat.classList.add('hide');
     btn_blancos();
-    //pedir permiso desde el inicio de la seccion
-});
+} );

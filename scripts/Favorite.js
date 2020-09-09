@@ -3,16 +3,40 @@ let favoritesResults = document.getElementById('favorite-results');
 let noResultsFavContainer = document.getElementById('description-empty-favorite-section');
 let favoritesLimit = 100;
 
+var allGifs = [];
+
+
+class Gif {
+	constructor(image, preview, id, title, username) {
+		this.id = id;
+		this.image = image;
+		this.preview = preview;
+		this.title = title;
+		this.username = username;
+		this.favorite = false;
+		// this.addGifs();
+	}
+	addGifs() {
+		allGifs.push(this);
+	}
+	removeFavorite() {
+		this.favorite = false;
+	}
+	addFavorite() {
+		this.favorite = true;
+	}
+}
 
 const addFavorite = (id) => {
 	console.log('el evento a la escucha funciona');
 	let button = event.target;
-
+	//let atribute = button.getAttribute('src');
+	
 	button.src = './assets/icon-fav-active.svg';
 	button.style.padding = '6px';
-
-	let filter = allGifs.filter((gif) => {
-		return gif.id === id;
+	
+	let filter = allGifs.filter((gifos) => {
+		return gifos.id === id;
 	});
 
 	if(filter[0].favorite === true) {
@@ -22,14 +46,15 @@ const addFavorite = (id) => {
 	} else{
 		filter[0].addFavorite();
 	}
-
 	renderFavorites();
+
 	let favoriteSection = document.getElementById('favorite-results')
 	let emptySection = document.querySelector('.description-empty-favorite-section');
 	if(favoriteSection != '') {
 		emptySection.style.display = 'none'
 	}
 };
+
 
 const renderFavorites = () => {
 	favoritesResults.innerHTML = '';
@@ -41,7 +66,7 @@ const renderFavorites = () => {
 		if (i < favoritesLimit) {
 			let template = `
 			<div  class="item-favorite" >
-                <img src="${preview}" alt="">
+                <img src="${preview}" alt="" onclick="searchGif('${id}')">
                 <div class="overlay-favorite">
                     <div class="icon-overlay-favorite">
                 	    <img src="./assets/icon-trash-hover.svg" alt="" onclick="removeFavorite('${id}')">
@@ -57,17 +82,15 @@ const renderFavorites = () => {
 			favoritesResults.insertAdjacentHTML('beforeend', template);
 		}
 	});
-
 };
 
 const removeFavorite = (id) => {
-	let filter = allGifs.filter((gif, i) => {
+	let filter = allGifs.filter((gif, i) => { // probar si se puede borrar la I
 		return gif.id === id;
 	});
 	filter[0].removeFavorite();
 	renderFavorites();
 };
-
 
 async function descargarGif(url, nombre) {
 	await fetch(url).then((img)=> {

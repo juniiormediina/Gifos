@@ -1,14 +1,16 @@
 @media screen and (min-width: 768px){
-    // header 
+    /* header */
     header{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 0px 86px 0px 86px;
         .menu-bar{
             .btn-menu{
                 display: none;
             }
         }
+
         .full-menu{
             position: unset;
             top: unset;
@@ -17,15 +19,12 @@
             width: unset;
             height: unset;
             background-color: inherit;
-
             transition: inherit;
 
             ul{
                 flex-flow: row nowrap;
                 li{
                     color: $color-principal;
-                    font-size: 13px;
-                    font-weight: bold;
                 }
                 .add{
                     display: flex;
@@ -41,14 +40,12 @@
     }
 
     main{
-        // Principal con imagen / barra de busqueda
+        /* Principal con imagen / barra de busqueda */
         .principal-section{
             .principal-container{
-                padding-top: 50px;
                 h1{
                     width: 443px;
                     height: 100px;
-                    font-size: 30px;
                 }
                 img{
                     width: 399px;
@@ -58,19 +55,16 @@
                     input{
                         width: 551px;
                     } 
-                    a{
-                        margin-left: -45px;
-                    }
+                }
+                .suggestion-container{
+                    left: 13px;
+                    width: 551px;
                 }
             }
-            .suggestion-container {
-                width: 551px;
-            } 
         }
 
-        //Result Search 
+        /* Result Search */
         .result-search-section{
-            
             .result-search-container{           
                 .item{
                     img{
@@ -102,9 +96,18 @@
             }
         }
 
-        // Mis Gifos 
+        /* Mis Gifos */
         .misGifos{
-
+            .misGifos_render{
+                .misGifos_render_container{
+                    .item-gifos{
+                        img{
+                            width: 260px;
+                            height: 200px;
+                        }
+                    }
+                }
+            }
             .description-empty-misGifos-section{
                 .description-empty-misGifos-container{
                     h2{
@@ -114,7 +117,7 @@
             }
         }
 
-        // Slider de Gifos 
+        /* Slider de Gifos */
         .carousel{
             .slick-list{
                 max-width: 65vw;
@@ -122,7 +125,7 @@
         }
     }
 
-    // footer 
+    /* footer */
     footer{
         flex-flow: row nowrap;
         height: 116px;
@@ -134,7 +137,7 @@
     }
 }
 @media screen and (min-width: 1024px){
-    // header 
+    /* header */
     header{
         .menu-bar{
             a{
@@ -168,21 +171,47 @@
     }
 
     main{
-        .principal-section{
-            .principal-container {
-                .suggestion-container{
-                    width: 552px;
-                    left: 13px;
+        /* Slider de Gifos */
+        .carousel{
+            .slick-list{
+                max-width: 74vw;
+                .slick-prev{
+                    left: 50px;
+                }
+                .slick-next{
+                    right: 50px;
                 }
             }
         }
-        
-        // Result Search 
+    }
+
+    /* footer */
+    footer{
+        .footer-social{
+            .icons{
+                a:hover{                   
+                    .face{
+                        background-image: url(../assets/icon_facebook_hover.svg);
+                    }
+                    .twit{
+                        background-image: url(../assets/icon-twitter-hover.svg);
+                    }
+                    .insta{
+                        background-image: url(../assets/icon_instagram-hover.svg);
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    main{
+        /* Result Search */
         .result-search-section{
-            
             .result-search-container{           
                 .item{
                     .overlay{
+                        display: flex;
                         .icon-overlay{
                             img{
                                 &:hover{
@@ -204,14 +233,19 @@
             }
         }
 
+        /* favorite */
         .favorite{
             .result-favorite-section{
                 .result-container{
                     .item-favorite{
                         .overlay-favorite{
-                            img{
-                                &:hover{
-                                    opacity: 1;
+                            display: flex;
+                            .icon-overlay-favorite{
+                                
+                                img{
+                                    &:hover{
+                                        opacity: 1;
+                                    }
                                 }
                             }
                         }
@@ -225,39 +259,40 @@
             }
         }
 
+        /* Mis Gifos */
         .misGifos{
             .misGifos_render{
                 .misGifos_render_container{
                     .item-gifos{
                         .overlay-gifos{
-                            img{
-                                &:hover{
-                                    opacity: 1;
+                            display: flex;
+                            .icon-overlay-gifos{
+                                img{
+                                    &:hover{
+                                        opacity: 1;
+                                    }
                                 }
                             }
-                            &:hover{
-                                .overlay-favorite{
-                                    opacity: 0.7;
-                                }
+                        }
+                        &:hover{
+                            .overlay-gifos{
+                                opacity: 0.7;
                             }
                         }
                     }
                 }
-                
             }
         }
         
-        // Slider de Gifos 
+        /* Slider de Gifos */
         .carousel{
             .slick-list{
-                max-width: 74vw;
-
+                max-width: 59vw;;
                 .slick-track {
                     overflow-x: unset;
-                    overflow-y: unset;
                     .slick{
                         .overlay-slider{
-                            
+                            display: flex;
                             .icon-overlay-slider{
                                 img{
                                     &:hover{
@@ -273,136 +308,47 @@
                         }
                     }
                 }
-
                 .slick-arrow{
                     display: flex;
                 }
-
                 .slick-prev{
-                    // background-image: url(../assets/button-left.svg); 
-                    left: 50px;
-                    &:hover{
-                        background: $color-principal;
-                        img{
-                            //filter: invert(4.4) hue-rotate(1deg) saturate(1%); 
-                            filter: brightness(2000%);
-                        }
-                    }
-                }
-                .slick-next{
-                    right: 50px;
-                    &:hover{
-                        background: $color-principal;
-                        img{
-                            //filter: invert(4.4) hue-rotate(1deg) saturate(1%); 
-                            filter: brightness(2000%);
-                        }
-                    }
-                }
-            }
-        }
-        
-    }
-    main .misGifos .misGifos_render .misGifos_render_container .item-gifos .overlay-gifos:hover{
-        opacity: 1;
-    }
-    // footer 
-    footer{
-        .footer-social{
-            .icons{
-                a:hover{                   
-                    .face{
-                        background-image: url(../assets/icon_facebook_hover.svg);
-                    }
-                    .twit{
-                        background-image: url(../assets/icon-twitter-hover.svg);
-                    }
-                    .insta{
-                        background-image: url(../assets/icon_instagram-hover.svg);
-                    }
-                }
-            }
-        }
-    }
-}
-@media screen and (min-width: 1280px){
-
-    header{
-        .search-nav{
-            display: flex;
-        }
-    }
-    
-    main{
-        // Result Search 
-        .result-search-section{
-            .result-search-container{
-                .item{
-                    .overlay{
-                        display: flex;
-                    }
-                }
-            }
-        }
-        .favorite{
-            .result-favorite-section{
-                .result-container{
-                    .item-favorite{
-                        .overlay-favorite{
-                            display: flex;
-                        }
-                    }
-                }
-            }
-        }
-
-        .misGifos{
-            #misGifos_render{
-                #misGifos_render_container{
-                    .item-gifos{
-                        .overlay-gifos{
-                            display: flex;
-                        }
-                    }
-                }
-            }
-        }
-        .carousel{
-            .slick-list{
-                max-width: 59vw;
-                .slick-track{
-                    .slick{
-                        .overlay-slider{
-                            display: flex;
-                        }
-                    }
-                }
-                .slick-prev{
-                    // background-image: url(../assets/button-left.svg);
                     left: 120px;
+                    &:hover{
+                        background: $color-principal;
+                        img{ 
+                            filter: brightness(2000%);
+                        }
+                    }
                 }
                 .slick-next{
                     right: 123px;
+                    &:hover{
+                        background: $color-principal;
+                        img{ 
+                            filter: brightness(2000%);
+                        }
+                    }
                 }
             }
         }
     }
 }
 @media screen and (min-width: 1440px){
-    // header 
+    /* header */
     header{
         padding: 0px 156px 0px 156px;
     }
 
     main{
 
-        // Result Search 
+        /* Result Search */
         .result-search-section{
             .result-search-container{
                 width: 1280px;
             }
         }
         
+        /* favorite */
         .favorite{
             .result-favorite-section{
                 .result-container{
@@ -411,13 +357,20 @@
             }
         }
 
-        // Slider de Gifos
+        /* Mis Gifos */
+        .misGifos{
+            .misGifos_render{
+                .misGifos_render_container{
+                    width: 1280px;
+                }
+            }
+        }
+
+        /* Slider de Gifos */
         .carousel{
             .slick-list{
                 max-width: 53vw;
-                
                 .slick-prev{
-                    // background-image: url(../assets/button-left.svg);
                     left: 166px;
                 }
                 .slick-next{

@@ -1,11 +1,10 @@
 main{
-    // Create Gifos
-    
+    /* Create Gifos */
     .createGifos{
             display: none;
             padding: 95px 0 0 0;
             height: 800px;
-            // display: flex; // hay que habilitarlo para que se pueda ver la seccion
+            /* display: flex; */ // hay que habilitarlo para que se pueda ver la seccion
             justify-content: center;
             align-items: center;
         .createGifos-container{
@@ -79,21 +78,21 @@ main{
                             justify-content: center;
                             align-items: center;
                             .window_video{
-                                width: 630px;
-                                height: 330px;
+                                width: 480px;
+                                height: 320px;
                                 
                             }
                             .window_preview{
-                                width: 630px;
-                                height: 330px;
+                                width: 480px;
+                                height: 320px;
                             }
                             .uploading_img{
                                 position: absolute;
                                 display: flex;
                                 flex-flow:column;
                                 justify-content: center;
-                                width: 630px;
-                                height: 330px;
+                                width: 480px;
+                                height: 320px;
                                 background: #572ee599;
                                 opacity: 1;
                                 align-content: center;
@@ -108,8 +107,8 @@ main{
                                 display: flex;
                                 flex-flow:column;
                                 justify-content: center;
-                                width: 630px;
-                                height: 330px;
+                                width: 480px;
+                                height: 320px;
                                 background: #572ee599;
                                 opacity: 1;
                                 align-content: center;
@@ -141,6 +140,12 @@ main{
                                 text-decoration: none;
                                 
                             }
+                            /* &:hover{
+                                background: $color-principal;
+                                a{
+                                    color: $color-white;
+                                }
+                            } */
                         }
                     }
                     #btn_repeat{
@@ -150,14 +155,16 @@ main{
                         right: 265px;
                         font-family: $secondary-font;
                         color: $color-principal;
+                        font-weight: bold;
                     }
                     #temporizador{
                         cursor: pointer;;
                         position: absolute;
-                        margin-top: -55px;
+                        margin-top: -40px;
                         right: 265px;
                         font-family: $secondary-font;
                         color: $color-principal;
+                        font-weight: bold;
                     }
                 }
                 .container-movie{

@@ -1,10 +1,10 @@
 main{
-    // Mis Gifos 
+    /* Mis Gifos */
     .misGifos{
         display: none;
         .misGifos-section{
-            // height: 280px; 
             padding-top: 120px;
+            padding-bottom: 50px;
             .misGifos-container{
                 height: 100%;
                 display: flex;
@@ -34,8 +34,6 @@ main{
                 grid-column-gap: 20px;
                 grid-row-gap: 20px;
                 justify-content: center;
-                padding-top: 50px;
-                /* width: 1280px; */
                 .item-gifos{
                     position: relative;
                     img{
@@ -95,49 +93,6 @@ main{
                     width: 320px;
                     text-align: center;
                 }
-            }
-        }        
-    }
-}
-#misGifos_render{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-    justify-content: center;
-    .item{
-        position: relative;
-        img{
-            width: 156px;
-            height: 120px;
-            display: block;
-        }
-        .overlay{
-            position: absolute;
-            display: flex;
-            flex-flow: column;
-            justify-content: space-between;
-            background: $color-principal;
-            opacity: 0;
-            width: 100%;
-            font-size: 20px;
-            bottom: 0;
-            color: $color-white;
-            height: 100%;
-            .icon-overlay{
-                display: flex;
-                justify-content: flex-end;
-                img{
-                    width: 32px;
-                    height: 32px;
-                    border-radius: 6px;
-                    background:  $color-white;
-                    opacity: 0.7;
-                    margin: 5px;
-                }
-            }
-            .text-overlay{
-                margin: 0 0 5px 10px;
             }
         }
     }

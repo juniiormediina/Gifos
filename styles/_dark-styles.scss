@@ -1,7 +1,7 @@
 .dark{
     background: $dark-color;
     
-    //Header 
+    /* Header */
     header{
         background: $dark-color;
         background-color: $dark-color;
@@ -23,7 +23,7 @@
 
     main{
 
-        //Principal con imagen / barra de busqueda
+        /* Principal con imagen / barra de busqueda */
         .principal-section{
             .principal-container{
                 h1{
@@ -32,7 +32,6 @@
                 .principal-container-input{
                     input{
                         background-color: $dark-color;
-                        color: $color-white;
                         border: 1px solid $color-white;
                     }
                     a{
@@ -41,7 +40,6 @@
                         }
                     }
                 }
-
                 .suggestion-container {
                     background-color: $dark-color;
                     border: 1px solid $color-white;
@@ -66,7 +64,7 @@
             }
         }
 
-        // Tendring Section
+        /* Tendring Section */
         .trending-section{
             .trending-container{
                 h2{
@@ -78,20 +76,18 @@
             }
         }
 
-        // Result Search
+        /* Result Search */
         .result-search-section{
             .result-search-title{
                 color: $color-white;
             }
             .btn{
-                color: white;
                 border: 1px solid $color-white;
-                background-color: $dark-color;
-                border: 1px solid white;
+                color: $color-white;
             }
         }
 
-        // Empty Search
+        /* Empty Search */
         .search-empty-section{
             .search-empty{
                 h2{
@@ -100,7 +96,7 @@
             }
         }
 
-        // Favorites
+        /* Favorites */
         .favorite{
             .favorite-section{
                 .favorite-container{
@@ -111,7 +107,7 @@
             }
         }
 
-        // Mis Gifos
+        /* Mis Gifos */
         .misGifos{
             .misGifos-section{
                 .misGifos-container{
@@ -122,7 +118,7 @@
             }
         }
 
-        // Slider de Gifos
+        /* Slider de Gifos */
         .carousel{
             background-color: $bold-dark-color;
             h2{
@@ -149,7 +145,7 @@
             }
         }
 
-        // Create Gifos
+        /* Create Gifos */
         .createGifos{
             .createGifos-container{
                 .container-top{
@@ -172,9 +168,6 @@
                                     }
                                 }
                             }
-                        }
-                        #btn_repeat{
-                            color: $color-white;
                         }
                     }
                     .container-movie{
@@ -199,19 +192,7 @@
         }
     }
 
-    .modal {
-        background-color: rgba(rgb(14, 14, 14), 0.9);
-        &__content__card__info {
-            & h3 {
-                color:white;
-            }
-            & p {
-                color: white;
-            }
-        }
-    }
-
-    // Footer 
+    /* Footer */
     footer{
         border-bottom: 5px solid #000000;
         .footer-social{
@@ -254,7 +235,7 @@
 
 @media screen and (min-width: 768px){
     .dark{
-        // header 
+        /* header */
         header{
             .full-menu{
                 background: transparent;
@@ -272,23 +253,11 @@
                 }
             }
         }
-
-        .modal {
-            background-color: rgba(rgb(14, 14, 14), 0.9);
-            &__content__card__info {
-                & h3 {
-                    color: rgb(255, 255, 255);
-                }
-                & p {
-                    color: rgb(255, 255, 255);
-                }
-            }
-        }
     }
 }
 @media screen and (min-width: 1024px){
     .dark{
-        // header 
+        /* header */
         header{
             .menu-bar{
                 a{
@@ -313,7 +282,7 @@
 
         main{
 
-            // Result Search 
+            /* Result Search */
             .result-search-section{
                 .btn:hover{
                     background-color: $color-white;
@@ -321,7 +290,7 @@
                 }
             }
 
-            // Slider de Gifos 
+            /* Slider de Gifos */
             .carousel{
                 .slick-list{
                     .slick-prev{
@@ -342,15 +311,21 @@
                     }
                 }
             }
-
-            .modal {
-                background-color: rgba(rgb(14, 14, 14), 0.9);
-                &__content__card__info {
-                    & h3 {
-                        color: rgb(255, 255, 255);
-                    }
-                    & p {
-                        color: rgb(255, 255, 255);
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    .dark{
+        header{
+            .search-nav{
+                input{
+                    color: $color-white;
+                    background: $dark-color;
+                    border: 1px solid $color-white;
+                }
+                a{
+                    img{
+                        filter: brightness(2000%);
                     }
                 }
             }

@@ -1,6 +1,5 @@
 let misGifos_render = document.getElementById('misGifos_render');
 let misGifos_empty = document.getElementById('misGifos_empty');
-
 let misGifos_render_container = document.getElementById('misGifos_render_container');
 
 function creaMisGifos (){
@@ -28,7 +27,7 @@ function createMisGifos(information){
     let divItem_gifos = document.createElement("div");
     divItem_gifos.classList.add('item-gifos');
     let img = document.createElement("img");
-    img.src = getUrlImage(information);
+    img.src = getImage(information);
     img.alt = getTitle(information);
     img.setAttribute("data-id", getId(information));
     img.setAttribute("onclick", "searchGif('"+img.dataset.id+"')");
@@ -43,7 +42,7 @@ function createMisGifos(information){
     imgDelGifos.setAttribute("onclick", "addFavorite('"+imgDelGifos.dataset.id+"')");
     let imgDownloadGifos = document.createElement("img");
     imgDownloadGifos.src = "./assets/icon-download.svg";
-    imgDownloadGifos.setAttribute("data-image", getUrlImage(information));
+    imgDownloadGifos.setAttribute("data-image", getImage(information));
     imgDownloadGifos.setAttribute("data-title", getTitle(information));
     imgDownloadGifos.addEventListener('click', ()=> descargarGif(imgDownloadGifos.dataset.image , imgDownloadGifos.dataset.title));
     let imgMaxGifos = document.createElement("img");
@@ -53,7 +52,7 @@ function createMisGifos(information){
     let divTextGifos = document.createElement("div");
     divTextGifos.classList.add('text-overlay-gifos');
     let userPGifos = document.createElement('p');
-    userPGifos.textContent = getGifUser(information);
+    userPGifos.textContent = getUserName(information);
     let h2TitleGifos = document.createElement("h2");
     h2TitleGifos.textContent= getTitle(information);
     divItem_gifos.appendChild(img);
@@ -68,5 +67,4 @@ function createMisGifos(information){
     let misGifos_render = document.querySelector('.misGifos_render_container');
     misGifos_render.appendChild(divItem_gifos);
     misGifos_render.insertAdjacentElement('beforeend', divItem_gifos);
-
 }

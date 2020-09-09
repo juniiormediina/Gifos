@@ -1,11 +1,11 @@
 main{
     //TODO: si decido que voy a trabajar con un solo HTML
     // para manejar todo el DOM Deberia encapsular estas secciones para manejarlas por bloque por el momento considero que lo mejor seria que dentro de un section meter dos bloques de divs
-    // Favorites
+    /* Favorites */
     .favorite{
         display: none;
         .favorite-section{
-            // height: 280px;
+            /* height: 280px; */
             padding-top: 120px;
             padding-bottom: 50px;
             .favorite-container{
@@ -25,6 +25,7 @@ main{
                 }
             }
         }
+
         .result-favorite-section{
             display: flex;
             flex-flow: column nowrap;
@@ -77,8 +78,9 @@ main{
             }
             
         }
+
         .description-empty-favorite-section{
-            height: 400px;
+            height: 500px;
             .description-empty-favorite-container{
                 height: 100%;
                 display: flex;
