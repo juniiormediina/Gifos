@@ -9,3 +9,20 @@ $color-gray: #F3F5F8;
 $color-white: #ffffff;
 $dark-color: #37383C;
 $bold-dark-color: #222326;
+
+// Clases para mostrar y ocultar las secciones
+.show {
+	display: block !important;
+}
+.hide {
+	display: none !important;
+}
+.morado{
+	
+	background: #572EE5;
+}
+.blanco{
+
+		color: #ffffff !important;
+
+}

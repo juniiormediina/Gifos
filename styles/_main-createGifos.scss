@@ -1,10 +1,11 @@
 main{
-    /* Create Gifos */
+    // Create Gifos
+    
     .createGifos{
             display: none;
             padding: 95px 0 0 0;
             height: 800px;
-            /* display: flex; */ // hay que habilitarlo para que se pueda ver la seccion
+            // display: flex; // hay que habilitarlo para que se pueda ver la seccion
             justify-content: center;
             align-items: center;
         .createGifos-container{
@@ -74,18 +75,49 @@ main{
                         }
                         .video_cointainer{
                             position: absolute;
-                            z-index: 50;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            #window_video{
-                                height: 320px;
-                                width: 480px;
+                            .window_video{
+                                width: 630px;
+                                height: 330px;
+                                
                             }
-                            #window_preview{
-                                display: none;
-                                height: 320px;
-                                width: 480px;
+                            .window_preview{
+                                width: 630px;
+                                height: 330px;
+                            }
+                            .uploading_img{
+                                position: absolute;
+                                display: flex;
+                                flex-flow:column;
+                                justify-content: center;
+                                width: 630px;
+                                height: 330px;
+                                background: #572ee599;
+                                opacity: 1;
+                                align-content: center;
+                                p{
+                                    color: $color-white;
+                                    text-align: center;
+                                    font-family: $secondary-font;
+                                }
+                            }
+                            .upload_img{
+                                position: absolute;
+                                display: flex;
+                                flex-flow:column;
+                                justify-content: center;
+                                width: 630px;
+                                height: 330px;
+                                background: #572ee599;
+                                opacity: 1;
+                                align-content: center;
+                                p{
+                                    color: $color-white;
+                                    text-align: center;
+                                    font-family: $secondary-font;
+                                }
                             }
                         }
                     }
@@ -109,13 +141,23 @@ main{
                                 text-decoration: none;
                                 
                             }
-                            &:hover{
-                                background: $color-principal;
-                                a{
-                                    color: $color-white;
-                                }
-                            }
                         }
+                    }
+                    #btn_repeat{
+                        cursor: pointer;;
+                        position: absolute;
+                        margin-top: -40px;
+                        right: 265px;
+                        font-family: $secondary-font;
+                        color: $color-principal;
+                    }
+                    #temporizador{
+                        cursor: pointer;;
+                        position: absolute;
+                        margin-top: -55px;
+                        right: 265px;
+                        font-family: $secondary-font;
+                        color: $color-principal;
                     }
                 }
                 .container-movie{

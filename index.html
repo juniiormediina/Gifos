@@ -19,20 +19,17 @@
                 <img id="close" src="./assets/close.svg" alt="Close">
             </div>
         </div>
-        <div class="search-nav" id="searchNavTop">
-            <input type="text" placeholder="Busca GIFOS y más" id="gifTitleNav">
-            <a class="img-search-nav" id="searchNav"><img src="./assets/icon-search.svg" alt="Buscar"></a>
-        </div>
+
         <!-- Menu de navegación -->
         <nav class="full-menu">
             <ul>
-                <li><a id="changeMode">MODO NOCTURNO</a></li>
+                <li><a href="#" id="changeMode">MODO NOCTURNO</a></li>
                 <span></span>
-                <li><a id="btnfavorite">FAVORITOS</a></li>
+                <li><a href="" id="btnfavorite">FAVORITOS</a></li>
                 <span></span>
-                <li><a id="btnmisGifos">MIS GIFOS</a></li>
+                <li><a href="" id="btnmisGifos">MIS GIFOS</a></li>
                 <span></span>
-                <a class="add" id="btncreateGifos" ></a>
+                <a href="" class="add" id="btncreateGifos" ></a>
             </ul>
         </nav>
     </header>
@@ -45,16 +42,12 @@
                 <img src="./assets/ilustra_header.svg" alt="Bienvenido a GIFOS">
                 <div class="principal-container-input" id="principal-container-input">
                     <input type="text" placeholder="Busca GIFOS y más" id="gifTitle">
-                    
-                    <a class="img-search" id="search"><img src="./assets/icon-search.svg" alt="Buscar"></a>
+                    <a class="img-search" id="search"><img id="closeSearch" src="./assets/icon-search.svg" alt="Buscar"></a>
                 </div>
                         <div class="suggestion-container">
                             <hr class="hr">
                             <ul class="suggestions">
-                                <!-- <li>sugerencia</li>
-                                <li>sugerencia</li>
-                                <li>sugerencia</li>
-                                <li>sugerencia</li> -->
+
                             </ul>
                         </div>
             </div>
@@ -64,17 +57,19 @@
         <!-- Trending Section -->
         <Section class="trending-section" id="trending_section">
             <div class="trending-container">
+                <h2>Trending</h2>
+
             </div>
         </Section>
 
         <!-- Result Search -->
-        <section class="result-search-section">
+        <section class="result-search-section" id="result_search_section">
             <div class="result-search-title">
                 <h2 class="search-title"></h2>
             </div>
             <div class="result-search-container" id="results">
-
             </div>
+
         </section>
 
         <!-- Empty Seacrh -->
@@ -141,15 +136,7 @@
             <div class="slick-list" id="slick-list">
                 <button class="slick-arrow slick-prev" id="button-prev"><img src="./assets/button-left.svg" alt=""></button>
                 <div class="slick-track" id="track">
-                   <!-- <div class="slick">
-                        <div>
-                            <a href="/">
-                                <picture>
-                                    <img src="https://via.placeholder.com/250x190" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div> -->
+
                 </div>
                 <button class="slick-arrow slick-next" id="button-next"><img src="./assets/button-right.svg" alt=""></button>
             </div>
@@ -173,8 +160,16 @@
                                 <p>(sólo necesitas una cámara para grabar un video)</p>
                             </div>
                             <div class="video_cointainer" id="video_cointainer">
-                                <video id="window_video" autoplay></video>
-                                <img id="window_preview" src="">
+                                <video id="window_video" class="window_video" autoplay></video>
+                                <img id="window_preview" class="window_preview">
+                                <div class="upload_img" id="upload_img">
+                                    <img src="./assets/ok.svg" alt="">
+                                    <p>GIFO subido con éxito</p>
+                                </div>
+                                <div id="uploading_img" class="uploading_img">
+                                    <img src="./assets/loader.svg">
+                                    <p>Estamos subiendo tu Gifo</p>
+                                </div>
                             </div>           
                         </div>
                         <div class="container-createGifos-bottom">
@@ -189,6 +184,7 @@
                             </div>
                         </div>
                         <div id="btn_repeat">Repetir Captura</div>
+                        <span id="temporizador"></span>
                     </div>
 
                     <div class="container-movie">
@@ -199,7 +195,6 @@
                 <div class="container-bottom">
                     <div class="createGifos-bottom">
                         <div class="createGifos-bars"></div>
-                        <!-- <div class="createGifos-movie"></div> -->
                     </div>
                     <div class="container-btn" id="container_btn">
                         <a class="btn-create" id="btn_start">COMENZAR</a>
@@ -215,7 +210,6 @@
                 <img src="./assets/close.svg" alt="close icon" />
             </div>
         </div>
-
     </main>
 
     <!-- Footer -->
@@ -229,15 +223,21 @@
             </div>
         </div>
         <div class="footer-copy">
-            <p> &copy; GIFOS 2020 All Rights Reserved.</p>
+            <p>GIFOS 2020 All Rights Reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script src="./scripts/gifClass.js"></script>
+    <script src="./scripts/tags.js"></script>
+    <script src="./scripts/maximixe.js"></script>
+    <script src="./scripts/createGif.js"></script>
+    <script src="./scripts/sections.js"></script>
+    <script src="./scripts/favorite.js"></script>
+    <script src="./scripts/slider.js"></script>
     <script src="./scripts/misGifos.js"></script>
-    <script src="./scripts/Favorite.js"></script>
-    <script src="./scripts/createGifos.js"></script>
-    <script src="./scripts/changeSections.js"></script>
+    
 </body>
 </html>

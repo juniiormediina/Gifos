@@ -1,7 +1,7 @@
 header{
     position: fixed;
     width: 100%;
-    z-index: 300;
+    z-index: 1;
 
     border-top: 5px solid $color-principal;
     background: $color-white;
@@ -45,7 +45,6 @@ header{
         }
     }
     
-
     .full-menu{
         position: fixed;
         top: 93px;
@@ -64,17 +63,15 @@ header{
             align-items: center;
 
             list-style: none;
-            cursor: pointer;
             li{
                 line-height: 60px;
                 text-decoration: none;
                 font-size: 15px;
-                color: $color-white;
-                font-weight: bold;
-                
+                color: $color-white; 
                 a{
                     color: inherit;
                     text-decoration: none;
+                    
                 }               
             }
             span{

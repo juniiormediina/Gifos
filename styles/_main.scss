@@ -1,8 +1,9 @@
-main{
+// Clases para mostrar y ocultar las secciones
 
-    /* Principal con imagen / barra de busqueda */
+main{
+    // Principal con imagen / barra de busqueda
     .principal-section{
-        /* height: 550px; */
+        //height: 550px;
         padding-top: 120px;
         padding-bottom: 16px;
         .principal-container{
@@ -33,36 +34,40 @@ main{
                 justify-content: center;
                 align-items: center;
                 /* flex-flow: column; */
-                /* border: 1px solid $color-principal;
-                    border-radius: 27px;
-                    height:  100px; */
                 input{
                     font-family: $secondary-font;
                     width: 334px;
                     height: 50px;
                     border: 1px solid $color-principal;
-                    border-radius: 27px;
                     /* border-bottom: none; */
+                    border-radius: 27px;
                     padding: 0 0 10px 30px; //padding: 0px 30px; //
                     &:focus{
                         outline: none;
                     }
                 }
                 a{
-                    /* margin-left: 270px;
-                    position: absolute; */
-                    /* margin-top: -104px; */
-                    margin-left: -45px;
-                    z-index: 200;
+                   /*  margin-left: 270px; */
+                   /* margin-rigth: 270px; */
+                   margin-left: -45px;
+                   z-index: 200;
+                    /* position: relative;
+                    margin-top: -36px; */
+                    
                     img{
                         cursor: pointer;
                         height: 20px;
                         width: 20px;
                     }
                 }
-            }       
+
+                
+            }    
             .suggestion-container {
                 display: none;
+                /* display: flex;
+                justify-content: center;
+                align-items: center; */
                 left: 12px;
                 position: relative;
                 width: 334px;
@@ -85,9 +90,11 @@ main{
                     li{
                         color: #9CAFC3;
                         font-size: 16px;
+
                         &:hover {
                             background-color: rgba(192, 185, 185, 0.911);
                             cursor: default;
+
                         }
                         img{
                             height: 15px;
@@ -97,13 +104,13 @@ main{
                         }
                     }
                 }
-            }
+            }  
         }
     }
-
-    /* Tendring Section */
+    //Tendring Section
     .trending-section{
         height: 135px;
+        
         .trending-container{
             height: 100%;
             display: flex;
@@ -117,8 +124,9 @@ main{
                 line-height: 25px;
             }
             div{
+                
                 display: flex;
-                flex-flow: row wrap;
+                flex-wrap: wrap;
                 justify-content: center;
                 p{
                     color: $color-principal;
@@ -126,23 +134,38 @@ main{
                     line-height: 25px;
                     padding-left: 10px;
                     cursor: pointer;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+                span {
+                    color: $color-principal;
                 }
             }
         }
     }
-
-    /* Result Search */
+    //Result Search
     .result-search-section{
+        //display: grid;
+        /* grid-template-columns: 1fr 1fr;
+        // display: flex; // hay que dejar este unicamente para que se pueda mostrar
+        row-gap: 15px; */
+
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
         justify-content: space-evenly;
+        
         .result-search-title{
             text-align: center;
             color: $color-principal;
             margin-bottom: 59px;
-            font-size: 35px;
-            line-height: 50px;
+            font-size: 25px;
+            line-height: 30px;
+            grid-row: 1/1;
+            grid-column: 1/3;
+            margin-bottom: 30px;
         }
         .result-search-container{
             display: flex;
@@ -159,8 +182,8 @@ main{
                     display: block;
                 }
                 .overlay{
-                    display: none;
                     position: absolute;
+                    display: none;
                     flex-flow: column;
                     justify-content: space-between;
                     background: $color-principal;
@@ -189,13 +212,14 @@ main{
             }
         }
         .btn{
-            // display: none;// hay que hacer una funcion que muestre este boton al realizar la consulta
+            /* display: none; */
             border: 1px solid $color-principal;
             border-radius: 25px;
             padding: 20px;
-            margin: 50px;
             text-align: center;
             cursor: pointer;
+            margin-top: 8px;
+
 
             font-size: 13px;
             color: $color-principal;
@@ -206,12 +230,11 @@ main{
             }
         }
     }
-
-    /* Empty Search */
+    //Empty Search
     .search-empty-section{
         display: none;
         .search-empty{
-            /* height: 280px; */
+            //height: 280px;
             padding-top: 120px;
             .search-empty-container{
                 height: 100%;
@@ -252,8 +275,7 @@ main{
             }
         }
     }
-    
-    /* Slider de Gifos */
+    //Slider de Gifos
     .carousel{
         width: 100%;
         height: 470px;
@@ -261,6 +283,7 @@ main{
         flex-flow: column;
         justify-content: center;
         background: $color-gray;
+        // margin: 0px 60px;
         h2{
             font-family: $principal-font;
             color: $color-principal;
@@ -276,6 +299,7 @@ main{
             text-align: center;
         }
         .slick-list{
+            // position: relative; // comentar
             display: flex;
             align-items: center;
             width: fit-content;
@@ -287,6 +311,7 @@ main{
             .slick-track{
                 position: relative;
                 overflow-x: scroll;
+                overflow-y: hidden;
                 top: 0;
                 left: 0;
                 display: flex;
@@ -294,22 +319,28 @@ main{
                 .slick{
                     position: relative;
                     width: 243px;
+                    //padding: 0 18px; // en vista movil no es necesario
                     float: left;
                     box-sizing: border-box;
                     display: flex;
-                    height: 191px;
+                    height: 187px;
                     margin-right: 15px;
                     img{
+                        //object-fit: cover; 
+                        // height: 300px; 
                         width: 243px;
                         border-radius: 4px;
                         box-shadow: 0 2px 0 rgba(0,0,0,.5);
                         transition: .3s ease-in-out;
                         height: 187px;
                         scroll-snap-align: center;
+                        /* &:hover{
+                            opacity: .85;
+                        } */
                     }
                     .overlay-slider{
-                        display: none;
                         position: absolute;
+                        display: none;
                         flex-flow: column;
                         justify-content: space-between;
                         background: $color-principal;
@@ -332,21 +363,19 @@ main{
                             }
                         }
                         .text-overlay-slider{
-                            margin: 0 0 0px 15px;
-                            display: flex;
-                            flex-flow: column;
-                            align-items: end;                        
-                            .user{
-                                font-family: Roboto-Regular;
-                                font-size: 15px;
-                                color: $color-white;
+                            margin: 0 0 5px 10px;
+                            
+                            .overlayP{
+                                color: #fff;
+                                text-align: left;
+                                margin-bottom: 5px;
                             }
-                            .title{
-                                line-height: unset;
-                                text-align: unset;
-                                font-size: 16px;
-                                color: $color-white;
-                                font-family: $secondary-font;
+
+                            .overlayH2{
+                                font-size: 20px;
+                                color: #fff;
+                                line-height: 25px;
+                                text-align: left;
                             }
                         }
                     }
@@ -365,6 +394,7 @@ main{
                 cursor: pointer;
             }
             .slick-prev{
+                // background-image: url(../assets/button-left.svg);
                 left: 16px;
                 img{
                     padding: 15px
