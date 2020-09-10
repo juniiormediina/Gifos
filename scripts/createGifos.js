@@ -74,7 +74,7 @@ btn_repeat.addEventListener('click', () => {
     temporizador.classList.remove('hide');
 });
 
-/* Inicio de cámar */a
+/* Inicio de cámara */
 const startdivice = () => {
     navigator.mediaDevices.getUserMedia({video: true, audio: false}).then((stream) => {
         window_video.srcObject = stream;
