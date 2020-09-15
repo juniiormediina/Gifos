@@ -20,6 +20,8 @@
             height: unset;
             background-color: inherit;
             transition: inherit;
+            display: flex;
+            align-items: center;
 
             ul{
                 flex-flow: row nowrap;
@@ -183,21 +185,21 @@
                         color: #9CAFC3;
                     }
                 }
-                .add{
-                    align-items: center;
-                    justify-content: center;
-                    width: 54px;
-                    height: 54px;
-                    border-radius: 50%;
-                    background-image: url(../assets/button-crear-gifo.svg);
-                    &:hover{
-                        background: $color-principal;
-                        background-image: url(../assets/CTA-crear-gifo-hover.svg);
-                    }
-                    &:active{
-                        background: #9CAFC3;
-                        background-image: url(../assets/CTA-crear-gifo-active.svg);
-                    }
+            }
+            .add{
+                align-items: center;
+                justify-content: center;
+                width: 54px;
+                height: 54px;
+                border-radius: 50%;
+                background-image: url(../assets/button-crear-gifo.svg);
+                &:hover{
+                    background: $color-principal;
+                    background-image: url(../assets/CTA-crear-gifo-hover.svg);
+                }
+                &:active{
+                    background: #9CAFC3;
+                    background-image: url(../assets/CTA-crear-gifo-active.svg);
                 }
             }
         }

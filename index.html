@@ -28,13 +28,13 @@
         <nav class="full-menu">
             <ul>
                 <li><a id="changeMode">MODO NOCTURNO</a></li>
-                <span></span>
+                <li class="span"></li>
                 <li><a id="btnfavorite">FAVORITOS</a></li>
-                <span></span>
+                <li class="span"></li>
                 <li><a id="btnmisGifos">MIS GIFOS</a></li>
-                <span></span>
-                <a class="add" id="btncreateGifos" ></a>
+                <li class="span"></li>
             </ul>
+            <a class="add" id="btncreateGifos" ></a>
         </nav>
     </header>
 
@@ -46,17 +46,14 @@
                 <img src="./assets/ilustra_header.svg" alt="Bienvenido a GIFOS">
                 <div class="principal-container-input" id="principal-container-input">
                     <input type="text" placeholder="Busca GIFOS y más" id="gifTitle">
-                    
-                    <a class="img-search" id="search"><img src="./assets/icon-search.svg" alt="Buscar"></a>
+                    <a class="img-search" id="search"><img id="closeSearch" src="./assets/icon-search.svg" alt="Buscar"></a>
                 </div>
                 <div class="suggestion-container">
                     <hr class="hr">
                     <ul class="suggestions">
-
                     </ul>
                 </div>
             </div>
-            
         </section>
 
         <!-- Trending Section -->
@@ -71,7 +68,6 @@
                 <h2 class="search-title"></h2>
             </div>
             <div class="result-search-container" id="results">
-
             </div>
         </section>
 
@@ -100,7 +96,6 @@
             </section>
             <section class="result-favorite-section">
                 <div class="result-container" id="favorite-results">
-
                 </div>
             </section>
             <section class="description-empty-favorite-section">
@@ -121,7 +116,6 @@
             </section>
             <section id="misGifos_render" class="misGifos_render">
                 <div id="misGifos_render_container" class="misGifos_render_container">
-
                 </div>
             </section>
             <section class="description-empty-misGifos-section" id="misGifos_empty">
@@ -139,7 +133,6 @@
             <div class="slick-list" id="slick-list">
                 <button class="slick-arrow slick-prev" id="button-prev"><img src="./assets/button-left.svg" alt=""></button>
                 <div class="slick-track" id="track">
-
                 </div>
                 <button class="slick-arrow slick-next" id="button-next"><img src="./assets/button-right.svg" alt=""></button>
             </div>
@@ -148,13 +141,11 @@
         <!-- Create Gifos -->
         <section class="createGifos" id="createGifos">
             <div class="createGifos-container">
-
                 <div class="container-top">
                     <div class="container-camera">
                         <div class="createGifos-img-camera"></div>
                         <div class="createGifos-img-camera-luz"></div>
-                    </div>
-                    
+                    </div>  
                     <div class="container-createGifos-box">
                         <div class="createGifos-box">
                             <div class="createGifos-box-intern">
@@ -164,12 +155,16 @@
                             </div>
                             <div class="video_cointainer" id="video_cointainer">
                                 <video id="window_video" class="window_video" autoplay></video>
-                                <img id="window_preview" class="window_preview">
+                                <img id="window_preview" class="window_preview" src="./assets/" alt="preview">
                                 <div id="uploading_img" class="uploading_img">
                                     <img src="./assets/loader.svg" alt="loading">
                                     <p>Estamos subiendo tu Gifo</p>
                                 </div>
                                 <div class="upload_img" id="upload_img">
+                                    <div class="icons-upload">
+                                        <img src="./assets/icon-download.svg" alt="download">
+                                        <img class="img2" src="./assets/icon-link.svg" alt="">
+                                    </div>
                                     <img src="./assets/ok.svg" alt="ok">
                                     <p>GIFO subido con éxito</p>
                                 </div>
@@ -189,24 +184,19 @@
                         <div id="btn_repeat">Repetir Captura</div>
                         <span id="temporizador"></span>
                     </div>
-
                     <div class="container-movie">
                         <div class="createGifos-movie"></div>
                     </div>
                 </div>
-
                 <div class="container-bottom">
                     <div class="createGifos-bottom">
                         <div class="createGifos-bars"></div>
-                        <!-- <div class="createGifos-movie"></div> -->
                     </div>
                     <div class="container-btn" id="container_btn">
                         <a class="btn-create" id="btn_start">COMENZAR</a>
                     </div>
                 </div>
-
             </div>
-            
         </section>
 
         <!-- Modal -->

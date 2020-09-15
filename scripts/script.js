@@ -269,6 +269,10 @@ let renderHTMLsearch = (gifInfo) => {
 /* Llamado a la API sugerencias  y pintado de la información */
 let search_input_enter = document.getElementById('gifTitle');
 search_input_enter.addEventListener("keyup",() => {
+    if(event.keyCode === 08){
+        closeSearch.setAttribute('src', './assets/icon-search.svg');
+        closeSearch.style.padding = '';
+    }
     if(search_input_enter.value == ''){
         document.querySelector('.suggestions').innerHTML = '';
         suggestion_container.style.display ='';
@@ -281,8 +285,11 @@ let suggestion_container = document.querySelector('.suggestion-container');
 let suggest = () => {
     let term = event.target.value;
     
-    if(suggestion_container.style.display == ''){
+    if(term != ''){
+        console.log('estoy en el primer if');
         suggestion_container.style.display = 'block';
+        closeSearch.setAttribute('src', './assets/close.svg');
+        closeSearch.style.padding = '3px';
     }
     
     fetch(`https://api.giphy.com/v1/tags/related/${term}?api_key=${Key_api}&limit=4`)

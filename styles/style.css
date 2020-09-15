@@ -146,7 +146,7 @@ header .full-menu ul li a {
   text-decoration: none;
 }
 
-header .full-menu ul span {
+header .full-menu ul .span {
   opacity: 0.5;
   width: 41px;
   border-bottom: 1px solid #ffffff;
@@ -1185,9 +1185,7 @@ main .createGifos .createGifos-container .container-top .container-createGifos-b
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  /* justify-content: center; */
   width: 480px;
   height: 320px;
   background: rgba(87, 46, 229, 0.4);
@@ -1200,6 +1198,36 @@ main .createGifos .createGifos-container .container-top .container-createGifos-b
   color: #ffffff;
   text-align: center;
   font-family: "Roboto", sans-serif;
+}
+
+main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .video_cointainer .upload_img .icons-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 100px;
+}
+
+main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .video_cointainer .upload_img .icons-upload img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #ffffff;
+  opacity: 0.7;
+  margin: 5px;
+}
+
+main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .video_cointainer .upload_img .icons-upload img:hover {
+  opacity: 1;
+}
+
+main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .video_cointainer .upload_img .icons-upload .img2 {
+  padding: 5px;
 }
 
 main .createGifos .createGifos-container .container-top .container-createGifos-box .container-createGifos-bottom {
@@ -1533,6 +1561,12 @@ footer .footer-copy {
     background-color: inherit;
     -webkit-transition: inherit;
     transition: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   header .full-menu ul {
     -webkit-box-orient: horizontal;
@@ -1644,7 +1678,7 @@ footer .footer-copy {
   header .full-menu ul li a:active {
     color: #9CAFC3;
   }
-  header .full-menu ul .add {
+  header .full-menu .add {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1656,11 +1690,11 @@ footer .footer-copy {
     border-radius: 50%;
     background-image: url(../assets/button-crear-gifo.svg);
   }
-  header .full-menu ul .add:hover {
+  header .full-menu .add:hover {
     background: #572EE5;
     background-image: url(../assets/CTA-crear-gifo-hover.svg);
   }
-  header .full-menu ul .add:active {
+  header .full-menu .add:active {
     background: #9CAFC3;
     background-image: url(../assets/CTA-crear-gifo-active.svg);
   }
