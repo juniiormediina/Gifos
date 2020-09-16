@@ -20,12 +20,12 @@ document.getElementById('btn-menu').addEventListener('click', () => {
 
 /* scroll header sticky y agrego barra de busqueda */
 window.onscroll = function(){
-        scrollFunction();
+    scrollFunction();
 };
 
 function scrollFunction(){
     if(screen.width >= 1280){
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
             document.getElementById("searchNavTop").style.display = "flex";
         } else{
             document.getElementById("searchNavTop").style.display = "none";
@@ -36,7 +36,7 @@ function scrollFunction(){
 
 /* Dark style */
 window.onload = () => {
-        new DarkMode();
+    new DarkMode();
 }
 class DarkMode{
     constructor(){
@@ -70,11 +70,13 @@ async function getGifByTitle(title){
     return gifData;
 }
 
-
 let input = document.getElementById('gifTitle');
 let results = document.getElementById('results');
+let inputNav = document.getElementById('gifTitleNav');
+let btnSearchNav = document.getElementById('searchNav');
 let btnSearch = document.getElementById('search');
 let closeSearch = document.getElementById('closeSearch');
+let closeSearchNav = document.getElementById('closeSearchNav');
 
 btnSearch.addEventListener('click', () => {
     search();
@@ -89,13 +91,15 @@ input.addEventListener('keyup', (event) => {
     }
 });
 
-closeSearch.addEventListener("click", (e)=>{
+closeSearch.addEventListener("click", (e) => {
     if(e.target.src.includes('close.svg'))
         input.value="";
 });
 
-let inputNav = document.getElementById('gifTitleNav');
-let btnSearchNav = document.getElementById('searchNav');
+closeSearchNav.addEventListener("click", (e) => {
+    if(e.target.src.includes('close.svg'))
+        inputNav.value="";
+});
 
 btnSearchNav.addEventListener('click', () => {
     document.querySelector('.search-title').innerHTML= inputNav.value;
@@ -117,7 +121,7 @@ let search = () => {
     let gifTitleNav = inputNav.value;
 
     if(gifTitle === '' && gifTitleNav === ''){
-        if(closeSearch.src.includes('close.svg')){
+        if(closeSearch.src.includes('close.svg') || closeSearchNav.src.includes('close.svg')){
             clearBtnSearch();
             return;
         }
@@ -125,7 +129,6 @@ let search = () => {
     } else{
         search_empty.classList.add('hide');
         getGifByTitle(gifTitle).then((gifData) => {
-            console.log(gifData);
             let button = document.querySelector('.btn');
             if(button == null){
                 buttonAdd();
@@ -133,14 +136,12 @@ let search = () => {
             gifData.data.forEach(gif => {
                 renderHTMLsearch(gif);
                 allGifs.push(new Gif (gif.images.preview_gif.url, gif.images.downsized.url, gif.id, gif.title, gif.username));
-            });
-            
+            }); 
         });
 
         getGifByTitle(gifTitleNav).then((gifDataNav) => {
-            console.log(gifDataNav);
             let button = document.querySelector('.btn');
-            if(button == null) {
+            if(button == null){
                 buttonAdd();
             }
             gifDataNav.data.forEach(gifNav => {
@@ -149,18 +150,17 @@ let search = () => {
             });   
         });
     }
-}
+};
 
 /* funcion agregar boton ver mas */
 let buttonAdd = () => {
-
     let div = document.querySelector('.result-search-section');
     let button = document.createElement('button');
     button.textContent = 'VER MÁS';
     button.classList.add('btn');
     button.setAttribute('onclick', 'limitFunction()');
     div.insertAdjacentElement('beforeend',button);
-}
+};
 
 /* Boton ver más */
 let limitBtn = 12;
@@ -168,14 +168,14 @@ let limitBtn = 12;
 let limitFunction = () => {
     limitBtn += 12;
     seeMore();
-}
+};
 
 let seeMore = () => {
     let gifTitle = input.value;
     document.querySelector('#results').innerHTML='';
     document.querySelector('.search-title').innerHTML= '';
 
-    async function getGifByTitleVerMas(title) {
+    async function getGifByTitleVerMas(title){
         let url = `https://api.giphy.com/v1/gifs/search?api_key=${Key_api}&q=${title}&limit=${limitBtn}&offset=0&rating=g&lang=en`;
         let response = await fetch(url);
         let gifData = await response.json();
@@ -185,7 +185,7 @@ let seeMore = () => {
     getGifByTitleVerMas(gifTitle).then((gifData) => {
         let button = document.querySelector('.btn');
         
-        if(button == null) {
+        if(button == null){
             buttonAdd();
         }
         gifData.data.forEach(gif => {
@@ -193,7 +193,7 @@ let seeMore = () => {
             allGifs.push(new Gif (gif.images.preview_gif.url, gif.images.downsized.url, gif.id, gif.title, gif.username));
         });            
     });
-}
+};
 
 /* obtener datos necesarios */
 let getImage = (urlImage) => {
@@ -202,11 +202,11 @@ let getImage = (urlImage) => {
     } else {
         return '';
     }  
-}
+};
 
 let getTitle = (title) => {
     return title.title;
-}
+};
 
 let getUserName = (userName) => {
     if(userName.username === ''){
@@ -214,11 +214,12 @@ let getUserName = (userName) => {
     } else{
         return userName.username;
     }
-}
+};
 
 let getId = (id) => {
     return id.id;
-}
+};
+
 /* Pintar información obtenida */
 let renderHTMLsearch = (gifInfo) => {
     let divItem = document.createElement('div');
@@ -274,53 +275,66 @@ let renderHTMLsearch = (gifInfo) => {
                 divTextOverlay.appendChild(h2);
     results.appendChild(divItem);
     results.insertAdjacentElement('beforeend', divItem);
-}
+};
 
 /* Llamado a la API sugerencias  y pintado de la información */
 let search_input_enter = document.getElementById('gifTitle');
-search_input_enter.addEventListener("keyup",(event)=>{
+search_input_enter.addEventListener("keyup",() => {
     clearBtnSearch();
 });
-let clearBtnSearch =()=>{
-    if(input.value==""){
+let search_inputNav_enter = document.getElementById('gifTitleNav');
+search_inputNav_enter.addEventListener("keyup",() => {
+    clearBtnSearch();
+});
+
+let clearBtnSearch = () => {
+    if(input.value == ""){
         closeSearch.setAttribute('src', './assets/icon-search.svg');
         closeSearch.style.padding = '';
     }
-    if(search_input_enter.value == ''){
+    if(inputNav.value == ""){
+        closeSearchNav.setAttribute('src', './assets/icon-search.svg');
+        closeSearchNav.style.padding = '';
+    }
+    if(search_input_enter.value == '' && search_inputNav_enter.value == ''){
         document.querySelector('.suggestions').innerHTML = '';
         suggestion_container.style.display ='';
     }else{
         suggest();
     }
-}
+};
 
 let suggestion_container = document.querySelector('.suggestion-container');
 let suggest = () => {
-    let term = event.target.value;
+    let term = input.value;
+    let termNav = inputNav.value;
     
     if(term != ''){
-        console.log('estoy en el primer if');
         suggestion_container.style.display = 'block';
         closeSearch.setAttribute('src', './assets/close.svg');
         closeSearch.style.padding = '3px';
+    }
+    if(termNav != ''){
+        closeSearchNav.setAttribute('src', './assets/close.svg');
+        closeSearchNav.style.padding = '3px';
     }
     
     fetch(`https://api.giphy.com/v1/tags/related/${term}?api_key=${Key_api}&limit=4`)
     .then(response => {
         response.json().then(data => {
             document.querySelector('.suggestions').innerHTML = '';
-        for (let i = 0; i < data.data.length; i++) {
+            for (let i = 0; i < data.data.length; i++) {
                 createSuggestions(data.data[i].name);
-        }    
+            }    
         });
     });
-}
+};
 
 let getsearch = () => {
     let search_value = event.target.childNodes[1];
     input.value = search_value.textContent;
 
-    document.querySelector('.search-title').innerHTML= input.value;
+    document.querySelector('.search-title').innerHTML = input.value;
     document.querySelector('#results').innerHTML='';
 
     getGifByTitle(input.value).then((gifData) => {
@@ -354,7 +368,7 @@ let createSuggestions = (data) => {
 
     li.insertAdjacentElement('afterbegin', imgIcon);
     ul.insertAdjacentElement('beforeend', li);
-}
+};
 
 /* Funcionalidad de los tags */
 let getTrendingTags = () => {
@@ -375,7 +389,7 @@ let getTrendingTags = () => {
             `;
         });
     });
-}
+};
 
 let tagSearch = () => {
     document.querySelector('#results').innerHTML='';
@@ -392,7 +406,7 @@ let tagSearch = () => {
             allGifs.push(new Gif (gif.images.preview_gif.url, gif.images.downsized.url, gif.id, gif.title, gif.username));
         });     
     });    
-}
+};
     
 getTrendingTags();
 
@@ -412,7 +426,7 @@ let getTrendingSlider = () => {
             slick = document.querySelectorAll('.slick');
         });
     });
-}
+};
 
 let renderHTMLslider = (gif) => {
     
@@ -438,7 +452,7 @@ let renderHTMLslider = (gif) => {
     divIconOvaerlaySlider.classList.add('icon-overlay-slider');
 
     let favorite = document.createElement("img");
-    favorite.src="./assets/icon-fav-hover.svg";
+    favorite.src = "./assets/icon-fav-hover.svg";
     favorite.setAttribute("data-id", getId(gif));
     favorite.setAttribute("onclick", "addFavorite('"+favorite.dataset.id+"')");
     
@@ -499,9 +513,9 @@ function Move(value){
     const slickWidth = slick[0].offsetWidth;
     track.style.left == "" ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice(0, -2) * -1);
     if(leftPosition < (trackWidth - listWidth) && value == 2){
-            track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
+        track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
     }else if(leftPosition > 0 && value == 1){
-            track.style.left = `${-1 * (leftPosition - slickWidth)}px`;
+        track.style.left = `${-1 * (leftPosition - slickWidth)}px`;
     }
 }
 
@@ -521,9 +535,9 @@ const maximixeGif = (gif) => {
     modalContainer.innerHTML = '';
     const { username, title, image, id, favorite } = gif;
 	let src;
-	if (!favorite) {
+	if(!favorite){
 		src = './assets/icon-fav-hover.svg';
-	} else{
+	}else{
 		src = './assets/icon-fav-active.svg';
     }
     

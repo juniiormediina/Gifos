@@ -13,7 +13,6 @@ function creaMisGifos(){
         fetch(`https://api.giphy.com/v1/gifs?api_key=${Key_api}&ids=${localStorage.getItem('misGifos')}`).then((objetoMisGifos) => {
             objetoMisGifos.json()
             .then((dataInfo) => {
-                console.log("data",dataInfo.data);
                 misGifos_render_container.innerHTML='';
                 for (let i = 0; i < dataInfo.data.length; i++){
                     createMisGifos(dataInfo.data[i]);

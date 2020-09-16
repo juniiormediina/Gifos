@@ -27,7 +27,6 @@ class Gif {
 
 /* Se agregan a favorito */
 const addFavorite = (id) => {
-	console.log('el evento a la escucha funciona');
 	let button = event.target;
 	
 	button.src = './assets/icon-fav-active.svg';

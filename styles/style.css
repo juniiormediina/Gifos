@@ -1,39 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
-* .purple {
-  color: #572ee5;
-}
-
-* .gray {
-  color: #9CAFC3;
-}
-
-/* clases para ocutar y mostrar secciones */
-.show {
-  display: block !important;
-}
-
-.hide {
-  display: none !important;
-}
-
-/* clases dadas para elementos de la seccion create gifos */
-.morado {
-  background: #572EE5;
-}
-
-.blanco {
-  color: #ffffff !important;
-}
-
 header {
   position: fixed;
   width: 100%;
@@ -158,6 +124,7 @@ main {
   /* Result Search */
   /* Empty Search */
   /* Slider de Gifos */
+  /* Modal */
 }
 
 main .principal-section {
@@ -684,6 +651,98 @@ main .carousel .slick-list .slick-next {
 
 main .carousel .slick-list .slick-next img {
   padding: 15px;
+}
+
+main .modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 600;
+}
+
+main .modal__content {
+  max-width: 1440px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 76px 29px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+  position: relative;
+}
+
+main .modal__content > img {
+  width: 24px;
+  position: absolute;
+  right: 21px;
+  top: 0;
+}
+
+main .modal__content__card {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 100%;
+}
+
+main .modal__content__card__image img {
+  width: 100%;
+  height: 100%;
+}
+
+main .modal__content__card__info {
+  padding-top: 14px;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .modal__content__card__info__images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .modal__content__card__info__images img {
+  margin: 0;
+  width: 36px;
+  margin-right: 10px;
+}
+
+main .modal__content__card__info__images img:last-child {
+  margin-right: 0;
+}
+
+main .modal__content__card__info h3 {
+  color: #000;
+}
+
+main .modal__content__card__info p {
+  color: #000;
 }
 
 main {
@@ -1359,121 +1418,6 @@ main .createGifos .createGifos-container .container-bottom .container-btn .btn-c
   color: #ffffff;
 }
 
-.modal {
-  position: fixed;
-  display: none;
-  top: 0;
-  width: 100%;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.7);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  z-index: 600;
-}
-
-.modal__content {
-  max-width: 1440px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  padding: 76px 29px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: right;
-  position: relative;
-}
-
-.modal__content > img {
-  width: 24px;
-  position: absolute;
-  right: 21px;
-  top: 0;
-}
-
-.modal__content__card {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  width: 100%;
-}
-
-.modal__content__card__image img {
-  width: 100%;
-  height: 100%;
-}
-
-.modal__content__card__info {
-  padding-top: 14px;
-  text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.modal__content__card__info__images {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.modal__content__card__info__images img {
-  margin: 0;
-  width: 36px;
-  margin-right: 10px;
-}
-
-.modal__content__card__info__images img:last-child {
-  margin-right: 0;
-}
-
-.modal__content__card__info h3 {
-  color: #000;
-}
-
-.modal__content__card__info p {
-  color: #000;
-}
-
-@media only screen and (min-width: 768px) {
-  .modal__content {
-    padding: 67px 268px;
-  }
-  .modal__content > img {
-    right: 278px;
-  }
-  .modal__content__card {
-    width: 695px;
-  }
-  .modal__content__card__image {
-    max-width: initial;
-    width: 100%;
-    height: 385px;
-  }
-  .modal__content__card__info {
-    padding-top: 27px;
-  }
-  .modal__content__card__info img {
-    width: 27px;
-  }
-}
-
 footer {
   font-family: "Roboto", sans-serif;
   width: 100%;
@@ -1586,6 +1530,7 @@ footer .footer-copy {
     /* Result Search */
     /* Mis Gifos */
     /* Slider de Gifos */
+    /* Modal */
   }
   main .principal-section .principal-container h1 {
     width: 443px;
@@ -1622,6 +1567,26 @@ footer .footer-copy {
   }
   main .carousel .slick-list {
     max-width: 65vw;
+  }
+  main .modal__content {
+    padding: 67px 268px;
+  }
+  main .modal__content > img {
+    right: 278px;
+  }
+  main .modal__content__card {
+    width: 695px;
+  }
+  main .modal__content__card__image {
+    max-width: initial;
+    width: 100%;
+    height: 385px;
+  }
+  main .modal__content__card__info {
+    padding-top: 27px;
+  }
+  main .modal__content__card__info img {
+    width: 27px;
   }
   /* footer */
   footer {
@@ -2090,5 +2055,39 @@ footer .footer-copy {
     -webkit-filter: brightness(2000%);
             filter: brightness(2000%);
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+* .purple {
+  color: #572ee5;
+}
+
+* .gray {
+  color: #9CAFC3;
+}
+
+/* clases para ocutar y mostrar secciones */
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* clases dadas para elementos de la seccion create gifos */
+.morado {
+  background: #572EE5;
+}
+
+.blanco {
+  color: #ffffff !important;
 }
 /*# sourceMappingURL=style.css.map */
