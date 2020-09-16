@@ -68,10 +68,7 @@
         /* Tendring Section */
         .trending-section{
             .trending-container{
-                h2{
-                    color: $color-white;
-                }
-                p{
+                h2, p, span{
                     color: $color-white;
                 }
             }
@@ -250,13 +247,12 @@
                     li{
                         color: $color-white;
                     }
-                    .add{
-                        border: 1px solid $color-white;
-                        background-image: url(../assets/CTA-crear-gifo-modo-noc.svg);
-                    }
-                    span{
+                    .span{
                         border-bottom: 1px solid $dark-color;
                     }
+                }
+                .add{
+                    background-image: url(../assets/CTA-crear-gifo-modo-noc.svg);
                 }
             }
         }
@@ -272,16 +268,14 @@
                 }
             }
             .full-menu{
-                ul{
-                    .add{
-                        &:hover{
-                            background: $color-white;
-                            background-image: url(../assets/CTA-crear-gifo-hover-modo-noc.svg);
-                        }
-                        &:active{
-                            background:#9CAFC3;
-                            background-image: url(../assets/CTA-crear-gifo-active-modo-noc.svg);
-                        }
+                .add{
+                    &:hover{
+                        background: $color-white;
+                        background-image: url(../assets/CTA-crear-gifo-hover-modo-noc.svg);
+                    }
+                    &:active{
+                        background:#9CAFC3;
+                        background-image: url(../assets/CTA-crear-gifo-active-modo-noc.svg);
                     }
                 }
             }
