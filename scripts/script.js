@@ -74,6 +74,7 @@ async function getGifByTitle(title){
 let input = document.getElementById('gifTitle');
 let results = document.getElementById('results');
 let btnSearch = document.getElementById('search');
+let closeSearch = document.getElementById('closeSearch');
 
 btnSearch.addEventListener('click', () => {
     search();
@@ -86,6 +87,11 @@ input.addEventListener('keyup', (event) => {
         document.querySelector('.search-title').innerHTML= input.value;
         search();
     }
+});
+
+closeSearch.addEventListener("click", (e)=>{
+    if(e.target.src.includes('close.svg'))
+        input.value="";
 });
 
 let inputNav = document.getElementById('gifTitleNav');
@@ -111,6 +117,10 @@ let search = () => {
     let gifTitleNav = inputNav.value;
 
     if(gifTitle === '' && gifTitleNav === ''){
+        if(closeSearch.src.includes('close.svg')){
+            clearBtnSearch();
+            return;
+        }
         search_empty.classList.add('show');
     } else{
         search_empty.classList.add('hide');
@@ -268,8 +278,11 @@ let renderHTMLsearch = (gifInfo) => {
 
 /* Llamado a la API sugerencias  y pintado de la información */
 let search_input_enter = document.getElementById('gifTitle');
-search_input_enter.addEventListener("keyup",() => {
-    if(event.keyCode === 08){
+search_input_enter.addEventListener("keyup",(event)=>{
+    clearBtnSearch();
+});
+let clearBtnSearch =()=>{
+    if(input.value==""){
         closeSearch.setAttribute('src', './assets/icon-search.svg');
         closeSearch.style.padding = '';
     }
@@ -279,7 +292,7 @@ search_input_enter.addEventListener("keyup",() => {
     }else{
         suggest();
     }
-});
+}
 
 let suggestion_container = document.querySelector('.suggestion-container');
 let suggest = () => {

@@ -193,6 +193,7 @@
                 height: 54px;
                 border-radius: 50%;
                 background-image: url(../assets/button-crear-gifo.svg);
+                cursor: pointer;
                 &:hover{
                     background: $color-principal;
                     background-image: url(../assets/CTA-crear-gifo-hover.svg);

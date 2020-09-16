@@ -268,7 +268,7 @@ main .principal-section .principal-container .suggestion-container .suggestions 
 
 main .principal-section .principal-container .suggestion-container .suggestions li:hover {
   background-color: rgba(192, 185, 185, 0.911);
-  cursor: default;
+  cursor: pointer;
 }
 
 main .principal-section .principal-container .suggestion-container .suggestions li img {
@@ -411,6 +411,7 @@ main .result-search-section .result-search-container .item .overlay .icon-overla
   background: #ffffff;
   opacity: 0.7;
   margin: 5px;
+  cursor: pointer;
 }
 
 main .result-search-section .result-search-container .item .overlay .text-overlay {
@@ -624,6 +625,7 @@ main .carousel .slick-list .slick-track .slick .overlay-slider .icon-overlay-sli
   background: #ffffff;
   opacity: 0.7;
   margin: 5px;
+  cursor: pointer;
 }
 
 main .carousel .slick-list .slick-track .slick .overlay-slider .text-overlay-slider {
@@ -801,6 +803,7 @@ main .favorite .result-favorite-section .result-container .item-favorite .overla
   background: #ffffff;
   opacity: 0.7;
   margin: 5px;
+  cursor: pointer;
 }
 
 main .favorite .result-favorite-section .result-container .item-favorite .overlay-favorite .text-overlay-favorite {
@@ -958,6 +961,7 @@ main .misGifos .misGifos_render .misGifos_render_container .item-gifos .overlay-
   background: #ffffff;
   opacity: 0.7;
   margin: 5px;
+  cursor: pointer;
 }
 
 main .misGifos .misGifos_render .misGifos_render_container .item-gifos .overlay-gifos .text-overlay {
@@ -1185,7 +1189,6 @@ main .createGifos .createGifos-container .container-top .container-createGifos-b
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  /* justify-content: center; */
   width: 480px;
   height: 320px;
   background: rgba(87, 46, 229, 0.4);
@@ -1214,6 +1217,7 @@ main .createGifos .createGifos-container .container-top .container-createGifos-b
 }
 
 main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .video_cointainer .upload_img .icons-upload img {
+  cursor: pointer;
   width: 32px;
   height: 32px;
   border-radius: 6px;
@@ -1689,6 +1693,7 @@ footer .footer-copy {
     height: 54px;
     border-radius: 50%;
     background-image: url(../assets/button-crear-gifo.svg);
+    cursor: pointer;
   }
   header .full-menu .add:hover {
     background: #572EE5;

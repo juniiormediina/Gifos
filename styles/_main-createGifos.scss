@@ -105,7 +105,6 @@ main{
                                 position: absolute;
                                 display: flex;
                                 flex-flow:column;
-                                /* justify-content: center; */
                                 width: 480px;
                                 height: 320px;
                                 background: rgba(87, 46, 229, 0.4);
@@ -122,6 +121,7 @@ main{
                                     align-items: center;
                                     margin-bottom: 100px;
                                     img{
+                                        cursor: pointer;
                                         width: 32px;
                                         height: 32px;
                                         border-radius: 6px;

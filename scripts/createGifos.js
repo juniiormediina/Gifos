@@ -8,6 +8,8 @@ let is_recording = false;
 let recorder;
 let btn_repeat = document.getElementById('btn_repeat');
 let temporizador = document.getElementById('temporizador');
+let btnDowloadGif = document.getElementById('btnDowloadGif');
+let btnLinkMyGif = document.getElementById('btnLinkMyGif');
 
 /* Indicadores paso a paso */
 let btn_1 = document.getElementById('btn_1');
@@ -134,7 +136,7 @@ let uploadGifo = () => {
     fetch('https://upload.giphy.com/v1/gifs', {
         method: "POST",
         body: form
-    }).then((resp)=>{
+    }).then((resp) => {
         resp.json().then((data) => {
             btn_video.textContent = 'COMENZAR';
             let misGifos = localStorage.getItem('misGifos') == null?[]:localStorage.getItem('misGifos').split(',');
@@ -142,9 +144,21 @@ let uploadGifo = () => {
             localStorage.setItem('misGifos',misGifos);
             uploading_img.classList.add('hide');
             upload_img.classList.remove('hide');
+            localStorage.setItem('resentUp',data.data.id);
         });
     });
 }
+/* Descargar */
+btnDowloadGif.addEventListener('click', () => {
+    descargarGif(URL.createObjectURL(recorder.getBlob()),'nuevoGif.gif');
+});
+
+btnLinkMyGif.addEventListener('click',()=>{
+    var link = document.createElement('a');
+    link.target='blank';
+    link.href=`https://giphy.com/gifs/${localStorage.getItem('resentUp')}`;
+    link.click();
+});
 
 /* Temporizador */
 function add(){
