@@ -10,19 +10,16 @@
                 display: none;
             }
         }
-
         .full-menu{
             position: unset;
             top: unset;
             left: unset;
-
             width: unset;
             height: unset;
             background-color: inherit;
             transition: inherit;
             display: flex;
             align-items: center;
-
             ul{
                 flex-flow: row nowrap;
                 li{
@@ -154,7 +151,6 @@
     }
 }
 @media screen and (min-width: 1024px){
-
     main{
         /* Slider de Gifos */
         .carousel{
@@ -364,7 +360,6 @@
     }
 
     main{
-
         /* Result Search */
         .result-search-section{
             .result-search-container{

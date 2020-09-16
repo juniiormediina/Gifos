@@ -1890,11 +1890,7 @@ footer .footer-copy {
   background-color: #222326;
 }
 
-.dark main .carousel h2 {
-  color: #ffffff;
-}
-
-.dark main .carousel p {
+.dark main .carousel h2, .dark main .carousel p {
   color: #ffffff;
 }
 
@@ -1917,11 +1913,7 @@ footer .footer-copy {
   background-image: url(../assets/camara-modo-noc.svg);
 }
 
-.dark main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .createGifos-box-intern h2 {
-  color: #ffffff;
-}
-
-.dark main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .createGifos-box-intern p {
+.dark main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .createGifos-box-intern h2, .dark main .createGifos .createGifos-container .container-top .container-createGifos-box .createGifos-box .createGifos-box-intern p {
   color: #ffffff;
 }
 
@@ -2068,7 +2060,7 @@ footer .footer-copy {
   color: #9CAFC3;
 }
 
-/* clases para ocutar y mostrar secciones */
+/* clases para ocultar y mostrar secciones */
 .show {
   display: block !important;
 }

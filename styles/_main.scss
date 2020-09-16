@@ -1,5 +1,4 @@
 main{
-
     /* Principal con imagen / barra de busqueda */
     .principal-section{
         padding-top: 120px;
@@ -178,14 +177,12 @@ main{
             }
         }
         .btn{
-
             border: 1px solid $color-principal;
             border-radius: 25px;
             padding: 20px;
             margin: 50px;
             text-align: center;
             cursor: pointer;
-
             font-size: 13px;
             color: $color-principal;
             text-transform: uppercase;
@@ -397,7 +394,6 @@ main{
                 align-self: center;
                 justify-self: center;
                 width: 100%;
-    
                 &__image {
                     & img {
                         width: 100%;

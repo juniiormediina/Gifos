@@ -1,6 +1,5 @@
 .dark{
     background: $dark-color;
-    
     /* Header */
     header{
         background: $dark-color;
@@ -22,7 +21,6 @@
     }
 
     main{
-
         /* Principal con imagen / barra de busqueda */
         .principal-section{
             .principal-container{
@@ -51,7 +49,6 @@
                     .suggestions{
                         li{
                             color: #9CAFC3;
-
                             &:hover {
                                 background-color: rgba(65, 65, 65, 0.911);
                                 cursor: default;
@@ -120,10 +117,7 @@
         /* Slider de Gifos */
         .carousel{
             background-color: $bold-dark-color;
-            h2{
-                color: $color-white;
-            }
-            p{
+            h2, p{
                 color: $color-white;
             }
             .slick-list{
@@ -156,11 +150,7 @@
                     .container-createGifos-box{
                         .createGifos-box{
                             .createGifos-box-intern{
-                                h2{
-
-                                    color: $color-white;
-                                }
-                                p{
+                                h2, p{
                                     color: $color-white;
                                 }
                             }
@@ -280,9 +270,7 @@
                 }
             }
         }
-
         main{
-
             /* Result Search */
             .result-search-section{
                 .btn:hover{
